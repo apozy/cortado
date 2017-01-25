@@ -147,6 +147,7 @@ var matrixSnapshot = function(pageStore, details) {
         blockedCount: pageStore.requestStats.blocked.all,
         diff: [],
         domain: pageStore.pageDomain,
+        favIconUrl: pageStore.favIconUrl,
         headers: µm.Matrix.getColumnHeaders(),
         hostname: pageStore.pageHostname,
         mtxContentModified: pageStore.mtxContentModifiedTime !== details.mtxContentModifiedTime,
@@ -158,6 +159,8 @@ var matrixSnapshot = function(pageStore, details) {
         pSwitches: {},
         rows: {},
         rowCount: 0,
+        sandbox: pageStore.sandbox,
+        scan: pageStore.pageScan,
         scope: '*',
         tabId: pageStore.tabId,
         tMatrixModified: µm.tMatrix.modifiedTime !== details.tMatrixModifiedTime,
@@ -389,7 +392,7 @@ var µm = µMatrix;
 var contentScriptSummaryHandler = function(tabId, details) {
     // TODO: Investigate "Error in response to tabs.executeScript: TypeError:
     // Cannot read property 'locationURL' of null" (2013-11-12). When can this
-    // happens? 
+    // happens?
     if ( !details || !details.locationURL ) {
         return;
     }
@@ -539,7 +542,7 @@ var onMessage = function(request, sender, callback) {
 
     case 'getUserAgentReplaceStr':
         response = µm.tMatrix.evaluateSwitchZ('ua-spoof', request.hostname) ?
-            µm.userAgentReplaceStr : 
+            µm.userAgentReplaceStr :
             undefined;
         break;
 

@@ -1,8 +1,8 @@
 {
     "manifest_version": 2,
-    "name": "uMatrix",
-    "short_name": "uMatrix",
-    "version": "0.9.9",
+    "name": "Apozy",
+    "short_name": "Apozy",
+    "version": "0.0.1",
     "description": "__MSG_extShortDesc__",
     "icons": {
         "16": "img/icon_16.png",
@@ -15,7 +15,7 @@
         "default_title": "uMatrix",
         "default_popup": "popup.html"
     },
-    "author": "Raymond Hill",
+    "author": "Erhan Justice",
     "background": {
         "page": "background.html"
     },
@@ -64,7 +64,7 @@
         }
     ],
     "default_locale": "en",
-    "homepage_url": "https://github.com/gorhill/uMatrix/wiki",
+    "homepage_url": "https://www.apozy.com",
     "minimum_chrome_version": "22.0",
     "options_page": "dashboard.html",
     "permissions": [

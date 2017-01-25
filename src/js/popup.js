@@ -130,6 +130,7 @@ function getGroupStats() {
     // First, group according to whether at least one node in the domain
     // hierarchy is white or blacklisted
     var pageDomain = matrixSnapshot.domain;
+    var pageScan = matrixSnapshot.scan;
     var rows = matrixSnapshot.rows;
     var columnOffsets = matrixSnapshot.headers;
     var anyTypeOffset = columnOffsets['*'];
@@ -254,7 +255,6 @@ function getGroupStats() {
 /******************************************************************************/
 
 // helpers
-
 function getTemporaryColor(hostname, type) {
     return matrixSnapshot.rows[hostname].temporary[matrixSnapshot.headers[type]];
 }
@@ -737,7 +737,7 @@ function makeMatrixGroup0Section() {
 }
 
 function makeMatrixGroup0() {
-    // Show literal "1st-party" row only if there is 
+    // Show literal "1st-party" row only if there is
     // at least one 1st-party hostname
     if ( Object.keys(groupsSnapshot[1]).length === 0 ) {
         return;
@@ -973,9 +973,113 @@ var makeMenu = function() {
     resizePopup();
 };
 
+var processReport = function () {
+// Cookies:
+// This service may tracks you on other websites you visit.
+//
+// CORS:
+// Other websites may perform unwanted actions to your logged in account.
+//
+// Content Security:
+// Content shown on this website may be not be safe.
+//
+// HSTS:
+// This service does not guarantee new connections will stay secure as you browse.
+//
+// Redirections/SSL:
+// Your data and activity on this site may be seen by others you share the internet with.
+
+};
+
 /******************************************************************************/
 
 // Do all the stuff that needs to be done before building menu et al.
+function initScanResults() {
+    $('#favicon').attr('src', matrixSnapshot.favIconUrl);
+    $('#domain').text(matrixSnapshot.domain);
+    $("#isLocked").prop("checked", matrixSnapshot.sandbox);
+
+    if (matrixSnapshot.scan.state.toUpperCase() !== "FINISHED") {
+      $('#riskScore').text("Site is " + matrixSnapshot.scan.state.toLowerCase());
+      $('#riskList').append('<li><a class="grey-text text-lighten-3" href="#!">All typing, form submissions and downloads are blocked when Site Lock is switched \'On\'.</a></li>');
+      return;
+    }
+    // else if (matrixSnapshot.scan.tests_failed === 0) {
+    //     $('#riskHeader').text("No Risks Found");
+    //     $('#riskScore').text("Site Scored " +  matrixSnapshot.scan.score + "%");
+    //     // Remove existing blue-grey color bg set in html
+    //     $('.page-footer').toggleClass('blue-grey');
+    //     $('.page-footer').toggleClass('green');
+    //     $('#riskList').append('<li><a class="grey-text text-lighten-3" href="#!">' + matrixSnapshot.domain +' is taking advantage of the latest web security features.</a></li>');
+    //     return;
+    // }
+
+    // Remove existing blue-grey color bg set in html
+    $('.page-footer').toggleClass('blue-grey');
+
+    var riskPriorityCount = 0;
+    for (var s in matrixSnapshot.scan.scan_report) {
+      var riskBadge = '';
+      $('#riskListDetail').append(' <li class="collection-item avatar">'
+      // + matrixSnapshot.scan.scan_report[s].score_modifier
+      +' <i class="material-icons circle '
+      + ((matrixSnapshot.scan.scan_report[s].pass === true) ? "green" : "red")
+      +'">'
+      + ((matrixSnapshot.scan.scan_report[s].pass === true) ? "check" : "close")
+      +'</i><span class="title">'
+      + matrixSnapshot.scan.scan_report[s].result.toUpperCase()
+      + '</span> <p>Wanted: '
+      + matrixSnapshot.scan.scan_report[s].expectation.toUpperCase()
+      + '<br>'
+      + matrixSnapshot.scan.scan_report[s].score_description
+      + '</p></li>');
+
+
+      if (!matrixSnapshot.scan.scan_report[s].pass
+        && matrixSnapshot.scan.scan_report[s].score_modifier <= -20) {
+            riskPriorityCount++;
+            riskBadge = '<span class="badge white black-text" data-badge-caption="" style="border-radius: 10px">'+ matrixSnapshot.scan.scan_report[s].score_modifier +'</span>';
+            if (matrixSnapshot.scan.scan_report[s].score_description_simple) {
+              $('#riskList').append( '<li>'+riskBadge +'<a class="white-text" href="#!">' + matrixSnapshot.scan.scan_report[s].score_description_simple + '</a><br><br></li>');
+            }
+          }
+
+    }
+    $('#riskScore').text("Site Scored " +  matrixSnapshot.scan.score + "%");
+    $('#riskHeader').text("(" + riskPriorityCount + ") Risks");
+    $('#riskHeaderDetail').text("(" + matrixSnapshot.scan.tests_quantity + ") Log");
+
+    if (matrixSnapshot.scan.score >= 100) {
+      $('#riskList').append('<li><a class="grey-text text-lighten-3" href="#!">' + matrixSnapshot.domain +' is taking advantage of the latest web security features.</a></li>');
+    }
+
+    switch (matrixSnapshot.scan.grade.toUpperCase()) {
+      case "A":
+      case "A+":
+      case "A-":
+            $('.page-footer').toggleClass('green');
+            break;
+      case "B":
+      case "B+":
+      case "B-":
+            $('.page-footer').toggleClass('blue');
+            break;
+      case "C":
+      case "C+":
+      case "C-":
+            $('.page-footer').toggleClass('indigo');
+            break;
+      case "D":
+      case "D+":
+      case "D-":
+            $('.page-footer').toggleClass('orange');
+            break;
+      case "F":
+      case "F+":
+            $('.page-footer').toggleClass('red');
+            break;
+    }
+}
 
 function initMenuEnvironment() {
     uDom('body').css('font-size', getUserSetting('displayTextSize'));
@@ -1208,6 +1312,7 @@ function dropDownMenuHide() {
 var onMatrixSnapshotReady = function(response) {
     // Now that tabId and pageURL are set, we can build our menu
     initMenuEnvironment();
+    initScanResults();
     makeMenu();
 
     // After popup menu is built, check whether there is a non-empty matrix

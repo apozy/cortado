@@ -133,7 +133,7 @@ master switch and dynamic filtering rules can be evaluated now properly even
 in the absence of a PageStore object, this was not the case before.
 
 Also, the TabContext object will try its best to find a good candidate root
-document URL for when none exists. This takes care of 
+document URL for when none exists. This takes care of
 <https://github.com/chrisaljoudi/uBlock/issues/1001>.
 
 The TabContext manager is self-contained, and it takes care to properly
@@ -590,6 +590,7 @@ vAPI.tabs.registerListeners();
 
         var iconId = null;
         var badgeStr = '';
+        var badgeBg = '';
 
         var pageStore = this.pageStoreFromTabId(tabId);
         if ( pageStore !== null ) {
@@ -600,12 +601,41 @@ vAPI.tabs.registerListeners();
                 var greenSize = squareSize * Math.sqrt(pageStore.perLoadAllowedRequestCount / total);
                 iconId = greenSize < squareSize/2 ? Math.ceil(greenSize) : Math.floor(greenSize);
             }
-            if ( this.userSettings.iconBadgeEnabled && pageStore.distinctRequestCount !== 0) {
-                badgeStr = this.formatCount(pageStore.distinctRequestCount);
+            if ( this.userSettings.iconBadgeEnabled && pageStore.distinctRequestCount !== 0 && pageStore.pageScan.grade) {
+                badgeStr = pageStore.pageScan.grade;
+                // badgeStr = this.formatCount(pageStore.distinctRequestCount);
+                switch (pageStore.pageScan.grade.toUpperCase()) {
+                  case "A":
+                  case "A+":
+                  case "A-":
+                        badgeBg = [76, 175, 80, 233];
+                        break;
+                  case "B":
+                  case "B+":
+                  case "B-":
+                        badgeBg = [33, 150, 243, 233];
+                        break;
+                  case "C":
+                  case "C+":
+                  case "C-":
+                        badgeBg = [63, 81, 181, 233];
+                        break;
+                  case "D":
+                  case "D+":
+                  case "D-":
+                        badgeBg = [255, 152, 0, 233];
+                        break;
+                  case "F":
+                  case "F+":
+                        badgeBg = [244, 67, 54, 233];
+                        break;
+                }
+            } else {
+                badgeStr = '...';
             }
         }
 
-        vAPI.setIcon(tabId, iconId, badgeStr);
+        vAPI.setIcon(tabId, iconId, badgeStr, badgeBg);
     };
 
     return function(tabId) {
@@ -659,6 +689,7 @@ vAPI.tabs.registerListeners();
         // Sometimes title changes while page is loading.
         var settled = tab.title && tab.title === pageStore.title;
         pageStore.title = tab.title || tab.url || '';
+        pageStore.favIconUrl = tab.favIconUrl || 'data:image/svg+xml;utf8,<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"> <path d="M0 0h24v24H0z" fill="none"/> <path d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"/> </svg>';
         this.pageStoresToken = Date.now();
         if ( settled || !tryAgain(tabId) ) {
             tryNoMore(tabId);

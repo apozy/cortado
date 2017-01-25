@@ -395,7 +395,7 @@ vAPI.tabs.injectScript = function(tabId, details, callback) {
 // Since we may be called asynchronously, the tab id may not exist
 // anymore, so this ensures it does still exist.
 
-vAPI.setIcon = function(tabId, iconId, badge) {
+vAPI.setIcon = function(tabId, iconId, badge, bg) {
     tabId = parseInt(tabId, 10);
     if ( isNaN(tabId) || tabId <= 0 ) {
         return;
@@ -408,7 +408,7 @@ vAPI.setIcon = function(tabId, iconId, badge) {
         if ( badge !== '' ) {
             chrome.browserAction.setBadgeBackgroundColor({
                 tabId: tabId,
-                color: '#000'
+                color: bg || '#666666'
             });
         }
     };
@@ -674,7 +674,7 @@ vAPI.net.registerListeners = function() {
 
         var path = µm.URI.pathFromURI(details.url),
             pos = path.indexOf('.', path.length - 6);
- 
+
         // https://github.com/chrisaljoudi/uBlock/issues/862
         // If no transposition possible, transpose to `object` as per
         // Chromium bug 410382 (see below)

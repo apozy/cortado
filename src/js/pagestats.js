@@ -336,7 +336,10 @@ PageStore.prototype.init = function(tabContext) {
     this.pageUrl = tabContext.normalURL;
     this.pageHostname = tabContext.rootHostname;
     this.pageDomain =  tabContext.rootDomain;
+    this.pageScan = {};
+    this.favIconUrl = '';
     this.title = '';
+    this.sandbox = true;  // TODO: not currently being used
     this.requests = µm.PageRequestStats.factory();
     this.domains = {};
     this.allHostnamesString = ' ';
@@ -345,8 +348,13 @@ PageStore.prototype.init = function(tabContext) {
     this.perLoadAllowedRequestCount = 0;
     this.perLoadBlockedRequestCount = 0;
     this.incinerationTimer = null;
+    this.scanDaemonTimer = null;
     this.mtxContentModifiedTime = 0;
     this.mtxCountModifiedTime = 0;
+
+    // Start Page Scanning
+    this.scheduleScanDaemon(500);
+
     return this;
 };
 
@@ -358,9 +366,15 @@ PageStore.prototype.dispose = function() {
     this.pageUrl = '';
     this.pageHostname = '';
     this.pageDomain = '';
+    this.pageScan = {};
     this.title = '';
     this.domains = {};
     this.allHostnamesString = ' ';
+
+    if ( this.scanDaemonTimer !== null ) {
+        clearTimeout(this.scanDaemonTimer);
+        this.scanDaemonTimer = null;
+    }
 
     if ( this.incinerationTimer !== null ) {
         clearTimeout(this.incinerationTimer);
@@ -405,6 +419,116 @@ PageStore.prototype.recordRequest = function(type, url, block) {
     }
 
     // console.debug("pagestats.js > PageStore.recordRequest(): %o: %s @ %s", this, type, url);
+};
+
+PageStore.prototype.scheduleScanDaemon = function(delay) {
+    if ( this.scanDaemonTimer !== null ) {
+        clearTimeout(this.scanDaemonTimer);
+    }
+    µm.URI;
+
+    var requestScheme = µm.URI.schemeFromURI(this.rawUrl);
+    var maxAttempts = 50;
+    var updateScan = function() {
+    if (this.pageDomain != 'extensions.chrome-scheme'
+     && this.pageDomain != 'behind-the-scene'
+     && maxAttempts && (requestScheme === 'https' || requestScheme === 'http')
+     && (this.pageScan.state === undefined || (this.pageScan.state.toUpperCase() !== "FINISHED" &&
+     this.pageScan.state.toUpperCase() !== 'ABORTED')) ) {
+        // console.log("Poll for scan update:", this.pageScan.state, this.tabId, this,  requestScheme);
+        maxAttempts--;
+        this.scan(this.pageDomain);
+      } else {
+        this.updateScanReport();
+        µm.updateBadgeAsync(this.tabId);
+        clearTimeout(this.scanDaemonTimer);
+      }
+    };
+
+    this.scanDaemonTimer = setInterval(updateScan.bind(this), delay);
+};
+
+/******************************************************************************/
+
+PageStore.prototype.updateScanReport = function () {
+  var GRADE_CHART = { 100: 'A+', 95: 'A', 90: 'A', 85: 'A-', 80: 'B+', 75: 'B', 70: 'B', 65: 'B-', 60: 'C+', 55: 'C', 50: 'C', 45: 'C-', 40: 'D+', 35: 'D', 30: 'D', 25: 'D-', 20: 'F', 15: 'F', 10: 'F', 5: 'F', 0: 'F' }
+  var adjustedScore = 115;
+  for (var s in this.pageScan.scan_report) {
+    if (s === 'contribute'){
+      delete this.pageScan.scan_report[s];
+      continue;
+    }
+    if (!this.pageScan.scan_report[s].pass && this.pageScan.scan_report[s].score_modifier <= -20) {
+          adjustedScore += this.pageScan.scan_report[s].score_modifier;
+          switch (s) {
+            case 'content-security-policy':
+              this.pageScan.scan_report[s].score_description_simple = 'Harmful content, or code may target you from this site';
+              break;
+            case 'cookies':
+              this.pageScan.scan_report[s].score_description_simple = 'This service tracks you on other websites you may visit';
+              break;
+            case 'cross-origin-resource-sharing':
+              this.pageScan.scan_report[s].score_description_simple = 'Other websites may harm or steal from your logged in account';
+              break;
+            case 'redirection':
+              this.pageScan.scan_report[s].score_description_simple = 'People you share the internet with may see your data or activity';
+              break;
+            case 'strict-transport-security':
+              this.pageScan.scan_report[s].score_description_simple = 'This service does not ensure all your browsing will be secure';
+              break;
+            case 'subresource-integrity':
+              this.pageScan.scan_report[s].score_description_simple = 'This service does not check if it’s sending you safe code';
+              break;
+            case 'x-frame-options':
+              this.pageScan.scan_report[s].score_description_simple = 'No protection against deceptively loading this service inside another website';
+              break;
+          }
+      }
+  }
+
+  if (adjustedScore > 100) {
+    adjustedScore = 100;
+  } else if (adjustedScore < 0 ) {
+    adjustedScore = 0;
+  }
+
+  this.pageScan.grade = GRADE_CHART[adjustedScore];
+  this.pageScan.score = adjustedScore;
+};
+
+PageStore.prototype.scan = function (tld) {
+  var xhr = new XMLHttpRequest();
+  var scan = {};
+  var scanReport = {};
+  var parentScope = this;
+
+
+  xhr.open("POST", "http://138.68.62.68:57001/api/v1/analyze?hidden=true&host=" + tld, true);
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState == 4) {
+      // JSON.parse does not evaluate the attacker's scripts.
+      scan = JSON.parse(xhr.responseText);
+      if (scan.error) {
+        return;
+      }
+
+      xhr.open("GET", "http://138.68.62.68:57001/api/v1/getScanResults?scan=" + scan.scan_id, true);
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4) {
+          // JSON.parse does not evaluate the attacker's scripts.
+          scanReport = JSON.parse(xhr.responseText);
+          if (scanReport.error) {
+            return;
+          } else {
+            parentScope.pageScan = scan;
+            parentScope.pageScan.scan_report = scanReport;
+          }
+        }
+      };
+      xhr.send();
+    }
+  }
+  xhr.send();
 };
 
 /******************************************************************************/

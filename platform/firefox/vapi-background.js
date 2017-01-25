@@ -1434,7 +1434,7 @@ var tabWatcher = (function() {
 
 /******************************************************************************/
 
-vAPI.setIcon = function(tabId, iconId, badge) {
+vAPI.setIcon = function(tabId, iconId, badge, bg) {
     // If badge is undefined, then setIcon was called from the TabSelect event
     var win;
     if ( badge === undefined ) {
@@ -1453,7 +1453,7 @@ vAPI.setIcon = function(tabId, iconId, badge) {
     if ( tabId === undefined ) {
         tabId = curTabId;
     } else if ( badge !== undefined ) {
-        tb.tabs[tabId] = { badge: badge, img: iconId };
+        tb.tabs[tabId] = { badge: badge, badgeColor: bg || '#666666', img: iconId };
     }
 
     if ( tabId === curTabId ) {
@@ -1819,7 +1819,7 @@ var httpObserver = {
 
     // Pending request ring buffer:
     // +-------+-------+-------+-------+-------+-------+-------
-    // |0      |1      |2      |3      |4      |5      |...      
+    // |0      |1      |2      |3      |4      |5      |...
     // +-------+-------+-------+-------+-------+-------+-------
     //
     // URL to ring buffer index map:
