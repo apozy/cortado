@@ -601,7 +601,7 @@ vAPI.tabs.registerListeners();
                 var greenSize = squareSize * Math.sqrt(pageStore.perLoadAllowedRequestCount / total);
                 iconId = greenSize < squareSize/2 ? Math.ceil(greenSize) : Math.floor(greenSize);
             }
-            if ( this.userSettings.iconBadgeEnabled && pageStore.distinctRequestCount !== 0 && pageStore.pageScan.grade) {
+            if ( this.userSettings.iconBadgeEnabled && pageStore.distinctRequestCount !== 0 && pageStore.pageScan.grade && pageStore.pageScan.state.toUpperCase() === "FINISHED") {
                 badgeStr = pageStore.pageScan.grade;
                 // badgeStr = this.formatCount(pageStore.distinctRequestCount);
                 switch (pageStore.pageScan.grade.toUpperCase()) {
@@ -630,8 +630,8 @@ vAPI.tabs.registerListeners();
                         badgeBg = [244, 67, 54, 233];
                         break;
                 }
-            } else {
-                badgeStr = '...';
+            } else if (this.userSettings.iconBadgeEnabled) {
+                badgeStr = '…';
             }
         }
 

@@ -353,7 +353,7 @@ PageStore.prototype.init = function(tabContext) {
     this.mtxCountModifiedTime = 0;
 
     // Start Page Scanning
-    this.scheduleScanDaemon(500);
+    this.scheduleScanDaemon(1000);
 
     return this;
 };
@@ -399,7 +399,7 @@ PageStore.prototype.recordRequest = function(type, url, block) {
     // https://github.com/gorhill/httpswitchboard/issues/306
     // If it is recorded locally, record globally
     µm.requestStats.record(type, block);
-    µm.updateBadgeAsync(this.tabId);
+    // µm.updateBadgeAsync(this.tabId);
 
     if ( block !== false ) {
         this.perLoadBlockedRequestCount++;
@@ -435,12 +435,11 @@ PageStore.prototype.scheduleScanDaemon = function(delay) {
      && maxAttempts && (requestScheme === 'https' || requestScheme === 'http')
      && (this.pageScan.state === undefined || (this.pageScan.state.toUpperCase() !== "FINISHED" &&
      this.pageScan.state.toUpperCase() !== 'ABORTED')) ) {
-        // console.log("Poll for scan update:", this.pageScan.state, this.tabId, this,  requestScheme);
+        // console.log("Poll for scan update:", this.pageScan);
         maxAttempts--;
-        this.scan(this.pageDomain);
+        // Note: Scans subdomain, but everywhere else will show as just the domain
+        this.scan(this.pageHostname);
       } else {
-        this.updateScanReport();
-        µm.updateBadgeAsync(this.tabId);
         clearTimeout(this.scanDaemonTimer);
       }
     };
@@ -465,16 +464,20 @@ PageStore.prototype.updateScanReport = function () {
               this.pageScan.scan_report[s].score_description_simple = 'Harmful content, or code may target you from this site';
               break;
             case 'cookies':
-              this.pageScan.scan_report[s].score_description_simple = 'This service tracks you on other websites you may visit';
+              if (this.pageScan.scan_report[s].score_modifier < -25) {
+                this.pageScan.scan_report[s].score_description_simple = 'This service tracks information others could use to impersonate your account.'
+              } else {
+                this.pageScan.scan_report[s].score_description_simple = 'This service tracks you on other websites you visit';
+              }
               break;
             case 'cross-origin-resource-sharing':
               this.pageScan.scan_report[s].score_description_simple = 'Other websites may harm or steal from your logged in account';
               break;
             case 'redirection':
-              this.pageScan.scan_report[s].score_description_simple = 'People you share the internet with may see your data or activity';
+              this.pageScan.scan_report[s].score_description_simple = 'People you share the internet with may see your data and online activity';
               break;
             case 'strict-transport-security':
-              this.pageScan.scan_report[s].score_description_simple = 'This service does not ensure all your browsing will be secure';
+              this.pageScan.scan_report[s].score_description_simple = 'This service does not promise to keep every connection secure.';
               break;
             case 'subresource-integrity':
               this.pageScan.scan_report[s].score_description_simple = 'This service does not check if it’s sending you safe code';
@@ -494,6 +497,7 @@ PageStore.prototype.updateScanReport = function () {
 
   this.pageScan.grade = GRADE_CHART[adjustedScore];
   this.pageScan.score = adjustedScore;
+  µm.updateBadgeAsync(this.tabId);
 };
 
 PageStore.prototype.scan = function (tld) {
@@ -522,6 +526,7 @@ PageStore.prototype.scan = function (tld) {
           } else {
             parentScope.pageScan = scan;
             parentScope.pageScan.scan_report = scanReport;
+            parentScope.updateScanReport();
           }
         }
       };

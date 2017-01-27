@@ -1000,7 +1000,7 @@ function initScanResults() {
     $("#isLocked").prop("checked", matrixSnapshot.sandbox);
 
     if (matrixSnapshot.scan.state.toUpperCase() !== "FINISHED") {
-      $('#riskScore').text("Site is " + matrixSnapshot.scan.state.toLowerCase());
+      $('#riskScore').text("Scan is " + matrixSnapshot.scan.state.toLowerCase());
       $('#riskList').append('<li><a class="grey-text text-lighten-3" href="#!">All typing, form submissions and downloads are blocked when Site Lock is switched \'On\'.</a></li>');
       return;
     }

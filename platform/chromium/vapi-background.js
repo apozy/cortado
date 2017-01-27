@@ -415,6 +415,7 @@ vAPI.setIcon = function(tabId, iconId, badge, bg) {
 
     var iconSelector = typeof iconId === 'number' ? iconId : 'off';
     var iconPaths = {
+        '19': 'img/browsericons/icon19-19.png'/* 
         '19': 'img/browsericons/icon19-' + iconSelector + '.png'/* ,
         '38': 'img/browsericons/icon38-' + iconSelector + '.png' */
     };
