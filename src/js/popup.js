@@ -945,50 +945,33 @@ var makeMenu = function() {
     if ( Object.keys(groupStats).length === 0 ) {
         return;
     }
+    console.log(matrixSnapshot.tSwitches["matrix-off"]);
+    $("#isLocked").prop("checked", !matrixSnapshot.tSwitches["matrix-off"]);
 
     // https://github.com/gorhill/httpswitchboard/issues/31
-    if ( matrixCellHotspots ) {
-        matrixCellHotspots.detach();
-    }
+    // if ( matrixCellHotspots ) {
+    //     matrixCellHotspots.detach();
+    // }
 
-    renderMatrixHeaderRow();
+    // renderMatrixHeaderRow();
 
     // Manually adjust the position of the main matrix according to the height
     // of the toolbar/matrix header.
-    document.querySelector('.paneContent').style.setProperty(
-        'padding-top',
-        document.querySelector('.paneHead').clientHeight + 'px'
-    );
-
-    startMatrixUpdate();
-    makeMatrixGroup0(groupStats[0]);
-    makeMatrixGroup1(groupStats[1]);
-    makeMatrixGroup2(groupStats[2]);
-    makeMatrixGroup3(groupStats[3]);
-    makeMatrixGroup4(groupStats[4]);
-    endMatrixUpdate();
-
-    initScopeCell();
-    updateMatrixButtons();
-    resizePopup();
-};
-
-var processReport = function () {
-// Cookies:
-// This service may tracks you on other websites you visit.
-//
-// CORS:
-// Other websites may perform unwanted actions to your logged in account.
-//
-// Content Security:
-// Content shown on this website may be not be safe.
-//
-// HSTS:
-// This service does not guarantee new connections will stay secure as you browse.
-//
-// Redirections/SSL:
-// Your data and activity on this site may be seen by others you share the internet with.
-
+    // document.querySelector('.paneContent').style.setProperty(
+    //     'padding-top',
+    //     document.querySelector('.paneHead').clientHeight + 'px'
+    // );
+    //
+    // startMatrixUpdate();
+    // makeMatrixGroup0(groupStats[0]);
+    // makeMatrixGroup1(groupStats[1]);
+    // makeMatrixGroup2(groupStats[2]);
+    // makeMatrixGroup3(groupStats[3]);
+    // makeMatrixGroup4(groupStats[4]);
+    // endMatrixUpdate();
+    // initScopeCell();
+    // updateMatrixButtons();
+    // resizePopup();
 };
 
 /******************************************************************************/
@@ -1176,6 +1159,7 @@ function updateMatrixSwitches() {
         if ( enabled && switchName !== 'matrix-off' ) {
             count += 1;
         }
+
         uDom('#mtxSwitch_' + switchName).toggleClass('switchTrue', enabled);
     }
     uDom('#buttonMtxSwitches').descendants('span.badge').text(count.toLocaleString());
@@ -1187,18 +1171,37 @@ function updateMatrixSwitches() {
 }
 
 function toggleMatrixSwitch(ev) {
-    var elem = ev.currentTarget;
-    var pos = elem.id.indexOf('_');
-    if ( pos === -1 ) {
-        return;
-    }
-    var switchName = elem.id.slice(pos + 1);
+    var lockValue = $("#isLocked").prop("checked");
+
+    // var elem = ev.currentTarget;
+    // var pos = elem.id.indexOf('_');
+    // if ( pos === -1 ) {
+    //     return;
+    // }
+    // var switchName = elem.id.slice(pos + 1);
+
     var request = {
         what: 'toggleMatrixSwitch',
-        switchName: switchName,
+        switchName: 'matrix-off',
         srcHostname: matrixSnapshot.scope
     };
+
     messager.send(request, updateMatrixSnapshot);
+
+    // Force tab reload
+    messager.send({
+        what: 'forceReloadTab',
+        tabId: matrixSnapshot.tabId
+    });
+
+    // Close popup
+    var closeTimer = vAPI.setTimeout(function() {
+      if (!lockValue) {
+              window.close();
+      } else {
+         clearTimeout(this);
+      }
+    }, 500);
 }
 
 /******************************************************************************/
@@ -1368,7 +1371,7 @@ var matrixSnapshotPoller = (function() {
         ) {
             updateMatrixColors();
             updateMatrixBehavior();
-            updateMatrixButtons();
+            // updateMatrixButtons();
         }
     };
 
@@ -1469,7 +1472,7 @@ uDom('body')
 uDom('#scopeKeyGlobal').on('click', selectGlobalScope);
 uDom('#scopeKeyDomain').on('click', selectDomainScope);
 uDom('#scopeKeySite').on('click', selectSiteScope);
-uDom('[id^="mtxSwitch_"]').on('click', toggleMatrixSwitch);
+uDom('#isLocked').on('click', toggleMatrixSwitch);
 uDom('#buttonPersist').on('click', persistMatrix);
 uDom('#buttonRevertScope').on('click', revertMatrix);
 
