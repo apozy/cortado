@@ -1197,7 +1197,7 @@ function toggleMatrixSwitch(ev) {
     // Close popup
     var closeTimer = vAPI.setTimeout(function() {
       if (!lockValue) {
-              window.close();
+          window.close();
       } else {
          clearTimeout(this);
       }

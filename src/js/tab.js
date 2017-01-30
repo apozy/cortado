@@ -634,7 +634,7 @@ vAPI.tabs.registerListeners();
                 badgeStr = '…';
             }
         }
-
+        console.log(pageStore);
         vAPI.setIcon(tabId, iconId, badgeStr, badgeBg);
     };
 
