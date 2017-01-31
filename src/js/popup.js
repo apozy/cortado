@@ -1020,19 +1020,19 @@ function initScanResults() {
       if (!matrixSnapshot.scan.scan_report[s].pass
         && matrixSnapshot.scan.scan_report[s].score_modifier <= -20) {
             riskPriorityCount++;
-            riskBadge = '<span class="badge white black-text" data-badge-caption="" style="border-radius: 10px">'+ matrixSnapshot.scan.scan_report[s].score_modifier +'</span>';
+            riskBadge = '<span class="badge white black-text" data-badge-caption="" style="border-radius: 10px">'+ matrixSnapshot.scan.scan_report[s].score_modifier + '</span>';
             if (matrixSnapshot.scan.scan_report[s].score_description_simple) {
               $('#riskList').append( '<li>'+riskBadge +'<a class="white-text" href="#!">' + matrixSnapshot.scan.scan_report[s].score_description_simple + '</a><br><br></li>');
             }
           }
 
     }
-    $('#riskScore').text("Site Scored " +  matrixSnapshot.scan.score + "%");
+    $('#riskScore').text("Site Privacy is " +  matrixSnapshot.scan.score + "%");
     $('#riskHeader').text("(" + riskPriorityCount + ") Risks");
     $('#riskHeaderDetail').text("(" + matrixSnapshot.scan.tests_quantity + ") Log");
 
     if (matrixSnapshot.scan.score >= 100) {
-      $('#riskList').append('<li><a class="grey-text text-lighten-3" href="#!">' + matrixSnapshot.domain +' is taking advantage of the latest web security features.</a></li>');
+      $('#riskList').append('<li><a class="grey-text text-lighten-3" href="#!">' + matrixSnapshot.domain +' is taking advantage of the latest web security and privacy features.</a></li>');
     }
 
     switch (matrixSnapshot.scan.grade.toUpperCase()) {
