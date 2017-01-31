@@ -339,7 +339,6 @@ PageStore.prototype.init = function(tabContext) {
     this.pageScan = {};
     this.favIconUrl = '';
     this.title = '';
-    this.sandbox = true;  // TODO: not currently being used
     this.requests = µm.PageRequestStats.factory();
     this.domains = {};
     this.allHostnamesString = ' ';

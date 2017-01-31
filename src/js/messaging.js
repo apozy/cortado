@@ -159,7 +159,6 @@ var matrixSnapshot = function(pageStore, details) {
         pSwitches: {},
         rows: {},
         rowCount: 0,
-        sandbox: pageStore.sandbox,
         scan: pageStore.pageScan,
         scope: '*',
         tabId: pageStore.tabId,

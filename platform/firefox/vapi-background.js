@@ -1454,6 +1454,8 @@ vAPI.setIcon = function(tabId, iconId, badge, bg) {
         tabId = curTabId;
     } else if ( badge !== undefined ) {
         tb.tabs[tabId] = { badge: badge, badgeColor: bg || '#666666', img: iconId };
+    } else {
+      tb.tabs[tabId] = { img: iconId };
     }
 
     if ( tabId === curTabId ) {

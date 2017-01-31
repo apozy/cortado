@@ -980,7 +980,6 @@ var makeMenu = function() {
 function initScanResults() {
     $('#favicon').attr('src', matrixSnapshot.favIconUrl);
     $('#domain').text(matrixSnapshot.domain);
-    $("#isLocked").prop("checked", matrixSnapshot.sandbox);
 
     if (matrixSnapshot.scan.state.toUpperCase() !== "FINISHED") {
       $('#riskScore').text("Scan is " + matrixSnapshot.scan.state.toLowerCase());
