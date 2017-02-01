@@ -506,7 +506,7 @@ PageStore.prototype.scan = function (tld) {
   var parentScope = this;
 
 
-  xhr.open("POST", "http://138.68.62.68:57001/api/v1/analyze?hidden=true&host=" + tld, true);
+  xhr.open("POST", "https://privacy.apozy.com/api/v1/analyze?hidden=true&host=" + tld, true);
   xhr.onreadystatechange = function() {
     if (xhr.readyState == 4) {
       // JSON.parse does not evaluate the attacker's scripts.
@@ -515,7 +515,7 @@ PageStore.prototype.scan = function (tld) {
         return;
       }
 
-      xhr.open("GET", "http://138.68.62.68:57001/api/v1/getScanResults?scan=" + scan.scan_id, true);
+      xhr.open("GET", "https://privacy.apozy.com/api/v1/getScanResults?scan=" + scan.scan_id, true);
       xhr.onreadystatechange = function() {
         if (xhr.readyState == 4) {
           // JSON.parse does not evaluate the attacker's scripts.
