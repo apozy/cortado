@@ -177,14 +177,14 @@ var collapser = (function() {
             document.onkeydown = function(e) {
               if (notificationTimer === null) {
                 localMessager.send({
-                        what: 'lockNotification',
+                        what: 'notifyBlockedRequest',
                         url: window.location.href
                 });
 
                 notificationTimer = vAPI.setTimeout(function() {
                   clearTimeout(notificationTimer);
                   notificationTimer = null;
-                }, 8000);
+                }, 8000); // NOTE: 8s is default chrome notification timeout
               }
 
                 return false;

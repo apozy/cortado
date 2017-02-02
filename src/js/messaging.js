@@ -544,7 +544,7 @@ var onMessage = function(request, sender, callback) {
             µm.userAgentReplaceStr :
             undefined;
         break;
-   case 'lockNotification':
+   case 'notifyBlockedRequest':
          vAPI.notifications.notifyLocked(µm.URI.hostnameFromURI(request.url));
          break;
 

@@ -636,7 +636,7 @@ vAPI.tabs.registerListeners();
         }
 
         // Only set icon if active
-        if(!µm.tMatrix.evaluateSwitchZ('matrix-off', pageStore.pageDomain)) {
+        if(pageStore && !µm.tMatrix.evaluateSwitchZ('matrix-off', pageStore.pageDomain)) {
           iconId = 19;
         }
 

@@ -116,16 +116,21 @@ vAPI.tabs = {};
 
 vAPI.notifications = chrome.notifications;
 vAPI.notifications.notifyLocked = function (domain, options) {
+  if (!options) {
+    options = {};
+  }
+
+  var unlockIcon = 'data:image/svg+xml;utf8,<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"> <path d="M0 0h24v24H0z" fill="none"/> <path d="M12 17c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm6-9h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6h1.9c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm0 12H6V10h12v10z"/> </svg>';
   var opt = {
-              type: "basic",
+              type: options.type || "basic",
               // progress: 3,
-              title: "Site Locked",
+              title: options.title || "Site Locked",
               // contextMessage: "Risk Level",
-              message: "You have never visited this site before.",
+              message: options.message || "Actions on this site may be limited.",
               // contextMessage: "Restricted input and downloads",
-              iconUrl: "img/browsericons/icon38-19.png",
+              iconUrl: options.iconUrl || "img/icon.svg",
               // message: "5 Risks",
-              buttons: [{title: "Click to unlock " + domain, iconUrl: 'data:image/svg+xml;utf8,<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"> <path d="M0 0h24v24H0z" fill="none"/> <path d="M12 17c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm6-9h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6h1.9c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm0 12H6V10h12v10z"/> </svg>'}]
+              buttons: [{title: "Click to unlock " + domain, iconUrl: unlockIcon}]
           };
 
           chrome.notifications.create(domain, opt, null);
