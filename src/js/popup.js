@@ -945,7 +945,7 @@ var makeMenu = function() {
     if ( Object.keys(groupStats).length === 0 ) {
         return;
     }
-    console.log(matrixSnapshot.tSwitches["matrix-off"]);
+    
     $("#isLocked").prop("checked", !matrixSnapshot.tSwitches["matrix-off"]);
 
     // https://github.com/gorhill/httpswitchboard/issues/31

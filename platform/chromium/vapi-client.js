@@ -152,7 +152,6 @@ vAPI.messaging = {
                     message.requestId = vAPI.messaging.requestId++;
                     vAPI.messaging.listeners[message.requestId] = callback;
                 }
-
                 vAPI.messaging.port.postMessage(message);
             },
             close: function() {

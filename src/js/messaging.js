@@ -544,6 +544,9 @@ var onMessage = function(request, sender, callback) {
             µm.userAgentReplaceStr :
             undefined;
         break;
+   case 'lockNotification':
+         vAPI.notifications.notifyLocked(µm.URI.hostnameFromURI(request.url));
+         break;
 
     case 'shutdown?':
         var tabContext = µm.tabContextManager.lookup(tabId);
@@ -555,7 +558,6 @@ var onMessage = function(request, sender, callback) {
     default:
         return vAPI.messaging.UNHANDLED;
     }
-
     callback(response);
 };
 

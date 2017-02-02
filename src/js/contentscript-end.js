@@ -156,6 +156,7 @@ var collapser = (function() {
         var placeholders = response.placeholders;
         var i = requests.length;
         var request, entry, target, tagName, docurl, replaced;
+        var notificationTimer = null;
         while ( i-- ) {
             request = requests[i];
             if ( pendingRequests.hasOwnProperty(request.id) === false ) {
@@ -171,6 +172,23 @@ var collapser = (function() {
             }
 
             target = entry.target;
+
+            // Block page input via js
+            document.onkeydown = function(e) {
+              if (notificationTimer === null) {
+                localMessager.send({
+                        what: 'lockNotification',
+                        url: window.location.href
+                });
+
+                notificationTimer = vAPI.setTimeout(function() {
+                  clearTimeout(notificationTimer);
+                  notificationTimer = null;
+                }, 8000);
+              }
+
+                return false;
+            };
 
             // No placeholders
             if ( collapse ) {
@@ -467,7 +485,7 @@ var nodeListsAddedHandler = function(nodeLists) {
             }
         }
         // I arbitrarily chose 250 ms for now:
-        // I have to compromise between the overhead of processing too few 
+        // I have to compromise between the overhead of processing too few
         // nodes too often and the delay of many nodes less often. There is nothing
         // time critical here.
         if ( addedNodeListsTimer === null ) {
