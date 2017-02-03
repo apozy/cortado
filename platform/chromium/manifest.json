@@ -71,6 +71,7 @@
         "browsingData",
         "contentSettings",
         "cookies",
+        "history",
         "notifications",
         "privacy",
         "storage",

@@ -350,9 +350,13 @@ PageStore.prototype.init = function(tabContext) {
     this.scanDaemonTimer = null;
     this.mtxContentModifiedTime = 0;
     this.mtxCountModifiedTime = 0;
+    this.visited = false;
 
     // Start Page Scanning
     this.scheduleScanDaemon(1000);
+
+    // Check if page has ever been visited
+    this.updatePageHistory();
 
     return this;
 };
@@ -446,6 +450,35 @@ PageStore.prototype.scheduleScanDaemon = function(delay) {
     this.scanDaemonTimer = setInterval(updateScan.bind(this), delay);
 };
 
+PageStore.prototype.updatePageHistory = function () {
+  // var parent = this;
+  var beforeDate = new Date();
+  var parentScope = this;
+  beforeDate.setMonth(beforeDate.getMonth() - 0);
+
+  // var searchingHistory = chrome.history.search({text: hostname, maxResults: 5, endTime: beforeDate });
+  var searchingHistory = vAPI.history.search({
+      text: parentScope.pageDomain,
+      maxResults: 5   // Because this could be a lot of entries, lets limit it to 5.
+  }, function(results) {
+      // What to show if there are no results.
+      if (results.length < 2) {
+          // chrome.browserAction.setBadgeBackgroundColor({
+          //     color: [175, 29, 109, 255]
+          // });
+          // chrome.browserAction.setBadgeText({
+          //     text: results.length.toString()
+          // });
+          parentScope.visted = false;
+      } else {
+          // chrome.browserAction.setBadgeText({
+          //     text: ""
+          // });
+
+          parentScope.visited = true;
+      }
+  });
+};
 /******************************************************************************/
 
 PageStore.prototype.updateScanReport = function () {

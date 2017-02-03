@@ -138,6 +138,10 @@ vAPI.notifications.notifyLocked = function (domain, options) {
 
 /******************************************************************************/
 
+vAPI.history = chrome.history;
+
+/******************************************************************************/
+
 vAPI.isBehindTheSceneTabId = function(tabId) {
     return tabId.toString() === '-1';
 };
