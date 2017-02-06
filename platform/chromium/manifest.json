@@ -12,8 +12,8 @@
         "default_icon": {
             "19": "img/browsericons/icon19-19.png"
         },
-        "default_title": "uMatrix",
-        "default_popup": "popup.html"
+        "default_title": "Apozy",
+        "default_popup": "popup_material.html"
     },
     "author": "Erhan Justice",
     "background": {

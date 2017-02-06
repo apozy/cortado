@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Browser Settings -->
+    <meta charset="utf-8" />
+    <!-- STYLES-->
+    <link rel="stylesheet" href="/lib/materialize/materialize.css">
+    <!--STYLES END-->
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body style="width: 384px;">
+    <div style="padding:32px 32px 0px 32px;" class="container">
+        <div class="row center">
+            <div class="col s1"> <img id="favicon" width="24" src="" /></div>
+            <div class="col s11" style="display: inline-block; overflow: auto;"><span id="domain" class="flow-text" style="font-size: 4vw; font-weight: bold;"></span></div>
+        </div>
+        <div class="row">
+            <div class="col s6">
+                <h6>Site Lock</h6>
+            </div>
+            <div class="col s6">
+                <div id="toggleLock" class="switch">
+                    <label>
+                Off
+                <input id="isLocked" type="checkbox">
+                <span class="lever"></span>
+                On
+              </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin: 0;">
+      <div class="col s12" style="padding: 0;">
+        <ul class="tabs">
+          <li class="tab col s3"><a id="riskHeader" class="active" href="#tab1">Risks</a></li>
+          <li class="tab col s3"><a id="riskHeaderDetail" href="#tab2">Log</a></li>
+        </ul>
+      </div>
+      <div id="tab1" class="col s12"  style="padding: 0;">
+        <footer class="page-footer blue-grey">
+              <div class="container">
+                  <div class="row">
+                      <div class="col s12">
+                          <h5 id="riskScore" class="white-text"></h5>
+                          <div class="progress hide">
+                              <div class="indeterminate"></div>
+                          </div>
+                          <ul id="riskList" style="font-size: 16px;">
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+              <div class="footer-copyright">
+                  <div class="container" style="background: rgba(160,93,127,.5);">
+                      <a class="grey-text text-lighten-4 left" href="#!">This is a public beta.</a>
+                      <a class="grey-text text-lighten-4 right" target="_blank" href="dashboard.html"><i style="margin-top: 12px;" class="material-icons">settings</i></a>
+                      <!-- <a class="grey-text text-lighten-4 right" href="#!">Explore My Risks</a> -->
+                  </div>
+              </div>
+          </footer>
+        </div>
+      <div id="tab2" class="col s12" style="padding: 0;">
+              <div class="progress hide">
+                  <div class="indeterminate"></div>
+              </div>
+              <ul id="riskListDetail" class="collection"> </ul>
+              <div class="footer-copyright">
+                  <div class="container" style="background: rgba(160,93,127,.5);">
+                      <a class="grey-text left" href="#!">This is a public beta.</a>
+                      <a class="grey-text right" target="_blank" href="dashboard.html"><i style="margin-top: 12px;" class="material-icons">settings</i></a>
+                      <!-- <a class="grey-text text-lighten-4 right" href="#!">Explore My Risks</a> -->
+                  </div>
+              </div>
+        </div>
+    </div>
+    <script src="/lib/jquery.js"></script>
+    <script src="/lib/materialize/materialize.js"></script>
+    <script src="lib/punycode.js"></script>
+    <script src="js/vapi-common.js"></script>
+    <script src="js/vapi-client.js"></script>
+    <script src="js/udom.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/popup.js"></script>
+</body>
+
+</html>
