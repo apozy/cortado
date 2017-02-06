@@ -1,6 +1,6 @@
 {
   "extName":{
-    "message":"uMatrix",
+    "message":"Apozy",
     "description":""
   },
   "extShortDesc":{
@@ -8,7 +8,7 @@
     "description":"this will be used as short description in web stores: MUST BE 132 characters OR LESS"
   },
   "dashboardPageName":{
-    "message":"uMatrix – Panel sterowania",
+    "message":"Apozy – Panel sterowania",
     "description":""
   },
   "settingsPageName":{
@@ -124,7 +124,7 @@
     "description":"A menu entry in the matrix popup"
   },
   "statsPageTitle":{
-    "message":"uMatrix &ndash; Statystyki",
+    "message":"Apozy &ndash; Statystyki",
     "description":""
   },
   "statsPageGenericStats":{
@@ -236,7 +236,7 @@
     "description":"Second part of Remember the last [n] HTTP requests per page"
   },
   "statsPageLogSizeHelp":{
-    "message":"<p>Możesz kontrolować szczegóły ostatnich żądań HTTP, które zostały wykonane przez daną stronę (zobacz niżej).<\/p><p>Jest to przydatne dla zaawansowanych użytkowników, którzy chcieliby zobaczyć co dokładnie jest pobierane. Jednakże rejestrowanie żądań HTTP wymaga pamięci RAM, więc jeśli nie zależy Ci na tej technicznej informacji, pamięć jest po prostu marnowana.<\/p><p>Stąd to pole, które pozwoli Ci dostosować ilość ostatnich żądań HTTP które zostaną zarejestrowane.<\/p><p>Wpisz &ldquo;<code>0<\/code>&rdquo;, aby wyłączyć szczegółowe rejestrowanie (dzięki temu zmniejszysz użycie pamięci RAM przez <i>uMatrix<\/i>).<\/p>",
+    "message":"<p>Możesz kontrolować szczegóły ostatnich żądań HTTP, które zostały wykonane przez daną stronę (zobacz niżej).<\/p><p>Jest to przydatne dla zaawansowanych użytkowników, którzy chcieliby zobaczyć co dokładnie jest pobierane. Jednakże rejestrowanie żądań HTTP wymaga pamięci RAM, więc jeśli nie zależy Ci na tej technicznej informacji, pamięć jest po prostu marnowana.<\/p><p>Stąd to pole, które pozwoli Ci dostosować ilość ostatnich żądań HTTP które zostaną zarejestrowane.<\/p><p>Wpisz &ldquo;<code>0<\/code>&rdquo;, aby wyłączyć szczegółowe rejestrowanie (dzięki temu zmniejszysz użycie pamięci RAM przez <i>Apozy<\/i>).<\/p>",
     "description":"To help user understand the purpose of the log size value"
   },
   "statsPageRefresh":{
@@ -244,7 +244,7 @@
     "description":""
   },
   "settingsPageTitle":{
-    "message":"uMatrix &ndash; Ustawienia",
+    "message":"Apozy &ndash; Ustawienia",
     "description":""
   },
   "settingsMatrixDisplayHeader":{
@@ -272,7 +272,7 @@
     "description":"English: Convenience"
   },
   "settingsMatrixAutoReloadPrompt":{
-    "message":"Kiedy okno uMatrix zostanie zamknięte, inteligentnie odśwież następujące karty:",
+    "message":"Kiedy okno Apozy zostanie zamknięte, inteligentnie odśwież następujące karty:",
     "description":""
   },
   "settingsMatrixAutoReloadNone":{
@@ -288,7 +288,7 @@
     "description":""
   },
   "settingsMatrixAutoReloadInfo":{
-    "message":"Kiedy wprowadzasz w matrycy zmiany, które mogą wpływać na wyświetlanie lub zachowanie jednej lub kilku stron, <i>uMatrix<\/i> odświeży te strony automatycznie, kiedy okno zostanie zamknięte.",
+    "message":"Kiedy wprowadzasz w matrycy zmiany, które mogą wpływać na wyświetlanie lub zachowanie jednej lub kilku stron, <i>Apozy<\/i> odświeży te strony automatycznie, kiedy okno zostanie zamknięte.",
     "description":""
   },
   "settingsSubframeColor":{
@@ -312,7 +312,7 @@
     "description":""
   },
   "privacyPageTitle":{
-    "message":"uMatrix &ndash; Prywatność",
+    "message":"Apozy &ndash; Prywatność",
     "description":""
   },
   "privacyDeleteBlockedCookiesPrompt":{
@@ -320,7 +320,7 @@
     "description":""
   },
   "privacyDeleteBlockedCookiesHelp":{
-    "message":"<p><i>uMatrix<\/i>nie zapobiega dostawaniu się ciasteczek z czarnej listy do twojej przeglądarki. Jednakże zapobiega opuszczaniu jej przez nie, co ostatecznie się liczy. Nieblokowanie ciasteczek zanim dotrą do twojej przeglądarki, daje możliwość poinformowania cię gdy strona próbuje używać ciastek, a nawet pozwala przejrzeć ich zawartość gdy tego chcesz.<\/p><p>Kiedy te czarnolistowane ciasteczka zostaną sklasyfikowane przez <i>uMatrix<\/i>, mogą, jeśli sobie tego życzysz, zostać usunięte z przeglądarki.<\/p><p><b>Ważna informacja:<\/b> Rozszerzenia mogą wykonywać żądania sieciowe podczas ich normalnej pracy. Te żądania mogą spowodować zapisanie ciasteczek w przeglądarce. Jeśli nazwa hosta z której pochodzi ciasteczko nie jest na białej liście, ciasteczko zostanie usunięte z przeglądarki przez <i>uMatrix<\/i> jeśli ta opcja jest zaznaczona. Upewnij się, że nazwy hostów z którymi komunikuje się rozszerzenie są na białej liście.<\/p>",
+    "message":"<p><i>Apozy<\/i>nie zapobiega dostawaniu się ciasteczek z czarnej listy do twojej przeglądarki. Jednakże zapobiega opuszczaniu jej przez nie, co ostatecznie się liczy. Nieblokowanie ciasteczek zanim dotrą do twojej przeglądarki, daje możliwość poinformowania cię gdy strona próbuje używać ciastek, a nawet pozwala przejrzeć ich zawartość gdy tego chcesz.<\/p><p>Kiedy te czarnolistowane ciasteczka zostaną sklasyfikowane przez <i>Apozy<\/i>, mogą, jeśli sobie tego życzysz, zostać usunięte z przeglądarki.<\/p><p><b>Ważna informacja:<\/b> Rozszerzenia mogą wykonywać żądania sieciowe podczas ich normalnej pracy. Te żądania mogą spowodować zapisanie ciasteczek w przeglądarce. Jeśli nazwa hosta z której pochodzi ciasteczko nie jest na białej liście, ciasteczko zostanie usunięte z przeglądarki przez <i>Apozy<\/i> jeśli ta opcja jest zaznaczona. Upewnij się, że nazwy hostów z którymi komunikuje się rozszerzenie są na białej liście.<\/p>",
     "description":""
   },
   "privacyDeleteNonBlockedSessionCookiesPrompt1":{
@@ -352,7 +352,7 @@
     "description":"Second part of 'Clear browser cache every [n] minutes'"
   },
   "privacyClearCacheHelp":{
-    "message":"<p>Niektóre witryny internetowe są tak zdecydowane by cię śledzić, że używają niezbyt ładnych trików aby obejść jakiekolwiek zabezpieczenia zastosujesz, by nie być śledzonym.<\/p><p>Kilka z tych trików<sup style='font-size:smaller'>[1, 2]<\/sup> opiera się na wykorzystaniu <a href='https:\/\/en.wikipedia.org\/wiki\/Web_cache'>pamięci podręcznej przeglądarki [ang.]<\/a>, której zawartość jest często dostępna przez bardzo długo, ponieważ użytkownicy rzadko ją usuwają.<\/p><p>Wady regularnego czyszczenia pamięci podręcznej są niewielkie (prawdopodobnie nie zauważysz, gdy to się stanie), a zaletą jest zapobieganie tym nieznośnym szpiegom naruszania twojej prywatności.<\/p><p>Zaznacz tą opcję by <i>uMatrix<\/i> robił to za ciebie, z częstotliwością jaką sobie życzysz.<\/p><p style='font-size:smaller'>[1] <a href='https:\/\/grepular.com\/Preventing_Web_Tracking_via_the_Browser_Cache'>&ldquo;Zapobieganie śledzeniu z wykorzystaniem pamięci podręcznej przeglądarki&rdquo; [ang.]<\/a><br>[2] <a href='http:\/\/lucb1e.com\/rp\/cookielesscookies\/'>&ldquo;Bezciasteczkowe ciasteczka&rdquo;[ang.]<\/a><\/p>",
+    "message":"<p>Niektóre witryny internetowe są tak zdecydowane by cię śledzić, że używają niezbyt ładnych trików aby obejść jakiekolwiek zabezpieczenia zastosujesz, by nie być śledzonym.<\/p><p>Kilka z tych trików<sup style='font-size:smaller'>[1, 2]<\/sup> opiera się na wykorzystaniu <a href='https:\/\/en.wikipedia.org\/wiki\/Web_cache'>pamięci podręcznej przeglądarki [ang.]<\/a>, której zawartość jest często dostępna przez bardzo długo, ponieważ użytkownicy rzadko ją usuwają.<\/p><p>Wady regularnego czyszczenia pamięci podręcznej są niewielkie (prawdopodobnie nie zauważysz, gdy to się stanie), a zaletą jest zapobieganie tym nieznośnym szpiegom naruszania twojej prywatności.<\/p><p>Zaznacz tą opcję by <i>Apozy<\/i> robił to za ciebie, z częstotliwością jaką sobie życzysz.<\/p><p style='font-size:smaller'>[1] <a href='https:\/\/grepular.com\/Preventing_Web_Tracking_via_the_Browser_Cache'>&ldquo;Zapobieganie śledzeniu z wykorzystaniem pamięci podręcznej przeglądarki&rdquo; [ang.]<\/a><br>[2] <a href='http:\/\/lucb1e.com\/rp\/cookielesscookies\/'>&ldquo;Bezciasteczkowe ciasteczka&rdquo;[ang.]<\/a><\/p>",
     "description":""
   },
   "privacyProcessRefererPrompt":{
@@ -360,7 +360,7 @@
     "description":""
   },
   "privacyProcessRefererHelp":{
-    "message":"<p>Z Wikipedii [ang.]:<\/p><blockquote>HTTP referer jest nagłówkiem HTTP który identyfikuje adres strony która linkuje do zasobu będącego wywoływanym. ... <b>Ponieważ informacje o stronie odsyłającej mogą zagrażać prywatności, niektóre przeglądarki pozwalają na wyłączenie wysyłania tej informacji.<\/b><\/blockquote><p>Jeśli ta opcja jest zaznaczona, <i>uMatrix<\/i> będzie fałszował informację o refererze jeśli domena referera jest inna niż domena żądania sieciowego.",
+    "message":"<p>Z Wikipedii [ang.]:<\/p><blockquote>HTTP referer jest nagłówkiem HTTP który identyfikuje adres strony która linkuje do zasobu będącego wywoływanym. ... <b>Ponieważ informacje o stronie odsyłającej mogą zagrażać prywatności, niektóre przeglądarki pozwalają na wyłączenie wysyłania tej informacji.<\/b><\/blockquote><p>Jeśli ta opcja jest zaznaczona, <i>Apozy<\/i> będzie fałszował informację o refererze jeśli domena referera jest inna niż domena żądania sieciowego.",
     "description":""
   },
   "privacyNoMixedContentPrompt":{
@@ -440,7 +440,7 @@
     "description":""
   },
   "userRulesDefaultFileName":{
-    "message":"umatrix-moje-reguly.txt",
+    "message":"Apozy-moje-reguly.txt",
     "description":"default file name to use"
   },
   "hostsFilesPrompt":{
@@ -496,7 +496,7 @@
     "description":""
   },
   "aboutChangelog":{
-    "message":"<a href='https:\/\/github.com\/gorhill\/uMatrix\/releases'>Historia zmian<\/a>",
+    "message":"<a href='https:\/\/github.com\/gorhill\/Apozy\/releases'>Historia zmian<\/a>",
     "description":""
   },
   "aboutStorageUsed":{
@@ -504,7 +504,7 @@
     "description":""
   },
   "aboutDoc":{
-    "message":"<a href='https:\/\/github.com\/gorhill\/uMatrix\/wiki'>Dokumentacja<\/a>",
+    "message":"<a href='https:\/\/github.com\/gorhill\/Apozy\/wiki'>Dokumentacja<\/a>",
     "description":""
   },
   "aboutPermissions":{
@@ -544,7 +544,7 @@
     "description":""
   },
   "aboutBackupFilename":{
-    "message":"umatrix-kopia-zapasowa.txt",
+    "message":"Apozy-kopia-zapasowa.txt",
     "description":"default filename to use"
   },
   "aboutRestoreButton":{
@@ -552,7 +552,7 @@
     "description":""
   },
   "aboutRestoreConfirm":{
-    "message":"Wszystkie ustawienia zostaną nadpisane danymi z kopii z {{time}}, a następnie uMatrix zostanie zrestartowany.\n\nNadpisać aktualne ustawienia używając danych z kopii?",
+    "message":"Wszystkie ustawienia zostaną nadpisane danymi z kopii z {{time}}, a następnie Apozy zostanie zrestartowany.\n\nNadpisać aktualne ustawienia używając danych z kopii?",
     "description":"Message asking user to confirm restore"
   },
   "aboutRestoreError":{
@@ -600,8 +600,8 @@
     "description":"An entry for when an asset was updated"
   },
   "mainBlockedPrompt1":{
-    "message":"uMatrix nie pozwolił załadować się następującej stronie:",
-    "description":"English: uMatrix has prevented the following page from loading:"
+    "message":"Apozy nie pozwolił załadować się następującej stronie:",
+    "description":"English: Apozy has prevented the following page from loading:"
   },
   "mainBlockedPrompt2":{
     "message":"Z powodu tej reguły",

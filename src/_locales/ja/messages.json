@@ -1,6 +1,6 @@
 {
   "extName":{
-    "message":"uMatrix",
+    "message":"Apozy",
     "description":""
   },
   "extShortDesc":{
@@ -8,7 +8,7 @@
     "description":"this will be used as short description in web stores: MUST BE 132 characters OR LESS"
   },
   "dashboardPageName":{
-    "message":"uMatrix — ダッシュボード",
+    "message":"Apozy — ダッシュボード",
     "description":""
   },
   "settingsPageName":{
@@ -32,7 +32,7 @@
     "description":"a tab in dashboard"
   },
   "aboutPageName":{
-    "message":"uMatrix について",
+    "message":"Apozy について",
     "description":"a tab in dashboard"
   },
   "allPrettyName":{
@@ -124,7 +124,7 @@
     "description":"A menu entry in the matrix popup"
   },
   "statsPageTitle":{
-    "message":"uMatrix &ndash; 統計",
+    "message":"Apozy &ndash; 統計",
     "description":""
   },
   "statsPageGenericStats":{
@@ -236,7 +236,7 @@
     "description":"Second part of Remember the last [n] HTTP requests per page"
   },
   "statsPageLogSizeHelp":{
-    "message":"<p>Web ページ（下記参照）による直近の HTTP リクエストの詳細を調べることができます。<\/p><p>これは、Web ページが何をしていたかを正確に調べたい上級ユーザーにとってとても便利です。しかし、これらの HTTP リクエストをログに記録するのは多くのメモリーを必要とします。もしあなたがこの技術情報を必要としない場合、メモリーが浪費されています。<\/p><p>このフィールドではログに記録される直近の HTTP リクエストの上限を調整することができます。<\/p><p>ログ記録を無効化したい（そして <i>uMatrix<\/i> のメモリー消費量を削減したい）場合は &ldquo;<code>0<\/code>&rdquo; を入力してください。<\/p>",
+    "message":"<p>Web ページ（下記参照）による直近の HTTP リクエストの詳細を調べることができます。<\/p><p>これは、Web ページが何をしていたかを正確に調べたい上級ユーザーにとってとても便利です。しかし、これらの HTTP リクエストをログに記録するのは多くのメモリーを必要とします。もしあなたがこの技術情報を必要としない場合、メモリーが浪費されています。<\/p><p>このフィールドではログに記録される直近の HTTP リクエストの上限を調整することができます。<\/p><p>ログ記録を無効化したい（そして <i>Apozy<\/i> のメモリー消費量を削減したい）場合は &ldquo;<code>0<\/code>&rdquo; を入力してください。<\/p>",
     "description":"To help user understand the purpose of the log size value"
   },
   "statsPageRefresh":{
@@ -244,7 +244,7 @@
     "description":""
   },
   "settingsPageTitle":{
-    "message":"uMatrix &ndash; 設定",
+    "message":"Apozy &ndash; 設定",
     "description":""
   },
   "settingsMatrixDisplayHeader":{
@@ -288,7 +288,7 @@
     "description":""
   },
   "settingsMatrixAutoReloadInfo":{
-    "message":"1 ページ以上に影響を与える変更をしてから Matrix を閉じたときは、<i>uMatrix<\/i> は影響をうけるページを再読み込みします",
+    "message":"1 ページ以上に影響を与える変更をしてから Matrix を閉じたときは、<i>Apozy<\/i> は影響をうけるページを再読み込みします",
     "description":""
   },
   "settingsSubframeColor":{
@@ -312,7 +312,7 @@
     "description":""
   },
   "privacyPageTitle":{
-    "message":"uMatrix &ndash; プライバシー",
+    "message":"Apozy &ndash; プライバシー",
     "description":""
   },
   "privacyDeleteBlockedCookiesPrompt":{
@@ -320,7 +320,7 @@
     "description":""
   },
   "privacyDeleteBlockedCookiesHelp":{
-    "message":"<p><i>uMatrix<\/i> はブロックする設定になっているクッキーでも、ブラウザが保存するのをブロックしません。ブラウザからのクッキーの送信をブロックします（これが本当に重要なことです）。ブラウザがクッキーを保存するのをブロックしないのは、そのサイトがクッキーを送信していることをユーザに知らせるとともに、必要であればその内容を確認できるようにするためです。<\/p><p>必要であれば、こうしたクッキーを <i>uMatrix<\/i> がブロックしたときにブラウザから削除できます。<\/p><p><b>重要な注意点：<\/b> ブラウザの拡張機能はその機能の一部として Web リクエストをおこなうことがあります。こうしたリクエストの結果、ブラウザにクッキーが保存されることがあります。もしこのオプションが設定されていて、かつクッキーを送信したホストからのクッキーを許可するように登録されていない場合は、<i>uMatrix<\/i> によってクッキーが削除されます。拡張機能が通信するホストからのクッキーを許可するように設定するのを忘れないでください。<\/p>",
+    "message":"<p><i>Apozy<\/i> はブロックする設定になっているクッキーでも、ブラウザが保存するのをブロックしません。ブラウザからのクッキーの送信をブロックします（これが本当に重要なことです）。ブラウザがクッキーを保存するのをブロックしないのは、そのサイトがクッキーを送信していることをユーザに知らせるとともに、必要であればその内容を確認できるようにするためです。<\/p><p>必要であれば、こうしたクッキーを <i>Apozy<\/i> がブロックしたときにブラウザから削除できます。<\/p><p><b>重要な注意点：<\/b> ブラウザの拡張機能はその機能の一部として Web リクエストをおこなうことがあります。こうしたリクエストの結果、ブラウザにクッキーが保存されることがあります。もしこのオプションが設定されていて、かつクッキーを送信したホストからのクッキーを許可するように登録されていない場合は、<i>Apozy<\/i> によってクッキーが削除されます。拡張機能が通信するホストからのクッキーを許可するように設定するのを忘れないでください。<\/p>",
     "description":""
   },
   "privacyDeleteNonBlockedSessionCookiesPrompt1":{
@@ -352,7 +352,7 @@
     "description":"Second part of 'Clear browser cache every [n] minutes'"
   },
   "privacyClearCacheHelp":{
-    "message":"<p>ユーザの行動を追跡するのに必死な Web サイトもあります。こうした Web サイトは行儀の悪い方法を使って、追跡されないようにするための対策を回避しようとします。<\/p><p>こうした手法の一部は、<a href='https:\/\/en.wikipedia.org\/wiki\/Web_cache'>ブラウザのキャッシュ<\/a>に依存<sup style='font-size:smaller'>[1, 2]<\/sup> しています。なぜなら、ブラウザのキャッシュを消去する人はまれで、多くの場合に長期間にわたって残り続けるためです。<\/p><p>定期的にブラウザのキャッシュを消去することによる不都合はほとんどありません（あるとすれば、消去されるときユーザが気づかないということです）。メリットは、こうした不愉快なトラッカーによってあなたのプライバシーが侵害されるのを防げるという点です。<\/p><p>このオプションを設定することで、任意の間隔で <i>uMatrix<\/i> がブラウザのキャッシュを消去するようになります。<\/p><p style='font-size:smaller'>[1] <a href='https:\/\/grepular.com\/Preventing_Web_Tracking_via_the_Browser_Cache'>&ldquo;Preventing Web Tracking via the Browser Cache&rdquo;<\/a><br>[2] <a href='http:\/\/lucb1e.com\/rp\/cookielesscookies\/'>&ldquo;Cookieless cookies&rdquo;<\/a><\/p>",
+    "message":"<p>ユーザの行動を追跡するのに必死な Web サイトもあります。こうした Web サイトは行儀の悪い方法を使って、追跡されないようにするための対策を回避しようとします。<\/p><p>こうした手法の一部は、<a href='https:\/\/en.wikipedia.org\/wiki\/Web_cache'>ブラウザのキャッシュ<\/a>に依存<sup style='font-size:smaller'>[1, 2]<\/sup> しています。なぜなら、ブラウザのキャッシュを消去する人はまれで、多くの場合に長期間にわたって残り続けるためです。<\/p><p>定期的にブラウザのキャッシュを消去することによる不都合はほとんどありません（あるとすれば、消去されるときユーザが気づかないということです）。メリットは、こうした不愉快なトラッカーによってあなたのプライバシーが侵害されるのを防げるという点です。<\/p><p>このオプションを設定することで、任意の間隔で <i>Apozy<\/i> がブラウザのキャッシュを消去するようになります。<\/p><p style='font-size:smaller'>[1] <a href='https:\/\/grepular.com\/Preventing_Web_Tracking_via_the_Browser_Cache'>&ldquo;Preventing Web Tracking via the Browser Cache&rdquo;<\/a><br>[2] <a href='http:\/\/lucb1e.com\/rp\/cookielesscookies\/'>&ldquo;Cookieless cookies&rdquo;<\/a><\/p>",
     "description":""
   },
   "privacyProcessRefererPrompt":{
@@ -360,7 +360,7 @@
     "description":""
   },
   "privacyProcessRefererHelp":{
-    "message":"<p>Wikipedia から引用：<\/p><blockquote>HTTP リファラは、要求しているリソースにリンクしたウェブページのアドレスを識別する HTTP ヘッダのフィールドです。<b>リファラはプライバシーを侵害するおそれがあるため、一部の Web ブラウザでは、ユーザーがリファラの送信を無効にすることができます<\/b>。<\/blockquote><p>この設定をオンにすると、HTTP リファラのドメイン名がアクセスしている Web サイトのドメイン名と異なる場合（サードパーティリクエストである場合）、<i>uMatrix<\/i> は HTTP リファラを偽装します。",
+    "message":"<p>Wikipedia から引用：<\/p><blockquote>HTTP リファラは、要求しているリソースにリンクしたウェブページのアドレスを識別する HTTP ヘッダのフィールドです。<b>リファラはプライバシーを侵害するおそれがあるため、一部の Web ブラウザでは、ユーザーがリファラの送信を無効にすることができます<\/b>。<\/blockquote><p>この設定をオンにすると、HTTP リファラのドメイン名がアクセスしている Web サイトのドメイン名と異なる場合（サードパーティリクエストである場合）、<i>Apozy<\/i> は HTTP リファラを偽装します。",
     "description":""
   },
   "privacyNoMixedContentPrompt":{
@@ -440,7 +440,7 @@
     "description":""
   },
   "userRulesDefaultFileName":{
-    "message":"my-umatrix-rules.txt",
+    "message":"my-Apozy-rules.txt",
     "description":"default file name to use"
   },
   "hostsFilesPrompt":{
@@ -504,7 +504,7 @@
     "description":""
   },
   "aboutDoc":{
-    "message":"<a href='https:\/\/github.com\/gorhill\/uMatrix\/wiki'>ドキュメント<\/a>",
+    "message":"<a href='https:\/\/github.com\/gorhill\/Apozy\/wiki'>ドキュメント<\/a>",
     "description":""
   },
   "aboutPermissions":{
@@ -544,7 +544,7 @@
     "description":""
   },
   "aboutBackupFilename":{
-    "message":"my-umatrix-backup.txt",
+    "message":"my-Apozy-backup.txt",
     "description":"default filename to use"
   },
   "aboutRestoreButton":{
@@ -552,7 +552,7 @@
     "description":""
   },
   "aboutRestoreConfirm":{
-    "message":"すべての設定は {{time}} のバックアップデータで上書きされ、uMatrix が再起動します。\n\nバックアップデータで上書きしますか？",
+    "message":"すべての設定は {{time}} のバックアップデータで上書きされ、Apozy が再起動します。\n\nバックアップデータで上書きしますか？",
     "description":"Message asking user to confirm restore"
   },
   "aboutRestoreError":{
@@ -600,8 +600,8 @@
     "description":"An entry for when an asset was updated"
   },
   "mainBlockedPrompt1":{
-    "message":"uMatrix はこのページの読み込みをブロックしています：",
-    "description":"English: uMatrix has prevented the following page from loading:"
+    "message":"Apozy はこのページの読み込みをブロックしています：",
+    "description":"English: Apozy has prevented the following page from loading:"
   },
   "mainBlockedPrompt2":{
     "message":"以下のルールに従う",

@@ -1,6 +1,6 @@
 {
   "extName":{
-    "message":"uMatrix",
+    "message":"Apozy",
     "description":""
   },
   "extShortDesc":{
@@ -8,7 +8,7 @@
     "description":"this will be used as short description in web stores: MUST BE 132 characters OR LESS"
   },
   "dashboardPageName":{
-    "message":"uMatrix — Painel",
+    "message":"Apozy — Painel",
     "description":""
   },
   "settingsPageName":{
@@ -124,7 +124,7 @@
     "description":"A menu entry in the matrix popup"
   },
   "statsPageTitle":{
-    "message":"uMatrix &ndash; Estatísticas",
+    "message":"Apozy &ndash; Estatísticas",
     "description":""
   },
   "statsPageGenericStats":{
@@ -236,7 +236,7 @@
     "description":"Second part of Remember the last [n] HTTP requests per page"
   },
   "statsPageLogSizeHelp":{
-    "message":"<p> Você pode inspecionar os detalhes das mais recentes solicitações HTTP matérias que têm sido feitas por uma página web (veja abaixo). <\/p><p> Isto é útil para usuários avançados que querem investigar exatamente o que uma página da web tem vindo a fazer. Mas registrando essas solicitações HTTP requer memória, e se você não se preocupam com esta informação técnica, a memória está sendo desperdiçado. <\/p><p> Por isso, neste domínio, que permite ajustar o número máximo dos mais recentes solicitações HTTP que deve ser registada para inspeção adicional <\/p><p> Digite &ldquo;.<code>0<\/code>&rdquo; para desativar o log detalhado (e, consequentemente, reduzir o consumo de memória de <i>uMatrix<\/i>).<\/p>",
+    "message":"<p> Você pode inspecionar os detalhes das mais recentes solicitações HTTP matérias que têm sido feitas por uma página web (veja abaixo). <\/p><p> Isto é útil para usuários avançados que querem investigar exatamente o que uma página da web tem vindo a fazer. Mas registrando essas solicitações HTTP requer memória, e se você não se preocupam com esta informação técnica, a memória está sendo desperdiçado. <\/p><p> Por isso, neste domínio, que permite ajustar o número máximo dos mais recentes solicitações HTTP que deve ser registada para inspeção adicional <\/p><p> Digite &ldquo;.<code>0<\/code>&rdquo; para desativar o log detalhado (e, consequentemente, reduzir o consumo de memória de <i>Apozy<\/i>).<\/p>",
     "description":"To help user understand the purpose of the log size value"
   },
   "statsPageRefresh":{
@@ -244,7 +244,7 @@
     "description":""
   },
   "settingsPageTitle":{
-    "message":"uMatrix &ndash; Definições",
+    "message":"Apozy &ndash; Definições",
     "description":""
   },
   "settingsMatrixDisplayHeader":{
@@ -288,7 +288,7 @@
     "description":""
   },
   "settingsMatrixAutoReloadInfo":{
-    "message":"Sempre que você fizer mudanças na matriz que podem afetar a visualização e\/ou comportamento de uma ou mais páginas, <i>uMatrix<\/i> recarregará páginas afetadas automaticamente quando você fechar a matriz.",
+    "message":"Sempre que você fizer mudanças na matriz que podem afetar a visualização e\/ou comportamento de uma ou mais páginas, <i>Apozy<\/i> recarregará páginas afetadas automaticamente quando você fechar a matriz.",
     "description":""
   },
   "settingsSubframeColor":{
@@ -312,7 +312,7 @@
     "description":""
   },
   "privacyPageTitle":{
-    "message":"uMatrix &ndash; Privacidade",
+    "message":"Apozy &ndash; Privacidade",
     "description":""
   },
   "privacyDeleteBlockedCookiesPrompt":{
@@ -320,7 +320,7 @@
     "description":""
   },
   "privacyDeleteBlockedCookiesHelp":{
-    "message":"<p>Cookies na lista negra não são impedidos pelo <i>uMatrix<\/i> de entrar em seu navegador. No entanto, eles estão impedidos de ficar no seu navegador, que é o que realmente importa. Não bloquear os cookies antes de introduzir o seu navegador lhe dá a oportunidade de ser informado de que um site tentou usar cookies, e além disso, para inspecionar o seu conteúdo, se desejar.<\/p><p>Uma vez que esses cookies lista negra foram contabilizados por <i>uMatrix<\/i>, eles podem ser removidos do seu navegador, se assim o desejar.<\/p><p><b>Nota importante:<\/b> As extensões podem fazer solicitações da web durante o curso de sua operação normal. Estes pedidos podem resultar em cookies que está sendo criado no navegador. Se o nome da máquina a partir de onde se originam um biscoito não está na lista branca, o cookie será removido a partir do navegador pelo <i>uMatrix<\/i> se esta opção estiver marcada. Então não se esqueça que o nome da máquina (s) com que uma extensão comunicar está na lista branca.<\/p>",
+    "message":"<p>Cookies na lista negra não são impedidos pelo <i>Apozy<\/i> de entrar em seu navegador. No entanto, eles estão impedidos de ficar no seu navegador, que é o que realmente importa. Não bloquear os cookies antes de introduzir o seu navegador lhe dá a oportunidade de ser informado de que um site tentou usar cookies, e além disso, para inspecionar o seu conteúdo, se desejar.<\/p><p>Uma vez que esses cookies lista negra foram contabilizados por <i>Apozy<\/i>, eles podem ser removidos do seu navegador, se assim o desejar.<\/p><p><b>Nota importante:<\/b> As extensões podem fazer solicitações da web durante o curso de sua operação normal. Estes pedidos podem resultar em cookies que está sendo criado no navegador. Se o nome da máquina a partir de onde se originam um biscoito não está na lista branca, o cookie será removido a partir do navegador pelo <i>Apozy<\/i> se esta opção estiver marcada. Então não se esqueça que o nome da máquina (s) com que uma extensão comunicar está na lista branca.<\/p>",
     "description":""
   },
   "privacyDeleteNonBlockedSessionCookiesPrompt1":{
@@ -352,7 +352,7 @@
     "description":"Second part of 'Clear browser cache every [n] minutes'"
   },
   "privacyClearCacheHelp":{
-    "message":"<p>Alguns sites são realmente empenhados no seu rastreamento, tanto que eles vão usar truques não tão agradáveis ​​para contornar as medidas de tomar, a fim de não ser rastreado.<\/p><p>Alguns desses truques é usar<sup style='font-size:smaller'>[1, 2]<\/sup> no <a href='https:\/\/en.wikipedia.org\/wiki\/Web_cache'>cache do navegador<\/a>, que o conteúdo é muitas vezes de longa duração já que raramente os usuários irão perder seu tempo para limpar regularmente o cache de seu navegador.<\/p><p>Há pouco inconveniente em limpar o cache do navegador regularmente (mais provável é que você não vai notar quando isso acontece), e o benefício é para evitar que esses rastreadores detestáveis ​​de invadir a sua privacidade.<\/p><p>Marque esta opção para o <i>uMatrix<\/i> fazer isso por você, no intervalo que você desejar.<\/p><p style='font-size:smaller'>[1] <a href='https:\/\/grepular.com\/Preventing_Web_Tracking_via_the_Browser_Cache'>&ldquo;Preventing Web Tracking via the Browser Cache&rdquo;<\/a><br>[2] <a href='http:\/\/lucb1e.com\/rp\/cookielesscookies\/'>&ldquo;Cookieless cookies&rdquo;<\/a><\/p>",
+    "message":"<p>Alguns sites são realmente empenhados no seu rastreamento, tanto que eles vão usar truques não tão agradáveis ​​para contornar as medidas de tomar, a fim de não ser rastreado.<\/p><p>Alguns desses truques é usar<sup style='font-size:smaller'>[1, 2]<\/sup> no <a href='https:\/\/en.wikipedia.org\/wiki\/Web_cache'>cache do navegador<\/a>, que o conteúdo é muitas vezes de longa duração já que raramente os usuários irão perder seu tempo para limpar regularmente o cache de seu navegador.<\/p><p>Há pouco inconveniente em limpar o cache do navegador regularmente (mais provável é que você não vai notar quando isso acontece), e o benefício é para evitar que esses rastreadores detestáveis ​​de invadir a sua privacidade.<\/p><p>Marque esta opção para o <i>Apozy<\/i> fazer isso por você, no intervalo que você desejar.<\/p><p style='font-size:smaller'>[1] <a href='https:\/\/grepular.com\/Preventing_Web_Tracking_via_the_Browser_Cache'>&ldquo;Preventing Web Tracking via the Browser Cache&rdquo;<\/a><br>[2] <a href='http:\/\/lucb1e.com\/rp\/cookielesscookies\/'>&ldquo;Cookieless cookies&rdquo;<\/a><\/p>",
     "description":""
   },
   "privacyProcessRefererPrompt":{
@@ -360,7 +360,7 @@
     "description":""
   },
   "privacyProcessRefererHelp":{
-    "message":"<p>Do Wikipedia: &ldquo;HTTP Referer é um campo de cabeçalho HTTP que identifica o endereço da página que ligado ao recurso que está sendo solicitado. ... <b>Porque a informação do  referer pode violar a privacidade, alguns navegadores da Web permitem que o usuário desativar o envio de informações do referer.<\/b>&rdquo;<\/p><p>Se essa configuração for selecionada, <i>uMatrix<\/i> irá remover as informações HTTP referer se <b>ambas <\/b> das seguintes condições forem verdadeiras:<ul style='padding-left:1em;list-style-type:disc;'><li>O nome de domínio do HTTP referer não corresponde ao nome de domínio do URL do pedido (ou seja, o referer é de terceiros para a página da web);<li>O nome do host do pedido não está na lista branca.<\/ul><\/p>",
+    "message":"<p>Do Wikipedia: &ldquo;HTTP Referer é um campo de cabeçalho HTTP que identifica o endereço da página que ligado ao recurso que está sendo solicitado. ... <b>Porque a informação do  referer pode violar a privacidade, alguns navegadores da Web permitem que o usuário desativar o envio de informações do referer.<\/b>&rdquo;<\/p><p>Se essa configuração for selecionada, <i>Apozy<\/i> irá remover as informações HTTP referer se <b>ambas <\/b> das seguintes condições forem verdadeiras:<ul style='padding-left:1em;list-style-type:disc;'><li>O nome de domínio do HTTP referer não corresponde ao nome de domínio do URL do pedido (ou seja, o referer é de terceiros para a página da web);<li>O nome do host do pedido não está na lista branca.<\/ul><\/p>",
     "description":""
   },
   "privacyNoMixedContentPrompt":{
@@ -440,7 +440,7 @@
     "description":""
   },
   "userRulesDefaultFileName":{
-    "message":"minhas-regras-umatrix.txt",
+    "message":"minhas-regras-Apozy.txt",
     "description":"default file name to use"
   },
   "hostsFilesPrompt":{
@@ -496,7 +496,7 @@
     "description":""
   },
   "aboutChangelog":{
-    "message":"<a href='https:\/\/github.com\/gorhill\/uMatrix\/releases'>Change log<\/a>",
+    "message":"<a href='https:\/\/github.com\/gorhill\/Apozy\/releases'>Change log<\/a>",
     "description":""
   },
   "aboutStorageUsed":{
@@ -504,7 +504,7 @@
     "description":""
   },
   "aboutDoc":{
-    "message":"<a href='https:\/\/github.com\/gorhill\/uMatrix\/wiki'>Documentação<\/a>",
+    "message":"<a href='https:\/\/github.com\/gorhill\/Apozy\/wiki'>Documentação<\/a>",
     "description":""
   },
   "aboutPermissions":{
@@ -544,7 +544,7 @@
     "description":""
   },
   "aboutBackupFilename":{
-    "message":"meu-backup-umatrix.txt",
+    "message":"meu-backup-Apozy.txt",
     "description":"default filename to use"
   },
   "aboutRestoreButton":{
@@ -552,7 +552,7 @@
     "description":""
   },
   "aboutRestoreConfirm":{
-    "message":"Todas as suas definições irão ser sobrescritas pelos dados salvos em {{time}}, e o uMatrix irá reiniciar.\n\nSubstituir todas a configuração atual usando dados de backup?",
+    "message":"Todas as suas definições irão ser sobrescritas pelos dados salvos em {{time}}, e o Apozy irá reiniciar.\n\nSubstituir todas a configuração atual usando dados de backup?",
     "description":"Message asking user to confirm restore"
   },
   "aboutRestoreError":{
@@ -600,8 +600,8 @@
     "description":"An entry for when an asset was updated"
   },
   "mainBlockedPrompt1":{
-    "message":"uMatrix impediu que a seguinte página fosse carregada:",
-    "description":"English: uMatrix has prevented the following page from loading:"
+    "message":"Apozy impediu que a seguinte página fosse carregada:",
+    "description":"English: Apozy has prevented the following page from loading:"
   },
   "mainBlockedPrompt2":{
     "message":"Devido à seguinte regra",

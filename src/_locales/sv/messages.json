@@ -1,6 +1,6 @@
 {
   "extName":{
-    "message":"uMatrix",
+    "message":"Apozy",
     "description":""
   },
   "extShortDesc":{
@@ -8,7 +8,7 @@
     "description":"this will be used as short description in web stores: MUST BE 132 characters OR LESS"
   },
   "dashboardPageName":{
-    "message":"uMatrix — Översiktspanel",
+    "message":"Apozy — Översiktspanel",
     "description":""
   },
   "settingsPageName":{
@@ -124,7 +124,7 @@
     "description":"A menu entry in the matrix popup"
   },
   "statsPageTitle":{
-    "message":"uMatrix &ndash; Statistik",
+    "message":"Apozy &ndash; Statistik",
     "description":""
   },
   "statsPageGenericStats":{
@@ -236,7 +236,7 @@
     "description":"Second part of Remember the last [n] HTTP requests per page"
   },
   "statsPageLogSizeHelp":{
-    "message":"<p>Du kan inspektera de senaste, råa HTTP-efterfrågningarna som har sänts av en sida (se nedan).<\/p><p>Det här mest användbart för erfarna användare som vill undersöka exakt vad webbsidan har gjort. Loggningen kräver dock minne och om du inte bryr dig om tekniska detaljer, slösas det på minnet.<\/p><p>Följaktligen låter fältet dig att justera hur många av de senaste HTTP-förfrågningarna som som loggas.<\/p><p>Ange &ldquo;<code>0<\/code>&rdquo; för att stänga av detaljerad loggning (och således minska minnesavtrycket från <i>uMatrix<\/i>).<\/p>",
+    "message":"<p>Du kan inspektera de senaste, råa HTTP-efterfrågningarna som har sänts av en sida (se nedan).<\/p><p>Det här mest användbart för erfarna användare som vill undersöka exakt vad webbsidan har gjort. Loggningen kräver dock minne och om du inte bryr dig om tekniska detaljer, slösas det på minnet.<\/p><p>Följaktligen låter fältet dig att justera hur många av de senaste HTTP-förfrågningarna som som loggas.<\/p><p>Ange &ldquo;<code>0<\/code>&rdquo; för att stänga av detaljerad loggning (och således minska minnesavtrycket från <i>Apozy<\/i>).<\/p>",
     "description":"To help user understand the purpose of the log size value"
   },
   "statsPageRefresh":{
@@ -244,7 +244,7 @@
     "description":""
   },
   "settingsPageTitle":{
-    "message":"uMatrix &ndash; Inställningar",
+    "message":"Apozy &ndash; Inställningar",
     "description":""
   },
   "settingsMatrixDisplayHeader":{
@@ -288,7 +288,7 @@
     "description":""
   },
   "settingsMatrixAutoReloadInfo":{
-    "message":"När du gör ändringar i matrisen som påverkar hur andra sidor ser ut eller beter sig kommer <i>uMatrix<\/i> ladda om de berörda sidorna automatiskt när du stänger matrisen.",
+    "message":"När du gör ändringar i matrisen som påverkar hur andra sidor ser ut eller beter sig kommer <i>Apozy<\/i> ladda om de berörda sidorna automatiskt när du stänger matrisen.",
     "description":""
   },
   "settingsSubframeColor":{
@@ -312,7 +312,7 @@
     "description":""
   },
   "privacyPageTitle":{
-    "message":"uMatrix &ndash; Integritet",
+    "message":"Apozy &ndash; Integritet",
     "description":""
   },
   "privacyDeleteBlockedCookiesPrompt":{
@@ -320,7 +320,7 @@
     "description":""
   },
   "privacyDeleteBlockedCookiesHelp":{
-    "message":"<p>Svartlistade kakor är inte skyddade från hamna på din dator av <i>uMatrix<\/i>. De är dock skyddade från att lämna din webbläsare, vilket är det som räknas. Genom att inte blockera kakor från att hamna på din dator får du möjligheten att se om en sida försökt att använda sig av kakor och du kan undersöka kakornas innehåll.<\/p><p>När kakorna ställts till svars för <i>uMatrix<\/i>, kan de raderas om du så önskar.<\/p><p><b>Viktigt:<\/b> Webbläsartillägg kan göra förfrågningar till webben medan de arbetar. Dessa förfrågningar kan resultera i att kakor skapas av webbläsaren. Om värdnamnet för vilken en kaka kommer ifrån inte är vitlistad, kommer kakan att tas bort av <i>uMatrix<\/i> om det är så inställt. Kontrollera att värdnamnen som tillägg använder för att kommunicera är vitlistade.<\/p>",
+    "message":"<p>Svartlistade kakor är inte skyddade från hamna på din dator av <i>Apozy<\/i>. De är dock skyddade från att lämna din webbläsare, vilket är det som räknas. Genom att inte blockera kakor från att hamna på din dator får du möjligheten att se om en sida försökt att använda sig av kakor och du kan undersöka kakornas innehåll.<\/p><p>När kakorna ställts till svars för <i>Apozy<\/i>, kan de raderas om du så önskar.<\/p><p><b>Viktigt:<\/b> Webbläsartillägg kan göra förfrågningar till webben medan de arbetar. Dessa förfrågningar kan resultera i att kakor skapas av webbläsaren. Om värdnamnet för vilken en kaka kommer ifrån inte är vitlistad, kommer kakan att tas bort av <i>Apozy<\/i> om det är så inställt. Kontrollera att värdnamnen som tillägg använder för att kommunicera är vitlistade.<\/p>",
     "description":""
   },
   "privacyDeleteNonBlockedSessionCookiesPrompt1":{
@@ -352,7 +352,7 @@
     "description":"Second part of 'Clear browser cache every [n] minutes'"
   },
   "privacyClearCacheHelp":{
-    "message":"<p>Vissa webbplatser är beslutna att spåra dig, till den grad att de använda osjysta metoder för att ta sig runt dina försök att inte bli spårad.<\/p><p>Några av dessa metoder förlitar<sup style='font-size:smaller'>[1, 2]<\/sup> sig på <a href='https:\/\/en.wikipedia.org\/wiki\/Web_cache'>webbläsarcachen<\/a>, vars innehåll ofta är långvarig eftersom användare sällar tar sig tiden att regelbundet rensa sin cache.<\/p><p>Det finns knappt något besvärligt med att rensa webbläsarcachen regelbundet (troligen märker du inte ens när det sker) och gagn är att du förhindrar dessa irriterande förföljarna penetrera din integritet.<\/p><p>Kryssa i detta alternativ för att låta <i>uMatrix<\/i> göra detta åt dig, i intervall du satt.<\/p><p style='font-size:smaller'>[1]<a href='https:\/\/grepular.com\/Preventing_Web_Tracking_via_the_Browser_Cache'>&ldquo;Preventing Web Tracking via the Browser Cache&rdquo;<\/a><br>[2] <a href='http:\/\/lucb1e.com\/rp\/cookielesscookies\/'>&ldquo;Cookieless cookies&rdquo;<\/a><\/p>",
+    "message":"<p>Vissa webbplatser är beslutna att spåra dig, till den grad att de använda osjysta metoder för att ta sig runt dina försök att inte bli spårad.<\/p><p>Några av dessa metoder förlitar<sup style='font-size:smaller'>[1, 2]<\/sup> sig på <a href='https:\/\/en.wikipedia.org\/wiki\/Web_cache'>webbläsarcachen<\/a>, vars innehåll ofta är långvarig eftersom användare sällar tar sig tiden att regelbundet rensa sin cache.<\/p><p>Det finns knappt något besvärligt med att rensa webbläsarcachen regelbundet (troligen märker du inte ens när det sker) och gagn är att du förhindrar dessa irriterande förföljarna penetrera din integritet.<\/p><p>Kryssa i detta alternativ för att låta <i>Apozy<\/i> göra detta åt dig, i intervall du satt.<\/p><p style='font-size:smaller'>[1]<a href='https:\/\/grepular.com\/Preventing_Web_Tracking_via_the_Browser_Cache'>&ldquo;Preventing Web Tracking via the Browser Cache&rdquo;<\/a><br>[2] <a href='http:\/\/lucb1e.com\/rp\/cookielesscookies\/'>&ldquo;Cookieless cookies&rdquo;<\/a><\/p>",
     "description":""
   },
   "privacyProcessRefererPrompt":{
@@ -360,7 +360,7 @@
     "description":""
   },
   "privacyProcessRefererHelp":{
-    "message":"<p>Översatt från Wikipedia:<\/p><blockquote>HTTP-hänvisning (s.k. referer[så!]) är delen i ett HTTP-sidhuvud som identifierar webbplatsens adress till den som begärt den. ... <b>Eftersom hänvisningen kan inskränka på integriteten tillåter vissa webbläsare användare att inte sända hänvisningsinformationen.<\/b><\/blockquote><p>Om inställningen är påslagen kommer <i>uMatrix<\/i> att lura domänen med en annan HTTP-hänvisningnsinformation i sidhuvudet, om det gäller en tredje part till domänen som gjort nätförfrågan.",
+    "message":"<p>Översatt från Wikipedia:<\/p><blockquote>HTTP-hänvisning (s.k. referer[så!]) är delen i ett HTTP-sidhuvud som identifierar webbplatsens adress till den som begärt den. ... <b>Eftersom hänvisningen kan inskränka på integriteten tillåter vissa webbläsare användare att inte sända hänvisningsinformationen.<\/b><\/blockquote><p>Om inställningen är påslagen kommer <i>Apozy<\/i> att lura domänen med en annan HTTP-hänvisningnsinformation i sidhuvudet, om det gäller en tredje part till domänen som gjort nätförfrågan.",
     "description":""
   },
   "privacyNoMixedContentPrompt":{
@@ -440,7 +440,7 @@
     "description":""
   },
   "userRulesDefaultFileName":{
-    "message":"mina-umatrix-regler.txt",
+    "message":"mina-Apozy-regler.txt",
     "description":"default file name to use"
   },
   "hostsFilesPrompt":{
@@ -496,7 +496,7 @@
     "description":""
   },
   "aboutChangelog":{
-    "message":"<a href='https:\/\/github.com\/gorhill\/uMatrix\/releases'>Ändringslogg<\/a>",
+    "message":"<a href='https:\/\/github.com\/gorhill\/Apozy\/releases'>Ändringslogg<\/a>",
     "description":""
   },
   "aboutStorageUsed":{
@@ -504,7 +504,7 @@
     "description":""
   },
   "aboutDoc":{
-    "message":"<a href='https:\/\/github.com\/gorhill\/uMatrix\/wiki'>Dokumentation<\/a>",
+    "message":"<a href='https:\/\/github.com\/gorhill\/Apozy\/wiki'>Dokumentation<\/a>",
     "description":""
   },
   "aboutPermissions":{
@@ -544,7 +544,7 @@
     "description":""
   },
   "aboutBackupFilename":{
-    "message":"min-umatrix-säkerhetskopia.txt",
+    "message":"min-Apozy-säkerhetskopia.txt",
     "description":"default filename to use"
   },
   "aboutRestoreButton":{
@@ -552,7 +552,7 @@
     "description":""
   },
   "aboutRestoreConfirm":{
-    "message":"Alla dina inställningar kommer att skrivas över med data från {{time}} och uMatrix kommer att startas om.\n\nVill du skriva över de existerande inställningarna med dem från säkerhetskopian?",
+    "message":"Alla dina inställningar kommer att skrivas över med data från {{time}} och Apozy kommer att startas om.\n\nVill du skriva över de existerande inställningarna med dem från säkerhetskopian?",
     "description":"Message asking user to confirm restore"
   },
   "aboutRestoreError":{
@@ -600,8 +600,8 @@
     "description":"An entry for when an asset was updated"
   },
   "mainBlockedPrompt1":{
-    "message":"uMatrix har förhindrat denna sida från att laddas:",
-    "description":"English: uMatrix has prevented the following page from loading:"
+    "message":"Apozy har förhindrat denna sida från att laddas:",
+    "description":"English: Apozy has prevented the following page from loading:"
   },
   "mainBlockedPrompt2":{
     "message":"På grund av den här regeln",

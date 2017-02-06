@@ -1,6 +1,6 @@
 {
   "extName":{
-    "message":"uMatrix",
+    "message":"Apozy",
     "description":""
   },
   "extShortDesc":{
@@ -8,7 +8,7 @@
     "description":"this will be used as short description in web stores: MUST BE 132 characters OR LESS"
   },
   "dashboardPageName":{
-    "message":"uMatrix — 控制台",
+    "message":"Apozy — 控制台",
     "description":""
   },
   "settingsPageName":{
@@ -124,7 +124,7 @@
     "description":"A menu entry in the matrix popup"
   },
   "statsPageTitle":{
-    "message":"uMatrix &ndash; 統計",
+    "message":"Apozy &ndash; 統計",
     "description":""
   },
   "statsPageGenericStats":{
@@ -236,7 +236,7 @@
     "description":"Second part of Remember the last [n] HTTP requests per page"
   },
   "statsPageLogSizeHelp":{
-    "message":"<p>您可以查看最近期網絡頁面所發出的請求之詳情（見下）。<\/p><p>這對於想了解網絡頁面的確切行為的進階使用者較為實用，惟記錄HTTP請求將耗用記憶體，如您並不在意技術細節則等同浪費記憶體。<\/p><p>故此欄將容許閣下調整用作進一歲檢查的近期HTTP請求之記錄數字。<\/p><p>輸入「<code>0<\/code>」將禁用詳細日誌（從而減少<i>uMatrix<\/i>所佔用之記憶體）。<\/p>",
+    "message":"<p>您可以查看最近期網絡頁面所發出的請求之詳情（見下）。<\/p><p>這對於想了解網絡頁面的確切行為的進階使用者較為實用，惟記錄HTTP請求將耗用記憶體，如您並不在意技術細節則等同浪費記憶體。<\/p><p>故此欄將容許閣下調整用作進一歲檢查的近期HTTP請求之記錄數字。<\/p><p>輸入「<code>0<\/code>」將禁用詳細日誌（從而減少<i>Apozy<\/i>所佔用之記憶體）。<\/p>",
     "description":"To help user understand the purpose of the log size value"
   },
   "statsPageRefresh":{
@@ -244,7 +244,7 @@
     "description":""
   },
   "settingsPageTitle":{
-    "message":"uMatrix &ndash; 設定",
+    "message":"Apozy &ndash; 設定",
     "description":""
   },
   "settingsMatrixDisplayHeader":{
@@ -288,7 +288,7 @@
     "description":""
   },
   "settingsMatrixAutoReloadInfo":{
-    "message":"當你更改矩陣以致其將影響分頁之外觀或行為之時，<i>uMatrix<\/i>將於關閉矩陣時自動重新載入。",
+    "message":"當你更改矩陣以致其將影響分頁之外觀或行為之時，<i>Apozy<\/i>將於關閉矩陣時自動重新載入。",
     "description":""
   },
   "settingsSubframeColor":{
@@ -312,7 +312,7 @@
     "description":""
   },
   "privacyPageTitle":{
-    "message":"uMatrix &ndash; 私隱",
+    "message":"Apozy &ndash; 私隱",
     "description":""
   },
   "privacyDeleteBlockedCookiesPrompt":{
@@ -320,7 +320,7 @@
     "description":""
   },
   "privacyDeleteBlockedCookiesHelp":{
-    "message":"<p><i>uMatrix<\/i>不會阻止黑名單中的Cookie進入您的瀏覽器，而是阻止它们離開开您的瀏覽器，因後者才確有意義。不於Cookie進入瀏覽器之前阻止他們將使您有機會得知一個網站正嘗試使用Cookie，以便您有需要時進一步查看。<\/p><p>如若黑名單中的Cookie被<i>uMatrix<\/i>所計入則可按閱下意願將其移除。<\/p><p><b>重要提示：<\/b>附加元件於其運作期間作出網絡請求之時將可能產生Cookie。如果Cookie來源之主機並未列於白名單，則<i>uMatrix<\/i>會於此選項開啟之時移除這些Cookie。請確保附加元件溝通用的主機列於白名單之中。<\/p>",
+    "message":"<p><i>Apozy<\/i>不會阻止黑名單中的Cookie進入您的瀏覽器，而是阻止它们離開开您的瀏覽器，因後者才確有意義。不於Cookie進入瀏覽器之前阻止他們將使您有機會得知一個網站正嘗試使用Cookie，以便您有需要時進一步查看。<\/p><p>如若黑名單中的Cookie被<i>Apozy<\/i>所計入則可按閱下意願將其移除。<\/p><p><b>重要提示：<\/b>附加元件於其運作期間作出網絡請求之時將可能產生Cookie。如果Cookie來源之主機並未列於白名單，則<i>Apozy<\/i>會於此選項開啟之時移除這些Cookie。請確保附加元件溝通用的主機列於白名單之中。<\/p>",
     "description":""
   },
   "privacyDeleteNonBlockedSessionCookiesPrompt1":{
@@ -352,7 +352,7 @@
     "description":"Second part of 'Clear browser cache every [n] minutes'"
   },
   "privacyClearCacheHelp":{
-    "message":"<p>某些網站特别熱衷於追蹤，至到其為繞過你為避免追蹤而所作的措施，會使用一些不太光彩的手段。<\/p><p>因為很少有使用者會定期花時間清理瀏覽器快取，使快取獲保留一段長時間，使得一部分追蹤方法使用<sup style='font-size:smaller'>[1, 2]<\/sup><a href='https:\/\/zh.wikipedia.org\/wiki\/%E7%BD%91%E9%A1%B5%E5%BF%AB%E7%85%A7'>瀏覽器快取<\/a>。<\/p><p>定期清理瀏覽器快取並不會帶來太多麻煩（甚至很可能根本不會注意到），郤可帶來阻止無處不在的追蹤器侵擾閣下私隱的好處。<\/p><p>點擊此選項將容許<i>uMatrix<\/i>於你所指定的時間為您完成此項工作。<\/p><p style='font-size:smaller'>[1] <a href='https:\/\/grepular.com\/Preventing_Web_Tracking_via_the_Browser_Cache'>「阻止利用瀏覽器快取進行網絡追蹤」<\/a><br>[2] <a href='http:\/\/lucb1e.com\/rp\/cookielesscookies\/'>「Cookieless cookies」<\/a><\/p>",
+    "message":"<p>某些網站特别熱衷於追蹤，至到其為繞過你為避免追蹤而所作的措施，會使用一些不太光彩的手段。<\/p><p>因為很少有使用者會定期花時間清理瀏覽器快取，使快取獲保留一段長時間，使得一部分追蹤方法使用<sup style='font-size:smaller'>[1, 2]<\/sup><a href='https:\/\/zh.wikipedia.org\/wiki\/%E7%BD%91%E9%A1%B5%E5%BF%AB%E7%85%A7'>瀏覽器快取<\/a>。<\/p><p>定期清理瀏覽器快取並不會帶來太多麻煩（甚至很可能根本不會注意到），郤可帶來阻止無處不在的追蹤器侵擾閣下私隱的好處。<\/p><p>點擊此選項將容許<i>Apozy<\/i>於你所指定的時間為您完成此項工作。<\/p><p style='font-size:smaller'>[1] <a href='https:\/\/grepular.com\/Preventing_Web_Tracking_via_the_Browser_Cache'>「阻止利用瀏覽器快取進行網絡追蹤」<\/a><br>[2] <a href='http:\/\/lucb1e.com\/rp\/cookielesscookies\/'>「Cookieless cookies」<\/a><\/p>",
     "description":""
   },
   "privacyProcessRefererPrompt":{
@@ -360,7 +360,7 @@
     "description":""
   },
   "privacyProcessRefererHelp":{
-    "message":"<p>維基百科：<\/p><blockquote>HTTP位址參照是一個用於辨識請求來源網頁的網址的HTTP頭……<b>由於位址參照可能侵犯私隱，某些瀏覽器容許使用者禁止傳送位址參照。<\/b><\/blockquote><p>若已選此設定，<i>uMatrix<\/i>則會於請求的HTTP位址參照與資源的域名有差別時，將HTTP位址參照偽裝成該資源的域名。",
+    "message":"<p>維基百科：<\/p><blockquote>HTTP位址參照是一個用於辨識請求來源網頁的網址的HTTP頭……<b>由於位址參照可能侵犯私隱，某些瀏覽器容許使用者禁止傳送位址參照。<\/b><\/blockquote><p>若已選此設定，<i>Apozy<\/i>則會於請求的HTTP位址參照與資源的域名有差別時，將HTTP位址參照偽裝成該資源的域名。",
     "description":""
   },
   "privacyNoMixedContentPrompt":{
@@ -440,7 +440,7 @@
     "description":""
   },
   "userRulesDefaultFileName":{
-    "message":"my-umatrix-rules.txt",
+    "message":"my-Apozy-rules.txt",
     "description":"default file name to use"
   },
   "hostsFilesPrompt":{
@@ -496,7 +496,7 @@
     "description":""
   },
   "aboutChangelog":{
-    "message":"<a href='https:\/\/github.com\/gorhill\/uMatrix\/releases'>更新日誌<\/a>",
+    "message":"<a href='https:\/\/github.com\/gorhill\/Apozy\/releases'>更新日誌<\/a>",
     "description":""
   },
   "aboutStorageUsed":{
@@ -504,7 +504,7 @@
     "description":""
   },
   "aboutDoc":{
-    "message":"<a href='https:\/\/github.com\/gorhill\/uMatrix\/wiki'>共筆系統<\/a>",
+    "message":"<a href='https:\/\/github.com\/gorhill\/Apozy\/wiki'>共筆系統<\/a>",
     "description":""
   },
   "aboutPermissions":{
@@ -544,7 +544,7 @@
     "description":""
   },
   "aboutBackupFilename":{
-    "message":"my-umatrix-backup.txt",
+    "message":"my-Apozy-backup.txt",
     "description":"default filename to use"
   },
   "aboutRestoreButton":{
@@ -552,7 +552,7 @@
     "description":""
   },
   "aboutRestoreConfirm":{
-    "message":"您的所有設定將由{{time}}的備份數據所覆蓋，然後uMatrix將會重新啟動。\n\n是否要將備份數據覆蓋現有設定？",
+    "message":"您的所有設定將由{{time}}的備份數據所覆蓋，然後Apozy將會重新啟動。\n\n是否要將備份數據覆蓋現有設定？",
     "description":"Message asking user to confirm restore"
   },
   "aboutRestoreError":{
@@ -600,8 +600,8 @@
     "description":"An entry for when an asset was updated"
   },
   "mainBlockedPrompt1":{
-    "message":"uMatrix已阻止下列頁面之載入：",
-    "description":"English: uMatrix has prevented the following page from loading:"
+    "message":"Apozy已阻止下列頁面之載入：",
+    "description":"English: Apozy has prevented the following page from loading:"
   },
   "mainBlockedPrompt2":{
     "message":"因下列規則：",

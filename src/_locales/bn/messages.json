@@ -440,7 +440,7 @@
     "description":""
   },
   "userRulesDefaultFileName":{
-    "message":"amar-umatrix-niyom.txt",
+    "message":"amar-Apozy-niyom.txt",
     "description":"default file name to use"
   },
   "hostsFilesPrompt":{
@@ -496,7 +496,7 @@
     "description":""
   },
   "aboutChangelog":{
-    "message":"<a href='https:\/\/github.com\/gorhill\/uMatrix\/releases'>পরিবর্তন লগ<\/a>",
+    "message":"<a href='https:\/\/github.com\/gorhill\/Apozy\/releases'>পরিবর্তন লগ<\/a>",
     "description":""
   },
   "aboutStorageUsed":{
@@ -504,7 +504,7 @@
     "description":""
   },
   "aboutDoc":{
-    "message":"<a href='https:\/\/github.com\/gorhill\/uMatrix\/wiki'>নথিপত্র<\/a>",
+    "message":"<a href='https:\/\/github.com\/gorhill\/Apozy\/wiki'>নথিপত্র<\/a>",
     "description":""
   },
   "aboutPermissions":{
@@ -544,7 +544,7 @@
     "description":""
   },
   "aboutBackupFilename":{
-    "message":"amar-umatrix-backup.txt",
+    "message":"amar-Apozy-backup.txt",
     "description":"default filename to use"
   },
   "aboutRestoreButton":{
@@ -601,7 +601,7 @@
   },
   "mainBlockedPrompt1":{
     "message":"uম্যাট্রিক্স নিচের পৃষ্ঠা লোড করাকে প্রতিহত করেছে:",
-    "description":"English: uMatrix has prevented the following page from loading:"
+    "description":"English: Apozy has prevented the following page from loading:"
   },
   "mainBlockedPrompt2":{
     "message":"নিম্নলিখিত নিয়মের কারণে",

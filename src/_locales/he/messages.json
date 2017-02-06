@@ -1,6 +1,6 @@
 {
   "extName":{
-    "message":"uMatrix",
+    "message":"Apozy",
     "description":""
   },
   "extShortDesc":{
@@ -8,7 +8,7 @@
     "description":"this will be used as short description in web stores: MUST BE 132 characters OR LESS"
   },
   "dashboardPageName":{
-    "message":"uMatrix — פאנל הקונפיגורציות",
+    "message":"Apozy — פאנל הקונפיגורציות",
     "description":""
   },
   "settingsPageName":{
@@ -124,7 +124,7 @@
     "description":"A menu entry in the matrix popup"
   },
   "statsPageTitle":{
-    "message":"uMatrix &ndash; סטטיסטיקות",
+    "message":"Apozy &ndash; סטטיסטיקות",
     "description":""
   },
   "statsPageGenericStats":{
@@ -236,7 +236,7 @@
     "description":"Second part of Remember the last [n] HTTP requests per page"
   },
   "statsPageLogSizeHelp":{
-    "message":"<p>אתה יכול לבדוק את הפרטים של רוב בקשות HTTP הגולמיות האחרונות אשר יצאו מדף אינטרנט (ראה להלן).<\/p><p>זה שימושי בעיקר למשתמשים מתקדמים שרוצים לחקור בדיוק מה דף האינטרנט עשה. אבל רישום בקשות ה HTTP הללו דורש זיכרון, ואם לא אכפת לך מהמידע הטכני הזה, אז הזיכרון מתבזבז.<\/p><p>לכן קיימת אפשרות זו המאפשרת לך להתאים את המספר המרבי של בקשות ה HTTP הכי האחרונות שמיועדות להירשם לבדיקה נוספת.<\/p><p>הזן &ldquo;<code>0<\/code>&rdquo; כדי לכבות את הרישום המפורט (וכתוצאה מכך להפחית את השימוש בזיכרון של <i>uMatrix<\/i>).<\/p>",
+    "message":"<p>אתה יכול לבדוק את הפרטים של רוב בקשות HTTP הגולמיות האחרונות אשר יצאו מדף אינטרנט (ראה להלן).<\/p><p>זה שימושי בעיקר למשתמשים מתקדמים שרוצים לחקור בדיוק מה דף האינטרנט עשה. אבל רישום בקשות ה HTTP הללו דורש זיכרון, ואם לא אכפת לך מהמידע הטכני הזה, אז הזיכרון מתבזבז.<\/p><p>לכן קיימת אפשרות זו המאפשרת לך להתאים את המספר המרבי של בקשות ה HTTP הכי האחרונות שמיועדות להירשם לבדיקה נוספת.<\/p><p>הזן &ldquo;<code>0<\/code>&rdquo; כדי לכבות את הרישום המפורט (וכתוצאה מכך להפחית את השימוש בזיכרון של <i>Apozy<\/i>).<\/p>",
     "description":"To help user understand the purpose of the log size value"
   },
   "statsPageRefresh":{
@@ -244,7 +244,7 @@
     "description":""
   },
   "settingsPageTitle":{
-    "message":"uMatrix &ndash; הגדרות",
+    "message":"Apozy &ndash; הגדרות",
     "description":""
   },
   "settingsMatrixDisplayHeader":{
@@ -288,7 +288,7 @@
     "description":""
   },
   "settingsMatrixAutoReloadInfo":{
-    "message":"בכל פעם שאתה עושה שינויים במטריצה אשר יכולים להשפיע על ההצגה ו\/או התנהגות של דף או יותר, <i>uMatrix<\/i> יטען מחדש את העמודים המושפעים אוטומטית כשתסגור את המטריצה.",
+    "message":"בכל פעם שאתה עושה שינויים במטריצה אשר יכולים להשפיע על ההצגה ו\/או התנהגות של דף או יותר, <i>Apozy<\/i> יטען מחדש את העמודים המושפעים אוטומטית כשתסגור את המטריצה.",
     "description":""
   },
   "settingsSubframeColor":{
@@ -312,7 +312,7 @@
     "description":""
   },
   "privacyPageTitle":{
-    "message":"uMatrix &ndash; פרטיות",
+    "message":"Apozy &ndash; פרטיות",
     "description":""
   },
   "privacyDeleteBlockedCookiesPrompt":{
@@ -320,7 +320,7 @@
     "description":""
   },
   "privacyDeleteBlockedCookiesHelp":{
-    "message":"<p>עוגיות ברשימה השחורה לא נמנעות על ידי <i>uMatrix<\/i> מלהיכנס לדפדפן שלך. אולם הן כן מנועות מלצאת מהדפדפן שלך, וזה מה שחשוב באמת. לא לחסום עוגיות לפני שהן נכנסות לדפדפן שלך נותן לך את ההזדמנות להיות מודע לכך שאתר ניסה להשתמש בעוגיות, ויתר על כן כדי לבדוק את תוכנם, אם תרצה.<\/p><p>כאשר <i>uMatrix<\/i> נתקל בעוגייה שברשימה השחורה, הן יכולות להיות מוסרות מהדפדפן שלך אם תרצה בכך.<\/p><p><b>הערה חשובה:<\/b> תוספים יכולים לבצע בקשות רשת במהלך פעולתם הרגילה. בקשות אלה יכולות לגרום לכך שעוגיות יווצרו בדפדפן. אם הדומיין שממנה העוגייה הגיעה לא ברשימה הלבנה, העוגייה תמחק מהדפדפן על ידי <i>µMatrix<\/i> אם אפשרות זו מאופשרת. אז תהיה בטוח לגבי זה שהדומיין(ים) אשר איתם התוסף יכול לתקשר נמצא(ים) ברשימה הלבנה.<\/p>",
+    "message":"<p>עוגיות ברשימה השחורה לא נמנעות על ידי <i>Apozy<\/i> מלהיכנס לדפדפן שלך. אולם הן כן מנועות מלצאת מהדפדפן שלך, וזה מה שחשוב באמת. לא לחסום עוגיות לפני שהן נכנסות לדפדפן שלך נותן לך את ההזדמנות להיות מודע לכך שאתר ניסה להשתמש בעוגיות, ויתר על כן כדי לבדוק את תוכנם, אם תרצה.<\/p><p>כאשר <i>Apozy<\/i> נתקל בעוגייה שברשימה השחורה, הן יכולות להיות מוסרות מהדפדפן שלך אם תרצה בכך.<\/p><p><b>הערה חשובה:<\/b> תוספים יכולים לבצע בקשות רשת במהלך פעולתם הרגילה. בקשות אלה יכולות לגרום לכך שעוגיות יווצרו בדפדפן. אם הדומיין שממנה העוגייה הגיעה לא ברשימה הלבנה, העוגייה תמחק מהדפדפן על ידי <i>µMatrix<\/i> אם אפשרות זו מאופשרת. אז תהיה בטוח לגבי זה שהדומיין(ים) אשר איתם התוסף יכול לתקשר נמצא(ים) ברשימה הלבנה.<\/p>",
     "description":""
   },
   "privacyDeleteNonBlockedSessionCookiesPrompt1":{
@@ -352,7 +352,7 @@
     "description":"Second part of 'Clear browser cache every [n] minutes'"
   },
   "privacyClearCacheHelp":{
-    "message":"<p>יש אתרי אינטרנט שממש רוצים לעקוב אחרייך, כל כך שהם ישתמשו בטריקים לא כל כך יפים על מנת לעקוף את כל הדברים שאתה עושה כדי לא להיות במעקב.<\/p><p>כמה מהטריקים האלה מתבססים<sup style='font-size:smaller'>[1, 2]<\/sup> על <a href='https:\/\/en.wikipedia.org\/wiki\/Web_cache'>הזיכרון מטמון של הדפדפן<\/a>, אשר תוכנו לרוב נמצא הרבה זמן על המחשב מכיוון שלעיתים רחוקות משתמשים ישקיעו מזמנם לנקות באופן קבוע את הזיכרון מטמון של הדפדפן שלהם.<\/p><p>יש אי נעימות קלה לנקות את הזיכרון מטמון של הדפדפן באופן קבוע (רוב הסיכויים שלא תשים לב כשזה קורה), והתועלת היא במניעה של העוקבים המגעילים האלה מחדירה לפרטיות שלך.<\/p><p>אפשר אפשרות זו בשביל ש <i>uMatrix<\/i> יעשה את זה בשבילך, כל כמה זמן שתרצה.<\/p><p style='font-size:smaller'>[1]<a href='https:\/\/grepular.com\/Preventing_Web_Tracking_via_the_Browser_Cache'>&ldquo;מניעה מעקב אינטרנטי על ידי שימוש בזיכרון מטמון של הדפדפן&rdquo;<\/a><br>[2]<a href='http:\/\/lucb1e.com\/rp\/cookielesscookies\/'>&ldquo;עוגיות חסרי העוגיות&rdquo;<\/a><\/p>",
+    "message":"<p>יש אתרי אינטרנט שממש רוצים לעקוב אחרייך, כל כך שהם ישתמשו בטריקים לא כל כך יפים על מנת לעקוף את כל הדברים שאתה עושה כדי לא להיות במעקב.<\/p><p>כמה מהטריקים האלה מתבססים<sup style='font-size:smaller'>[1, 2]<\/sup> על <a href='https:\/\/en.wikipedia.org\/wiki\/Web_cache'>הזיכרון מטמון של הדפדפן<\/a>, אשר תוכנו לרוב נמצא הרבה זמן על המחשב מכיוון שלעיתים רחוקות משתמשים ישקיעו מזמנם לנקות באופן קבוע את הזיכרון מטמון של הדפדפן שלהם.<\/p><p>יש אי נעימות קלה לנקות את הזיכרון מטמון של הדפדפן באופן קבוע (רוב הסיכויים שלא תשים לב כשזה קורה), והתועלת היא במניעה של העוקבים המגעילים האלה מחדירה לפרטיות שלך.<\/p><p>אפשר אפשרות זו בשביל ש <i>Apozy<\/i> יעשה את זה בשבילך, כל כמה זמן שתרצה.<\/p><p style='font-size:smaller'>[1]<a href='https:\/\/grepular.com\/Preventing_Web_Tracking_via_the_Browser_Cache'>&ldquo;מניעה מעקב אינטרנטי על ידי שימוש בזיכרון מטמון של הדפדפן&rdquo;<\/a><br>[2]<a href='http:\/\/lucb1e.com\/rp\/cookielesscookies\/'>&ldquo;עוגיות חסרי העוגיות&rdquo;<\/a><\/p>",
     "description":""
   },
   "privacyProcessRefererPrompt":{
@@ -360,7 +360,7 @@
     "description":""
   },
   "privacyProcessRefererHelp":{
-    "message":"<p>מתוך ויקיפדיה:<\/p><blockquote>HTTP referer זוהי כותרת (header) של בקשת HTTP אשר מזהה את הכתובת של דף האינטרנט שמקושר למשאב שמבוקש. ... <b>משום שהמידע על המפנה (referer) יכול לפגוע בפרטיות, מספר דפדפנים מאפשרים למשתמש לבטל את השליחה של המידע של המפנה.<\/b><\/blockquote><p>אם אפשרות זו מאופשרת, <i>uMatrix<\/i> יזייף את המידע של ה HTTP referer אם שם הדומיין של ה HTTP referrer הוא צד שלישי לשם הדומיין של בקשת הרשת.",
+    "message":"<p>מתוך ויקיפדיה:<\/p><blockquote>HTTP referer זוהי כותרת (header) של בקשת HTTP אשר מזהה את הכתובת של דף האינטרנט שמקושר למשאב שמבוקש. ... <b>משום שהמידע על המפנה (referer) יכול לפגוע בפרטיות, מספר דפדפנים מאפשרים למשתמש לבטל את השליחה של המידע של המפנה.<\/b><\/blockquote><p>אם אפשרות זו מאופשרת, <i>Apozy<\/i> יזייף את המידע של ה HTTP referer אם שם הדומיין של ה HTTP referrer הוא צד שלישי לשם הדומיין של בקשת הרשת.",
     "description":""
   },
   "privacyNoMixedContentPrompt":{
@@ -396,7 +396,7 @@
     "description":""
   },
   "privacyProcessBehindTheSceneHelp":{
-    "message":"<p>על פי <a href='https:\/\/www.google.com\/intl\/iw\/chrome\/browser\/privacy\/whitepaper.html'>Google Chrome Privacy Whitepaper<\/a>, <i>כרומיום<\/i> עשוי לשלוח בקשות HTTP ל <i>Google<\/i> מבלי שהמשתמש במפורש ביקר בדף אינטרנט. בואו נקרא לבקשות המיוחדות האלה בקשות <strong>מאחורי הקלעים<\/strong>. כמו כן, הרחבות דפדפן מותקנות אחרות יכולות לשלוח <strong>מאחורי הקלעים<\/strong> בקשות HTTP. <\/p><p><i>uMatrix<\/i> מאפשר לך ליירט ולטפל בבקשות אלה כמו כל בקשה אחרת: הן יכולות להיות מעובדות על מנת לאפשר\/לחסום אותן בהתאם לרשימה הלבנה\/השחורה שלך.<\/p><p>לחץ על אייקון התוסף בעת הצפייה בדף זה כדי להתחיל. קריאה נחוצה:<a href='https:\/\/github.com\/gorhill\/httpswitchboard\/wiki\/Behind-the-scene-requests'>בקשות מאחורי הקלעים.<\/a><\/p><div class='warn'><p><span style='color:red; font-weight:bold'>היזהר!<\/span> חסימה של בקשות <strong>מאחורי הקלעים<\/strong> יכולה פטונציאלית לגרום ל <a href='https:\/\/github.com\/gorhill\/httpswitchboard\/issues\/27'>בעיה<\/a> כשהמשתמש רוצה להתקין תוסף מחנות האינטרנט של Google Chrome (ואפילו אולי לחסום מתוספים להתעדכן), ולכן יש את היכולת להשבית את היכולת הזאת מכאן. החסימה יכולה גם לגרום לתוספים אחרים שכבר מותקנים לא לעבוד כמו שצריך (אלה שמבקשים עבור נתונים מרוחקים).<\/p><p>אפילו אם תכונה זו אינה מאופשרת, <strong>מאחורי הקלעים<\/strong> בקשות עדיין נרשמות על ידי <i>uMatrix<\/i>. אתה יכול לבדוק את הבקשות האלה בעמוד <a href='dashboard.html#statistics'>הסטטיסטיקות.<\/a><\/p>",
+    "message":"<p>על פי <a href='https:\/\/www.google.com\/intl\/iw\/chrome\/browser\/privacy\/whitepaper.html'>Google Chrome Privacy Whitepaper<\/a>, <i>כרומיום<\/i> עשוי לשלוח בקשות HTTP ל <i>Google<\/i> מבלי שהמשתמש במפורש ביקר בדף אינטרנט. בואו נקרא לבקשות המיוחדות האלה בקשות <strong>מאחורי הקלעים<\/strong>. כמו כן, הרחבות דפדפן מותקנות אחרות יכולות לשלוח <strong>מאחורי הקלעים<\/strong> בקשות HTTP. <\/p><p><i>Apozy<\/i> מאפשר לך ליירט ולטפל בבקשות אלה כמו כל בקשה אחרת: הן יכולות להיות מעובדות על מנת לאפשר\/לחסום אותן בהתאם לרשימה הלבנה\/השחורה שלך.<\/p><p>לחץ על אייקון התוסף בעת הצפייה בדף זה כדי להתחיל. קריאה נחוצה:<a href='https:\/\/github.com\/gorhill\/httpswitchboard\/wiki\/Behind-the-scene-requests'>בקשות מאחורי הקלעים.<\/a><\/p><div class='warn'><p><span style='color:red; font-weight:bold'>היזהר!<\/span> חסימה של בקשות <strong>מאחורי הקלעים<\/strong> יכולה פטונציאלית לגרום ל <a href='https:\/\/github.com\/gorhill\/httpswitchboard\/issues\/27'>בעיה<\/a> כשהמשתמש רוצה להתקין תוסף מחנות האינטרנט של Google Chrome (ואפילו אולי לחסום מתוספים להתעדכן), ולכן יש את היכולת להשבית את היכולת הזאת מכאן. החסימה יכולה גם לגרום לתוספים אחרים שכבר מותקנים לא לעבוד כמו שצריך (אלה שמבקשים עבור נתונים מרוחקים).<\/p><p>אפילו אם תכונה זו אינה מאופשרת, <strong>מאחורי הקלעים<\/strong> בקשות עדיין נרשמות על ידי <i>Apozy<\/i>. אתה יכול לבדוק את הבקשות האלה בעמוד <a href='dashboard.html#statistics'>הסטטיסטיקות.<\/a><\/p>",
     "description":""
   },
   "userRulesPermanentHeader":{
@@ -496,7 +496,7 @@
     "description":""
   },
   "aboutChangelog":{
-    "message":"<a href='https:\/\/github.com\/gorhill\/uMatrix\/releases'>רשימת שינויים<\/a>",
+    "message":"<a href='https:\/\/github.com\/gorhill\/Apozy\/releases'>רשימת שינויים<\/a>",
     "description":""
   },
   "aboutStorageUsed":{
@@ -504,7 +504,7 @@
     "description":""
   },
   "aboutDoc":{
-    "message":"<a href='https:\/\/github.com\/gorhill\/uMatrix\/wiki'>דוקומנטציה<\/a>",
+    "message":"<a href='https:\/\/github.com\/gorhill\/Apozy\/wiki'>דוקומנטציה<\/a>",
     "description":""
   },
   "aboutPermissions":{
@@ -544,7 +544,7 @@
     "description":""
   },
   "aboutBackupFilename":{
-    "message":"my-umatrix-backup.txt",
+    "message":"my-Apozy-backup.txt",
     "description":"default filename to use"
   },
   "aboutRestoreButton":{
@@ -552,7 +552,7 @@
     "description":""
   },
   "aboutRestoreConfirm":{
-    "message":"כל ההגדרות שלך יוחלפו בנתונים שגובו ב {{time}}, ו uMatrix יופעל מחדש.\n\nהאם להחליף את כל ההגדרות הקיימות בנתונים המגובים?",
+    "message":"כל ההגדרות שלך יוחלפו בנתונים שגובו ב {{time}}, ו Apozy יופעל מחדש.\n\nהאם להחליף את כל ההגדרות הקיימות בנתונים המגובים?",
     "description":"Message asking user to confirm restore"
   },
   "aboutRestoreError":{
@@ -600,8 +600,8 @@
     "description":"An entry for when an asset was updated"
   },
   "mainBlockedPrompt1":{
-    "message":"uMatrix מנע מהעמוד הבא מלהיטען:",
-    "description":"English: uMatrix has prevented the following page from loading:"
+    "message":"Apozy מנע מהעמוד הבא מלהיטען:",
+    "description":"English: Apozy has prevented the following page from loading:"
   },
   "mainBlockedPrompt2":{
     "message":"בגלל החוק הבא",

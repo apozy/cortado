@@ -1,6 +1,6 @@
 {
   "extName":{
-    "message":"uMatrix",
+    "message":"Apozy",
     "description":""
   },
   "extShortDesc":{
@@ -8,7 +8,7 @@
     "description":"this will be used as short description in web stores: MUST BE 132 characters OR LESS"
   },
   "dashboardPageName":{
-    "message":"uMatrix — Kontrol Paneli",
+    "message":"Apozy — Kontrol Paneli",
     "description":""
   },
   "settingsPageName":{
@@ -124,7 +124,7 @@
     "description":"A menu entry in the matrix popup"
   },
   "statsPageTitle":{
-    "message":"uMatrix &ndash; İstatistikleri",
+    "message":"Apozy &ndash; İstatistikleri",
     "description":""
   },
   "statsPageGenericStats":{
@@ -236,7 +236,7 @@
     "description":"Second part of Remember the last [n] HTTP requests per page"
   },
   "statsPageLogSizeHelp":{
-    "message":"<p>Bir web sayfası tarafından en son yapılan işlenmemiş HTTP isteklerinin ayrıntılarını denetleyebilirsiniz (aşağıya bakın).<\/p><p>Bu en çok ileri düzey kullanıcıların bir web sayfasının tam olarak ne yaptığını incelemerinde kullanışlı olur. Fakat bu HTTP istek günlüklüklerinin tutulması bellek kullanımı arttırır ve bu teknik bilgiye ihtiyacınız yoksa bellek boşa kullanılmış olur.<\/p><p>Bundan dolayı en fazla günlüğü tutulacak HTTP istek sayısını bu alandan ayarlayabilirsiniz.<\/p><p>&ldquo;<code>0<\/code>&rdquo; girerek ayrıntılı günlük tutulmasını kapatabilirsiniz (ve netice olarak <i>uMatrix'in<\/i> bellek kullanımını düşürürsünüz).<\/p>",
+    "message":"<p>Bir web sayfası tarafından en son yapılan işlenmemiş HTTP isteklerinin ayrıntılarını denetleyebilirsiniz (aşağıya bakın).<\/p><p>Bu en çok ileri düzey kullanıcıların bir web sayfasının tam olarak ne yaptığını incelemerinde kullanışlı olur. Fakat bu HTTP istek günlüklüklerinin tutulması bellek kullanımı arttırır ve bu teknik bilgiye ihtiyacınız yoksa bellek boşa kullanılmış olur.<\/p><p>Bundan dolayı en fazla günlüğü tutulacak HTTP istek sayısını bu alandan ayarlayabilirsiniz.<\/p><p>&ldquo;<code>0<\/code>&rdquo; girerek ayrıntılı günlük tutulmasını kapatabilirsiniz (ve netice olarak <i>Apozy'in<\/i> bellek kullanımını düşürürsünüz).<\/p>",
     "description":"To help user understand the purpose of the log size value"
   },
   "statsPageRefresh":{
@@ -244,7 +244,7 @@
     "description":""
   },
   "settingsPageTitle":{
-    "message":"uMatrix &ndash; Ayarları",
+    "message":"Apozy &ndash; Ayarları",
     "description":""
   },
   "settingsMatrixDisplayHeader":{
@@ -288,7 +288,7 @@
     "description":""
   },
   "settingsMatrixAutoReloadInfo":{
-    "message":"Matristen sayfa görünümünü ve\/veya davranışını etkileyebilecek değişiklikler yaptığınızda, <i>uMatrix<\/i> bunlardan etkilenen sayfaları matris kapatıldığında otomatik olarak yeniden yükleyecektir.",
+    "message":"Matristen sayfa görünümünü ve\/veya davranışını etkileyebilecek değişiklikler yaptığınızda, <i>Apozy<\/i> bunlardan etkilenen sayfaları matris kapatıldığında otomatik olarak yeniden yükleyecektir.",
     "description":""
   },
   "settingsSubframeColor":{
@@ -312,7 +312,7 @@
     "description":""
   },
   "privacyPageTitle":{
-    "message":"uMatrix &ndash; Gizlilik",
+    "message":"Apozy &ndash; Gizlilik",
     "description":""
   },
   "privacyDeleteBlockedCookiesPrompt":{
@@ -320,7 +320,7 @@
     "description":""
   },
   "privacyDeleteBlockedCookiesHelp":{
-    "message":"<p>Kara listelenmiş çerezlerin tarayıcınıza girmesi <i>uMatrix<\/i> tarafından önlenmez. Ancak tarayıcınızdan çıkışları önlenir, önemli olan da budur. Çerezlerin tarayıcınıza girişi önlenmeyerek sitenin çerez kullanımı hakkında bilgi sahibi olma fırsatını elde edersiniz ve üstelik dilerseniz içeriklerini de denetleyebilirsiniz.<\/p><p>Bu engellenmiş çerezler bir kere <i>uMatrix<\/i> tarafından raporlandıktan sonra eğer isterseniz tabi tarayıcınızdan kaldırılabilir.<\/p><p><b>Önemli not:<\/b> Eklentiler normal işleyişleri sırasında web isteği yapabilir. Bu istekler tarayıcınızda çerez oluşumuna neden olur. Bu seçenek işaretli ve çerezin geldiği alan adı beyaz listede değilse bu çerez <i>uMatrix<\/i> tarafından tarayıcınızdan kaldırılacaktır. Bu yüzden eklentilerin iletişim kurduğu alan ad(lar)ının beyaz listede bulunduğundan emin olunuz.<\/p>",
+    "message":"<p>Kara listelenmiş çerezlerin tarayıcınıza girmesi <i>Apozy<\/i> tarafından önlenmez. Ancak tarayıcınızdan çıkışları önlenir, önemli olan da budur. Çerezlerin tarayıcınıza girişi önlenmeyerek sitenin çerez kullanımı hakkında bilgi sahibi olma fırsatını elde edersiniz ve üstelik dilerseniz içeriklerini de denetleyebilirsiniz.<\/p><p>Bu engellenmiş çerezler bir kere <i>Apozy<\/i> tarafından raporlandıktan sonra eğer isterseniz tabi tarayıcınızdan kaldırılabilir.<\/p><p><b>Önemli not:<\/b> Eklentiler normal işleyişleri sırasında web isteği yapabilir. Bu istekler tarayıcınızda çerez oluşumuna neden olur. Bu seçenek işaretli ve çerezin geldiği alan adı beyaz listede değilse bu çerez <i>Apozy<\/i> tarafından tarayıcınızdan kaldırılacaktır. Bu yüzden eklentilerin iletişim kurduğu alan ad(lar)ının beyaz listede bulunduğundan emin olunuz.<\/p>",
     "description":""
   },
   "privacyDeleteNonBlockedSessionCookiesPrompt1":{
@@ -352,7 +352,7 @@
     "description":"Second part of 'Clear browser cache every [n] minutes'"
   },
   "privacyClearCacheHelp":{
-    "message":"<p>Bazı web siteleri sizi izlemekte çok kararlıdır, izlenmemek için aldığınız her ne önlem varsa bunları aşmak için hoş olmayan hileli yöntemler kullanıcaklardır.<\/p><p>Bu hilelerden bazıları <a href='https:\/\/en.wikipedia.org\/wiki\/Web_cache'>tarayıcı önbelleği<\/a> <sup style='font-size:smaller'>[1, 2]<\/sup>'ye dayalıdır, kullanıcı düzenli olarak tarayıcısının geçmişini temizlemediği için içerik çok uzun süre tarayıcıda kalır.<\/p><p>Tarayıcı önbelleğini düzenli olarak temizlemek biraz zahmetlidir (temizlendiğinde farkına muhtemelen varmazsınız) ve faydası ise kötü izleyicilerin gizliliğinizi ihlal etmesinin önüne geçmiş olursunuz.<\/p><p>Bu seçeneği işaretleyerek belirli aralıklarla bu işlemi sizin yerinize <i>uMatrix<\/i> yapabilir.<\/p><p style='font-size:smaller'>[1]<a href='https:\/\/grepular.com\/Preventing_Web_Tracking_via_the_Browser_Cache'>&ldquo;Tarayıcı Önbelleği ile Web İzlemesini Önlemek&rdquo;<\/a><br>[2]<a href='http:\/\/lucb1e.com\/rp\/cookielesscookies\/'>&ldquo;Çerezsiz çerezler&rdquo;<\/a><\/p>",
+    "message":"<p>Bazı web siteleri sizi izlemekte çok kararlıdır, izlenmemek için aldığınız her ne önlem varsa bunları aşmak için hoş olmayan hileli yöntemler kullanıcaklardır.<\/p><p>Bu hilelerden bazıları <a href='https:\/\/en.wikipedia.org\/wiki\/Web_cache'>tarayıcı önbelleği<\/a> <sup style='font-size:smaller'>[1, 2]<\/sup>'ye dayalıdır, kullanıcı düzenli olarak tarayıcısının geçmişini temizlemediği için içerik çok uzun süre tarayıcıda kalır.<\/p><p>Tarayıcı önbelleğini düzenli olarak temizlemek biraz zahmetlidir (temizlendiğinde farkına muhtemelen varmazsınız) ve faydası ise kötü izleyicilerin gizliliğinizi ihlal etmesinin önüne geçmiş olursunuz.<\/p><p>Bu seçeneği işaretleyerek belirli aralıklarla bu işlemi sizin yerinize <i>Apozy<\/i> yapabilir.<\/p><p style='font-size:smaller'>[1]<a href='https:\/\/grepular.com\/Preventing_Web_Tracking_via_the_Browser_Cache'>&ldquo;Tarayıcı Önbelleği ile Web İzlemesini Önlemek&rdquo;<\/a><br>[2]<a href='http:\/\/lucb1e.com\/rp\/cookielesscookies\/'>&ldquo;Çerezsiz çerezler&rdquo;<\/a><\/p>",
     "description":""
   },
   "privacyProcessRefererPrompt":{
@@ -360,7 +360,7 @@
     "description":""
   },
   "privacyProcessRefererHelp":{
-    "message":"<p>Wikipedia'dan:<\/p><blockquote>HTTP başvuran bilgisi bir web sayfasına hangi bağlantıdan geldiğinizi içeren HTTP başlığıdır. ... <b>Çünkü başvuran bilgisi gizliliğinizi ihlal edebilir, bazı web tarayıcıları bu bilginin gönderimini devre dışı bırakmanıza izin verebilir.<\/b><\/blockquote><p>Bu ayar işaretliyse <i>uMatrix<\/i>, HTTP başvuran bilgisinin alan adı, istek yapılan alan adına göre üçüncü taraf ise bu bilgiyi aldatacaktır.",
+    "message":"<p>Wikipedia'dan:<\/p><blockquote>HTTP başvuran bilgisi bir web sayfasına hangi bağlantıdan geldiğinizi içeren HTTP başlığıdır. ... <b>Çünkü başvuran bilgisi gizliliğinizi ihlal edebilir, bazı web tarayıcıları bu bilginin gönderimini devre dışı bırakmanıza izin verebilir.<\/b><\/blockquote><p>Bu ayar işaretliyse <i>Apozy<\/i>, HTTP başvuran bilgisinin alan adı, istek yapılan alan adına göre üçüncü taraf ise bu bilgiyi aldatacaktır.",
     "description":""
   },
   "privacyNoMixedContentPrompt":{
@@ -440,7 +440,7 @@
     "description":""
   },
   "userRulesDefaultFileName":{
-    "message":"umatrix-kurallarim.txt",
+    "message":"Apozy-kurallarim.txt",
     "description":"default file name to use"
   },
   "hostsFilesPrompt":{
@@ -496,7 +496,7 @@
     "description":""
   },
   "aboutChangelog":{
-    "message":"<a href='https:\/\/github.com\/gorhill\/uMatrix\/releases'>Değişim günlüğü<\/a>",
+    "message":"<a href='https:\/\/github.com\/gorhill\/Apozy\/releases'>Değişim günlüğü<\/a>",
     "description":""
   },
   "aboutStorageUsed":{
@@ -504,7 +504,7 @@
     "description":""
   },
   "aboutDoc":{
-    "message":"<a href='https:\/\/github.com\/gorhill\/uMatrix\/wiki'>Belgeler<\/a>",
+    "message":"<a href='https:\/\/github.com\/gorhill\/Apozy\/wiki'>Belgeler<\/a>",
     "description":""
   },
   "aboutPermissions":{
@@ -544,7 +544,7 @@
     "description":""
   },
   "aboutBackupFilename":{
-    "message":"umatrix-yedeklerim.txt",
+    "message":"Apozy-yedeklerim.txt",
     "description":"default filename to use"
   },
   "aboutRestoreButton":{
@@ -552,7 +552,7 @@
     "description":""
   },
   "aboutRestoreConfirm":{
-    "message":"{{time}} zamanında yedeklenmiş veri kullanılarak tüm ayarlarınızın üzerine yazılacak ve uMatrix yeniden başlayacak.\n\nYedeklenmiş veri kullanılarak ayarlarınızın üzerine yazılsın mı?",
+    "message":"{{time}} zamanında yedeklenmiş veri kullanılarak tüm ayarlarınızın üzerine yazılacak ve Apozy yeniden başlayacak.\n\nYedeklenmiş veri kullanılarak ayarlarınızın üzerine yazılsın mı?",
     "description":"Message asking user to confirm restore"
   },
   "aboutRestoreError":{
@@ -600,8 +600,8 @@
     "description":"An entry for when an asset was updated"
   },
   "mainBlockedPrompt1":{
-    "message":"uMatrix aşağıdaki sayfaların yüklenmesini engelledi:",
-    "description":"English: uMatrix has prevented the following page from loading:"
+    "message":"Apozy aşağıdaki sayfaların yüklenmesini engelledi:",
+    "description":"English: Apozy has prevented the following page from loading:"
   },
   "mainBlockedPrompt2":{
     "message":"Bu kural nedeniyle",

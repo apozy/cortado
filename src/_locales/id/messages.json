@@ -1,6 +1,6 @@
 {
   "extName":{
-    "message":"uMatrix",
+    "message":"Apozy",
     "description":""
   },
   "extShortDesc":{
@@ -8,7 +8,7 @@
     "description":"this will be used as short description in web stores: MUST BE 132 characters OR LESS"
   },
   "dashboardPageName":{
-    "message":"uMatrix — Dasbor",
+    "message":"Apozy — Dasbor",
     "description":""
   },
   "settingsPageName":{
@@ -124,7 +124,7 @@
     "description":"A menu entry in the matrix popup"
   },
   "statsPageTitle":{
-    "message":"uMatrix &ndash; Statistik",
+    "message":"Apozy &ndash; Statistik",
     "description":""
   },
   "statsPageGenericStats":{
@@ -236,7 +236,7 @@
     "description":"Second part of Remember the last [n] HTTP requests per page"
   },
   "statsPageLogSizeHelp":{
-    "message":"<p>Anda dapat memeriksa rincian terkini permintaan mentah HTTP yang telah dibuat oleh halaman web (lihat di bawah).<\/p><p>Hal ini sangat berguna bagi para pengguna tingkat lanjut yang ingin menyelidiki secara pasti apa yang halaman web telah lakukan. Akan tetapi, mencatat permintaan HTTP ini memerlukan tambahan memori, dan jika anda tidak peduli tentang informasi teknis ini, maka memori terbuang dengan percuma.<\/p><p>Oleh karena itu, ruas ini memungkinkan anda mengatur jumlah maksimum permintaan HTTP terkini yang akan dicatat untuk pemeriksaan lebih lanjut.<\/p><p>Masukkan &ldquo;<code>0<\/code>&rdquo; untuk mematikan pencatatan terperinci (dan berarti berkurangnya penggunaan memori <i>uMatrix<\/i>).<\/p>",
+    "message":"<p>Anda dapat memeriksa rincian terkini permintaan mentah HTTP yang telah dibuat oleh halaman web (lihat di bawah).<\/p><p>Hal ini sangat berguna bagi para pengguna tingkat lanjut yang ingin menyelidiki secara pasti apa yang halaman web telah lakukan. Akan tetapi, mencatat permintaan HTTP ini memerlukan tambahan memori, dan jika anda tidak peduli tentang informasi teknis ini, maka memori terbuang dengan percuma.<\/p><p>Oleh karena itu, ruas ini memungkinkan anda mengatur jumlah maksimum permintaan HTTP terkini yang akan dicatat untuk pemeriksaan lebih lanjut.<\/p><p>Masukkan &ldquo;<code>0<\/code>&rdquo; untuk mematikan pencatatan terperinci (dan berarti berkurangnya penggunaan memori <i>Apozy<\/i>).<\/p>",
     "description":"To help user understand the purpose of the log size value"
   },
   "statsPageRefresh":{
@@ -244,7 +244,7 @@
     "description":""
   },
   "settingsPageTitle":{
-    "message":"uMatrix &ndash; Pengaturan",
+    "message":"Apozy &ndash; Pengaturan",
     "description":""
   },
   "settingsMatrixDisplayHeader":{
@@ -288,7 +288,7 @@
     "description":""
   },
   "settingsMatrixAutoReloadInfo":{
-    "message":"Kapanpun anda membuat perubahan pada matriks yang dapat mempengaruhi tampilan dan\/atau perilaku satu atau lebih halaman, <i>uMatrix<\/i> akan memuat ulang halaman yang terdampak secara otomatis ketika anda menutup matriks.",
+    "message":"Kapanpun anda membuat perubahan pada matriks yang dapat mempengaruhi tampilan dan\/atau perilaku satu atau lebih halaman, <i>Apozy<\/i> akan memuat ulang halaman yang terdampak secara otomatis ketika anda menutup matriks.",
     "description":""
   },
   "settingsSubframeColor":{
@@ -312,7 +312,7 @@
     "description":""
   },
   "privacyPageTitle":{
-    "message":"uMatrix &ndash; Privasi",
+    "message":"Apozy &ndash; Privasi",
     "description":""
   },
   "privacyDeleteBlockedCookiesPrompt":{
@@ -320,7 +320,7 @@
     "description":""
   },
   "privacyDeleteBlockedCookiesHelp":{
-    "message":"<p>Kuki dalam daftar hitam tidak dicegah oleh <i>uMatrix<\/i> untuk masuk ke peramban anda. Namun mereka dicegah untuk meninggalkan peramban anda, dan itulah yang terpenting. Tidak memblokir kuki sebelum mereka masuk ke peramban anda memberikan anda kesempatan mendapatkan informasi bahwa situs tersebut mencoba untuk menggunakan kuki, dan lebih lanjut memeriksa isi kuki tersebut jika anda inginkan.<\/p><p>Setelah kuki dalam daftar hitam ini dicatat oleh <i>uMatrix<\/i>, mereka dapat dibuang dari peramban anda jika anda menginginkannya.<\/p><p><b>Catatan penting:<\/b> Ekstensi dapat membuat permintaan web selama operasi normal ekstensi berjalan. Permintaan ini dapat mengakibatkan beberapa kuki dibuat dalam peramban. Jika nama host dari mana kuki berasal tidak dalam daftar putih, kuki akan dibuang dari peramban oleh <i>uMatrix<\/i> jika opsi berikut dicentang. Jadi, pastikan nama host dengan yang ekstensi berkomunikasi masuk dalam daftar putih.<\/p>",
+    "message":"<p>Kuki dalam daftar hitam tidak dicegah oleh <i>Apozy<\/i> untuk masuk ke peramban anda. Namun mereka dicegah untuk meninggalkan peramban anda, dan itulah yang terpenting. Tidak memblokir kuki sebelum mereka masuk ke peramban anda memberikan anda kesempatan mendapatkan informasi bahwa situs tersebut mencoba untuk menggunakan kuki, dan lebih lanjut memeriksa isi kuki tersebut jika anda inginkan.<\/p><p>Setelah kuki dalam daftar hitam ini dicatat oleh <i>Apozy<\/i>, mereka dapat dibuang dari peramban anda jika anda menginginkannya.<\/p><p><b>Catatan penting:<\/b> Ekstensi dapat membuat permintaan web selama operasi normal ekstensi berjalan. Permintaan ini dapat mengakibatkan beberapa kuki dibuat dalam peramban. Jika nama host dari mana kuki berasal tidak dalam daftar putih, kuki akan dibuang dari peramban oleh <i>Apozy<\/i> jika opsi berikut dicentang. Jadi, pastikan nama host dengan yang ekstensi berkomunikasi masuk dalam daftar putih.<\/p>",
     "description":""
   },
   "privacyDeleteNonBlockedSessionCookiesPrompt1":{
@@ -352,7 +352,7 @@
     "description":"Second part of 'Clear browser cache every [n] minutes'"
   },
   "privacyClearCacheHelp":{
-    "message":"<p>Beberapa situs sangat lihai dalam melacak anda, amat sangat lihai sampai-sampai meraka akan gunakan cara-cara yang tidak baik untuk menghindari apapun tindakan yang anda lakukan agar tidak dilacak.<\/p><p>Beberapa cara-cara ini mengandalkan<sup style='font-size:smaller'>[1, 2]<\/sup> <a href='https:\/\/en.wikipedia.org\/wiki\/Web_cache'>tembolok peramban<\/a>, yang muatannya terkadang bertahan lama karena jarang pengguna menyempatkan waktu secara berkala membersihkan tembolok peramban mereka.<\/p><p>Ada sedikit ketidaknyamanan untuk membersihkan tembolok peramban secara berkala (kemungkinan adalah anda tidak akan tahu ketika hal tersebut terjadi), dan keuntungannya adalah untuk mencegah pelacak yang menjengkelkan ini melanggar privasi anda.<\/p><p>Centang opsi berikut untuk membuat <i>uMatrix<\/i> melakukannya untuk anda, pada selang waktu yang anda inginkan.<\/p><p style='font-size:smaller'>[1] <a href='https:\/\/grepular.com\/Preventing_Web_Tracking_via_the_Browser_Cache'>&ldquo;Mencegah Pelacakan Web melalui Tembolok Web&rdquo;<\/a><br>[2] <a href='http:\/\/lucb1e.com\/rp\/cookielesscookies\/'>&ldquo;Kuki tanpa kuki&rdquo;<\/a><\/p>",
+    "message":"<p>Beberapa situs sangat lihai dalam melacak anda, amat sangat lihai sampai-sampai meraka akan gunakan cara-cara yang tidak baik untuk menghindari apapun tindakan yang anda lakukan agar tidak dilacak.<\/p><p>Beberapa cara-cara ini mengandalkan<sup style='font-size:smaller'>[1, 2]<\/sup> <a href='https:\/\/en.wikipedia.org\/wiki\/Web_cache'>tembolok peramban<\/a>, yang muatannya terkadang bertahan lama karena jarang pengguna menyempatkan waktu secara berkala membersihkan tembolok peramban mereka.<\/p><p>Ada sedikit ketidaknyamanan untuk membersihkan tembolok peramban secara berkala (kemungkinan adalah anda tidak akan tahu ketika hal tersebut terjadi), dan keuntungannya adalah untuk mencegah pelacak yang menjengkelkan ini melanggar privasi anda.<\/p><p>Centang opsi berikut untuk membuat <i>Apozy<\/i> melakukannya untuk anda, pada selang waktu yang anda inginkan.<\/p><p style='font-size:smaller'>[1] <a href='https:\/\/grepular.com\/Preventing_Web_Tracking_via_the_Browser_Cache'>&ldquo;Mencegah Pelacakan Web melalui Tembolok Web&rdquo;<\/a><br>[2] <a href='http:\/\/lucb1e.com\/rp\/cookielesscookies\/'>&ldquo;Kuki tanpa kuki&rdquo;<\/a><\/p>",
     "description":""
   },
   "privacyProcessRefererPrompt":{
@@ -360,7 +360,7 @@
     "description":""
   },
   "privacyProcessRefererHelp":{
-    "message":"<p>Dari Wikipedia:<\/p><blockquote>Perujuk HTTP adalah sebuah ruas tajuk HTTP yang mengidentifikasi alamat dari halaman web yang bertautan dengan sumber daya yang sedang diminta. ... <b>Karena informasi perujuk dapat melanggar privasi, beberapa peramban memperbolehkan pengguna untuk menonaktifkan pengiriman informasi perujuk.<\/b><\/blockquote><p>Jika aturan ini dicentang, <i>uMatrix<\/i> akan memalsukan informasi perujuk HTTP jika nama ranah perujuk HTTP adalah pihak ketiga dari nama ranah jaringan yang diminta.",
+    "message":"<p>Dari Wikipedia:<\/p><blockquote>Perujuk HTTP adalah sebuah ruas tajuk HTTP yang mengidentifikasi alamat dari halaman web yang bertautan dengan sumber daya yang sedang diminta. ... <b>Karena informasi perujuk dapat melanggar privasi, beberapa peramban memperbolehkan pengguna untuk menonaktifkan pengiriman informasi perujuk.<\/b><\/blockquote><p>Jika aturan ini dicentang, <i>Apozy<\/i> akan memalsukan informasi perujuk HTTP jika nama ranah perujuk HTTP adalah pihak ketiga dari nama ranah jaringan yang diminta.",
     "description":""
   },
   "privacyNoMixedContentPrompt":{
@@ -440,7 +440,7 @@
     "description":""
   },
   "userRulesDefaultFileName":{
-    "message":"my-umatrix-rules.txt",
+    "message":"my-Apozy-rules.txt",
     "description":"default file name to use"
   },
   "hostsFilesPrompt":{
@@ -496,7 +496,7 @@
     "description":""
   },
   "aboutChangelog":{
-    "message":"<a href='https:\/\/github.com\/gorhill\/uMatrix\/releases'>Catatan perubahan<\/a>",
+    "message":"<a href='https:\/\/github.com\/gorhill\/Apozy\/releases'>Catatan perubahan<\/a>",
     "description":""
   },
   "aboutStorageUsed":{
@@ -504,7 +504,7 @@
     "description":""
   },
   "aboutDoc":{
-    "message":"<a href='https:\/\/github.com\/gorhill\/uMatrix\/wiki'>Dokumentasi<\/a>",
+    "message":"<a href='https:\/\/github.com\/gorhill\/Apozy\/wiki'>Dokumentasi<\/a>",
     "description":""
   },
   "aboutPermissions":{
@@ -544,7 +544,7 @@
     "description":""
   },
   "aboutBackupFilename":{
-    "message":"my-umatrix-backup.txt",
+    "message":"my-Apozy-backup.txt",
     "description":"default filename to use"
   },
   "aboutRestoreButton":{
@@ -552,7 +552,7 @@
     "description":""
   },
   "aboutRestoreConfirm":{
-    "message":"Semua pengaturan anda akan ditimpa menggunakan data yang dicadangkan pada {{time}}, dan uMatrix akan memulai ulang.\n\nTimpa semua aturan yang ada menggunakan data yang dicadangkan?",
+    "message":"Semua pengaturan anda akan ditimpa menggunakan data yang dicadangkan pada {{time}}, dan Apozy akan memulai ulang.\n\nTimpa semua aturan yang ada menggunakan data yang dicadangkan?",
     "description":"Message asking user to confirm restore"
   },
   "aboutRestoreError":{
@@ -600,8 +600,8 @@
     "description":"An entry for when an asset was updated"
   },
   "mainBlockedPrompt1":{
-    "message":"uMatrix telah mencegah laman berikut dimuat:",
-    "description":"English: uMatrix has prevented the following page from loading:"
+    "message":"Apozy telah mencegah laman berikut dimuat:",
+    "description":"English: Apozy has prevented the following page from loading:"
   },
   "mainBlockedPrompt2":{
     "message":"Disebabkan oleh aturan berikut",

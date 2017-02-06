@@ -1,6 +1,6 @@
 {
   "extName":{
-    "message":"uMatrix",
+    "message":"Apozy",
     "description":""
   },
   "extShortDesc":{
@@ -8,7 +8,7 @@
     "description":"this will be used as short description in web stores: MUST BE 132 characters OR LESS"
   },
   "dashboardPageName":{
-    "message":"uMatrix – Dashboard",
+    "message":"Apozy – Dashboard",
     "description":""
   },
   "settingsPageName":{
@@ -124,7 +124,7 @@
     "description":"A menu entry in the matrix popup"
   },
   "statsPageTitle":{
-    "message":"uMatrix &ndash; Statistieken",
+    "message":"Apozy &ndash; Statistieken",
     "description":""
   },
   "statsPageGenericStats":{
@@ -236,7 +236,7 @@
     "description":"Second part of Remember the last [n] HTTP requests per page"
   },
   "statsPageLogSizeHelp":{
-    "message":"<p>Van de meest recente HTTP-aanvragen die door een website zijn gedaan, kunt u de details inspecteren.<\/p><p>Dit is vooral nuttig voor nieuwsgierige (ook ervaren) gebruikers die willen onderzoeken wat een webpagina precies heeft gedaan. Het registreren van deze HTTP-aanvragen vereist echter geheugen, en als u niets om deze technische informatie geeft, wordt geheugen verspild.<\/p><p>Vandaar dit veld, waarmee u het maximale aantal meest recente HTTP-aanvragen kunt instellen dat voor nader onderzoek wordt geregistreerd.<\/p><p>Vul &lsquo;<code>0<\/code>&rsquo; in om gedetailleerde registratie uit te zetten (en daardoor de geheugenfootprint van <i>uMatrix<\/i> te verlagen).<\/p>",
+    "message":"<p>Van de meest recente HTTP-aanvragen die door een website zijn gedaan, kunt u de details inspecteren.<\/p><p>Dit is vooral nuttig voor nieuwsgierige (ook ervaren) gebruikers die willen onderzoeken wat een webpagina precies heeft gedaan. Het registreren van deze HTTP-aanvragen vereist echter geheugen, en als u niets om deze technische informatie geeft, wordt geheugen verspild.<\/p><p>Vandaar dit veld, waarmee u het maximale aantal meest recente HTTP-aanvragen kunt instellen dat voor nader onderzoek wordt geregistreerd.<\/p><p>Vul &lsquo;<code>0<\/code>&rsquo; in om gedetailleerde registratie uit te zetten (en daardoor de geheugenfootprint van <i>Apozy<\/i> te verlagen).<\/p>",
     "description":"To help user understand the purpose of the log size value"
   },
   "statsPageRefresh":{
@@ -244,7 +244,7 @@
     "description":""
   },
   "settingsPageTitle":{
-    "message":"uMatrix &ndash; Instellingen",
+    "message":"Apozy &ndash; Instellingen",
     "description":""
   },
   "settingsMatrixDisplayHeader":{
@@ -288,7 +288,7 @@
     "description":""
   },
   "settingsMatrixAutoReloadInfo":{
-    "message":"Als u wijzigingen aanbrengt die de weergave en\/of het gedrag van een of meer pagina’s kunnen beïnvloeden, zal <i>uMatrix<\/i> de betreffende pagina’s automatisch vernieuwen zodra u de matrix sluit.",
+    "message":"Als u wijzigingen aanbrengt die de weergave en\/of het gedrag van een of meer pagina’s kunnen beïnvloeden, zal <i>Apozy<\/i> de betreffende pagina’s automatisch vernieuwen zodra u de matrix sluit.",
     "description":""
   },
   "settingsSubframeColor":{
@@ -312,7 +312,7 @@
     "description":""
   },
   "privacyPageTitle":{
-    "message":"uMatrix &ndash; Privacy",
+    "message":"Apozy &ndash; Privacy",
     "description":""
   },
   "privacyDeleteBlockedCookiesPrompt":{
@@ -320,7 +320,7 @@
     "description":""
   },
   "privacyDeleteBlockedCookiesHelp":{
-    "message":"<p><i>uMatrix<\/i> voorkomt niet dat geblackliste cookies door uw browser worden ontvangen. Het verwijderen ervan uit uw browser wordt echter wel voorkomen, wat het belangrijkste is. Het niet blokkeren van cookies voordat ze door uw browser worden ontvangen biedt de mogelijkheid te worden geïnformeerd wanneer een website cookies probeerde te gebruiken, en daarnaast eventueel de inhoud ervan te inspecteren.<\/p><p>Als deze geblackliste cookies eenmaal door <i>uMatrix<\/i> zijn verwerkt, kunnen ze desgewenst uit uw browser worden verwijderd.<\/p><p><b>Belangrijke opmerking:<\/b> extensies kunnen tijdens hun normale werking webaanvragen doen. Door deze aanvragen kunnen cookies in de browser worden aangemaakt. Als de hostnaam waarvan een cookie afkomstig is zich niet op de whitelist bevindt, zal het cookie als deze optie is aangevinkt door <i>uMatrix<\/i> uit de browser worden verwijderd. Zorg er daarom voor dat de namen van de hosts waarmee een extensie communiceert zich op de whitelist bevinden.<\/p>",
+    "message":"<p><i>Apozy<\/i> voorkomt niet dat geblackliste cookies door uw browser worden ontvangen. Het verwijderen ervan uit uw browser wordt echter wel voorkomen, wat het belangrijkste is. Het niet blokkeren van cookies voordat ze door uw browser worden ontvangen biedt de mogelijkheid te worden geïnformeerd wanneer een website cookies probeerde te gebruiken, en daarnaast eventueel de inhoud ervan te inspecteren.<\/p><p>Als deze geblackliste cookies eenmaal door <i>Apozy<\/i> zijn verwerkt, kunnen ze desgewenst uit uw browser worden verwijderd.<\/p><p><b>Belangrijke opmerking:<\/b> extensies kunnen tijdens hun normale werking webaanvragen doen. Door deze aanvragen kunnen cookies in de browser worden aangemaakt. Als de hostnaam waarvan een cookie afkomstig is zich niet op de whitelist bevindt, zal het cookie als deze optie is aangevinkt door <i>Apozy<\/i> uit de browser worden verwijderd. Zorg er daarom voor dat de namen van de hosts waarmee een extensie communiceert zich op de whitelist bevinden.<\/p>",
     "description":""
   },
   "privacyDeleteNonBlockedSessionCookiesPrompt1":{
@@ -352,7 +352,7 @@
     "description":"Second part of 'Clear browser cache every [n] minutes'"
   },
   "privacyClearCacheHelp":{
-    "message":"<p>Sommige website zijn er zo op gericht om u te traceren dat ze onvriendelijke trucs gebruiken om maatregelen die u neemt om niet te worden gevolgd te omzeilen.<\/p><p>Sommige van deze trucs gebruiken<sup style='font-size:smaller'>[1, 2]<\/sup> de <a href='https:\/\/en.wikipedia.org\/wiki\/Web_cache'>browsercache<\/a>, waarvan de inhoud vaak lang aanwezig is, aangezien gebruikers zelden de tijd nemen om hun browsercache regelmatig te wissen.<\/p><p>Het regelmatig wissen van de browsercache biedt weinig ongemakken (waarschijnlijk merkt u het niet als dit gebeurt), en het voordeel is dat wordt voorkomen dat deze onaangename trackers inbreuk op uw privacy maken.<\/p><p>Vink deze optie aan om dit met een gewenst interval door <i>uMatrix<\/i> te laten doen.<\/p><p style='font-size:smaller'>[1] <a href='https:\/\/grepular.com\/Preventing_Web_Tracking_via_the_Browser_Cache'>&lsquo;Preventing Web Tracking via the Browser Cache&rsquo;<\/a><br>[2] <a href='http:\/\/lucb1e.com\/rp\/cookielesscookies\/'>&lsquo;Cookieless cookies&rsquo;<\/a><\/p>",
+    "message":"<p>Sommige website zijn er zo op gericht om u te traceren dat ze onvriendelijke trucs gebruiken om maatregelen die u neemt om niet te worden gevolgd te omzeilen.<\/p><p>Sommige van deze trucs gebruiken<sup style='font-size:smaller'>[1, 2]<\/sup> de <a href='https:\/\/en.wikipedia.org\/wiki\/Web_cache'>browsercache<\/a>, waarvan de inhoud vaak lang aanwezig is, aangezien gebruikers zelden de tijd nemen om hun browsercache regelmatig te wissen.<\/p><p>Het regelmatig wissen van de browsercache biedt weinig ongemakken (waarschijnlijk merkt u het niet als dit gebeurt), en het voordeel is dat wordt voorkomen dat deze onaangename trackers inbreuk op uw privacy maken.<\/p><p>Vink deze optie aan om dit met een gewenst interval door <i>Apozy<\/i> te laten doen.<\/p><p style='font-size:smaller'>[1] <a href='https:\/\/grepular.com\/Preventing_Web_Tracking_via_the_Browser_Cache'>&lsquo;Preventing Web Tracking via the Browser Cache&rsquo;<\/a><br>[2] <a href='http:\/\/lucb1e.com\/rp\/cookielesscookies\/'>&lsquo;Cookieless cookies&rsquo;<\/a><\/p>",
     "description":""
   },
   "privacyProcessRefererPrompt":{
@@ -360,7 +360,7 @@
     "description":""
   },
   "privacyProcessRefererHelp":{
-    "message":"<p>Van Wikipedia:<\/p><blockquote>Een HTTP-referer is een HTTP-headerveld dat het adres aanduidt van de webpagina die naar de opgevraagde bron verwijst. ... <b>Omdat referer-informatie uw privacy kan schenden, kunnen gebruikers in sommige webbrowsers het verzenden van de referer-informatie uitschakelen.<\/b><\/blockquote><p>Als deze optie is aangevinkt, zal <i>uMatrix<\/i> de HTTP-referer vervalsen (lees: manipuleren) als de domeinnaam van de HTTP-referer een derde partij is voor de domeinnaam van de netwerkaanvraag.",
+    "message":"<p>Van Wikipedia:<\/p><blockquote>Een HTTP-referer is een HTTP-headerveld dat het adres aanduidt van de webpagina die naar de opgevraagde bron verwijst. ... <b>Omdat referer-informatie uw privacy kan schenden, kunnen gebruikers in sommige webbrowsers het verzenden van de referer-informatie uitschakelen.<\/b><\/blockquote><p>Als deze optie is aangevinkt, zal <i>Apozy<\/i> de HTTP-referer vervalsen (lees: manipuleren) als de domeinnaam van de HTTP-referer een derde partij is voor de domeinnaam van de netwerkaanvraag.",
     "description":""
   },
   "privacyNoMixedContentPrompt":{
@@ -440,7 +440,7 @@
     "description":""
   },
   "userRulesDefaultFileName":{
-    "message":"mijn-umatrix-regels.txt",
+    "message":"mijn-Apozy-regels.txt",
     "description":"default file name to use"
   },
   "hostsFilesPrompt":{
@@ -496,7 +496,7 @@
     "description":""
   },
   "aboutChangelog":{
-    "message":"<a href='https:\/\/github.com\/gorhill\/uMatrix\/releases'>Wijzigingenlogboek<\/a>",
+    "message":"<a href='https:\/\/github.com\/gorhill\/Apozy\/releases'>Wijzigingenlogboek<\/a>",
     "description":""
   },
   "aboutStorageUsed":{
@@ -504,7 +504,7 @@
     "description":""
   },
   "aboutDoc":{
-    "message":"<a href='https:\/\/github.com\/gorhill\/uMatrix\/wiki'>Documentatie<\/a>",
+    "message":"<a href='https:\/\/github.com\/gorhill\/Apozy\/wiki'>Documentatie<\/a>",
     "description":""
   },
   "aboutPermissions":{
@@ -544,7 +544,7 @@
     "description":""
   },
   "aboutBackupFilename":{
-    "message":"mijn-umatrix-back-up.txt",
+    "message":"mijn-Apozy-back-up.txt",
     "description":"default filename to use"
   },
   "aboutRestoreButton":{
@@ -552,7 +552,7 @@
     "description":""
   },
   "aboutRestoreConfirm":{
-    "message":"Al uw instelling zullen met back-upgegevens van {{time}} worden overschreven, en uMatrix zal worden herstart.\n\nWilt u alle bestaande instellingen met back-upgegevens overschrijven?",
+    "message":"Al uw instelling zullen met back-upgegevens van {{time}} worden overschreven, en Apozy zal worden herstart.\n\nWilt u alle bestaande instellingen met back-upgegevens overschrijven?",
     "description":"Message asking user to confirm restore"
   },
   "aboutRestoreError":{
@@ -600,8 +600,8 @@
     "description":"An entry for when an asset was updated"
   },
   "mainBlockedPrompt1":{
-    "message":"uMatrix heeft voorkomen dat de volgende pagina werd geladen:",
-    "description":"English: uMatrix has prevented the following page from loading:"
+    "message":"Apozy heeft voorkomen dat de volgende pagina werd geladen:",
+    "description":"English: Apozy has prevented the following page from loading:"
   },
   "mainBlockedPrompt2":{
     "message":"vanwege de volgende regel",
