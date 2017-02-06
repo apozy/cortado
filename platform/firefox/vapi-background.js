@@ -1718,6 +1718,7 @@ var httpObserver = {
         14: 'font',
         15: 'image',
         16: 'websocket',
+        20: 'xmlhttprequest',
         21: 'image'
     },
     mimeTypeMap: {
