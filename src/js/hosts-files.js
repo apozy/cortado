@@ -89,6 +89,7 @@ var renderHostsFiles = function() {
         var entry = listDetails.available[listKey];
         var li = listEntryTemplate.clone();
 
+        li.descendants('input').attr('style', 'opacity: 1; position: inherit;');
         if ( entry.off !== true ) {
             li.descendants('input').attr('checked', '');
         }
@@ -432,6 +433,8 @@ var externalListsApplyHandler = function() {
 uDom.onLoad(function() {
     uDom('#autoUpdate').on('change', autoUpdateCheckboxChanged);
     uDom('#buttonApply').on('click', buttonApplyHandler);
+    uDom('#buttonApply').attr('class', 'btn-floating btn-large waves-effect waves-light green');
+    uDom('#buttonApply').html('<i class="material-icons">check</i>');
     uDom('#buttonUpdate').on('click', buttonUpdateHandler);
     uDom('#buttonPurgeAll').on('click', buttonPurgeAllHandler);
     uDom('#lists').on('change', '.listEntry > input', onListCheckboxChanged);
@@ -447,4 +450,3 @@ uDom.onLoad(function() {
 /******************************************************************************/
 
 })();
-

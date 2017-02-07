@@ -57,7 +57,7 @@ var _RequestStats = function() {
 };
 
 _RequestStats.prototype.reset = function() {
-    this.all = 
+    this.all =
     this.doc =
     this.frame =
     this.script =
@@ -105,7 +105,7 @@ return {
         clearBrowserCache: true,
         clearBrowserCacheAfter: 60,
         cloudStorageEnabled: false,
-        collapseBlocked: false,
+        collapseBlocked: true,
         colorBlindFriendly: false,
         deleteCookies: false,
         deleteUnusedSessionCookies: false,
@@ -113,7 +113,7 @@ return {
         deleteLocalStorage: false,
         displayTextSize: '13px',
         externalHostsFiles: '',
-        iconBadgeEnabled: false,
+        iconBadgeEnabled: true,
         maxLoggedRequests: 1000,
         popupScopeLevel: 'domain',
         processHyperlinkAuditing: true,
@@ -177,4 +177,3 @@ return {
 })();
 
 /******************************************************************************/
-
