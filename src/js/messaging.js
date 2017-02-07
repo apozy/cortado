@@ -545,7 +545,7 @@ var onMessage = function(request, sender, callback) {
             undefined;
         break;
    case 'notifyBlockedRequest':
-         vAPI.notifications.notifyLocked(µm.URI.hostnameFromURI(request.url));
+         vAPI.notifications.notifyLocked(µm.URI.domainFromHostname(µm.URI.hostnameFromURI(request.url)));
          break;
 
     case 'shutdown?':

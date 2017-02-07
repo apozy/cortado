@@ -289,7 +289,7 @@ var collapser = (function() {
               document.addEventListener('keydown', onKeyDown, true);
             }
         });
-      
+
         if ( newRequests.length === 0 ) {
             return;
         }
