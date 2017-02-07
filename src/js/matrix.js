@@ -408,9 +408,9 @@ Matrix.prototype.evaluateCellZXY = function(srcHostname, desHostname, type) {
     }
 
     // TODO: There are cells evaluated twice when the type is '*'. Unsure
-    // whether it's worth trying to avoid that, as this could introduce 
+    // whether it's worth trying to avoid that, as this could introduce
     // overhead which may not be gained back by skipping the redundant tests.
-    // And this happens *only* when building the matrix UI, not when 
+    // And this happens *only* when building the matrix UI, not when
     // evaluating net requests.
 
     // Specific-hostname specific-type cell
