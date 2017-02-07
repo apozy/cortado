@@ -296,16 +296,17 @@ var foilRefererHeaders = function(µm, toHostname, details) {
 
 var onHeadersReceived = function(details) {
     // console.debug('onHeadersReceived()> "%s": %o', details.url, details);
-
-    // Ignore schemes other than 'http...'
+    var headers = details.responseHeaders;
     var requestURL = details.url;
-    if ( requestURL.lastIndexOf('http', 0) !== 0 ) {
-        return;
-    }
 
     var µm = µMatrix;
     var tabId = details.tabId;
     var requestType = requestTypeNormalizer[details.type] || 'other';
+
+    // Ignore schemes other than 'http...'
+    // if ( requestURL.lastIndexOf('http', 0) !== 0 ) {
+    //     return;
+    // }
 
     // https://github.com/gorhill/uMatrix/issues/145
     // Check if the main_frame is a download
@@ -314,8 +315,14 @@ var onHeadersReceived = function(details) {
     }
 
     var tabContext = µm.tabContextManager.lookup(tabId);
-    if ( tabContext === null ) {
-        return;
+    var rootHostname = tabContext.rootHostname;
+    if ( tabContext === null || !rootHostname || !µm.tMatrix.evaluateSwitchZ('matrix-off', rootHostname)) {
+        headers.push({
+            'name': 'Content-Security-Policy',
+            'value': "sandbox allow-scripts allow-same-origin"
+        });
+
+        return { responseHeaders: headers };
     }
 
     if ( µm.mustAllow(tabContext.rootHostname, µm.URI.hostnameFromURI(requestURL), 'script') ) {
@@ -335,7 +342,7 @@ var onHeadersReceived = function(details) {
     //   - If we end up modifying the an existing CSP, strip out `report-uri`
     //     to prevent spurious CSP violations.
 
-    var headers = details.responseHeaders;
+
 
     // Is there a CSP header present?
     // If not, inject a script-src CSP directive to prevent inline javascript
@@ -344,7 +351,8 @@ var onHeadersReceived = function(details) {
     if ( i === -1 ) {
         headers.push({
             'name': 'Content-Security-Policy',
-            'value': "script-src 'unsafe-eval' *"
+            'value': "sandbox"
+            // 'value': "script-src 'unsafe-eval' *"
         });
         return { responseHeaders: headers };
     }
@@ -508,4 +516,3 @@ return {
 })();
 
 /******************************************************************************/
-

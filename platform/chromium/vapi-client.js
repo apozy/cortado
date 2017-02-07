@@ -70,7 +70,7 @@ vAPI.shutdown = (function() {
 /******************************************************************************/
 
 var messagingConnector = function(response) {
-    if ( !response ) {
+    if ( !response || !vAPI ) {
         return;
     }
 
@@ -139,6 +139,11 @@ vAPI.messaging = {
             channelName: channelName,
             listener: typeof callback === 'function' ? callback : null,
             send: function(message, callback) {
+                // Likley was shutdown, no messages can be sent
+                if (!vAPI) {
+                    return;
+                }
+
                 if ( vAPI.messaging.port === null ) {
                     vAPI.messaging.setup();
                 }

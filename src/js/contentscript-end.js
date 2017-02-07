@@ -148,15 +148,17 @@ var collapser = (function() {
         if ( !response ) {
             return;
         }
+
         var requests = response.requests;
-        if ( requests === null || Array.isArray(requests) === false ) {
+        if ( requests === null || Array.isArray(requests) === false || !requests.length) {
             return;
         }
+
         var collapse = response.collapse;
         var placeholders = response.placeholders;
         var i = requests.length;
         var request, entry, target, tagName, docurl, replaced;
-        var notificationTimer = null;
+
         while ( i-- ) {
             request = requests[i];
             if ( pendingRequests.hasOwnProperty(request.id) === false ) {
@@ -172,23 +174,6 @@ var collapser = (function() {
             }
 
             target = entry.target;
-
-            // Block page input via js
-            document.onkeydown = function(e) {
-              if (notificationTimer === null) {
-                localMessager.send({
-                        what: 'notifyBlockedRequest',
-                        url: window.location.href
-                });
-
-                notificationTimer = vAPI.setTimeout(function() {
-                  clearTimeout(notificationTimer);
-                  notificationTimer = null;
-                }, 8000); // NOTE: 8s is default chrome notification timeout
-              }
-
-                return false;
-            };
 
             // No placeholders
             if ( collapse ) {
@@ -230,6 +215,60 @@ var collapser = (function() {
         }
     };
 
+    var blockEvent = function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      e.stopImmediatePropagation();
+      return false;
+    };
+
+    var onKeyDown = function(e) {
+      // For debouncing notificaitons
+      var notificationTimer = null;
+
+      // Ignore if following modifier is active.
+      if (e.getModifierState("Fn") ||
+          e.getModifierState("Hyper") ||
+          e.getModifierState("OS") ||
+          e.getModifierState("Super") ||
+          e.getModifierState("Win") /* hack for IE */) {
+        return;
+      }
+
+      // Ignore special keys
+      var keyCodes = { 3 : "break", 8 : "backspace / delete", 9 : "tab", 12 : 'clear', 13 : "enter", 16 : "shift", 17 : "ctrl", 18 : "alt", 19 : "pause/break", 20 : "caps lock", 27 : "escape", 32 : "spacebar", 33 : "page up", 34 : "page down", 35 : "end", 36 : "home ", 37 : "left arrow ", 38 : "up arrow ", 39 : "right arrow", 40 : "down arrow ", 41 : "select", 42 : "print", 43 : "execute", 44 : "Print Screen", 45 : "insert ", 46 : "delete", 91 : "Windows Key / Left ⌘ / Chromebook Search key", 92 : "right window key ", 93 : "Windows Menu / Right ⌘", 112 : "f1 ", 113 : "f2 ", 114 : "f3 ", 115 : "f4 ", 116 : "f5 ", 117 : "f6 ", 118 : "f7 ", 119 : "f8 ", 120 : "f9 ", 121 : "f10", 122 : "f11", 123 : "f12", 124 : "f13", 125 : "f14", 126 : "f15", 127 : "f16", 128 : "f17", 129 : "f18", 130 : "f19", 131 : "f20", 132 : "f21", 133 : "f22", 134 : "f23", 135 : "f24", 144 : "num lock ", 145 : "scroll lock", 166 : "page backward", 167 : "page forward", 166 : "page backward", 167 : "page forward", 173 : "minus (firefox), mute/unmute", 174 : "decrease volume level", 175 : "increase volume level", 176 : "next", 177 : "previous", 178 : "stop", 179 : "play/pause", 180 : "e-mail", 181 : "mute/unmute (firefox)", 182 : "decrease volume level (firefox)", 183 : "increase volume level (firefox)", 224 : "left or right ⌘ key (firefox)", 225 : "altgr", 230 : "GNOME Compose Key", 233 : "XF86Forward", 234 : "XF86Back", 255 : "toggle touchpad" };
+      if (keyCodes[e.keyCode]) {
+        return;
+      }
+
+      // Handle shortcut keys with standard modifier
+      if ((e.ctrlKey || e.metaKey || e.altKey)
+          && !keyCodes[e.keyCode]
+          // Uncomment to block copy and paste
+          /*&& e.key.toLowerCase() !== 'c'
+          && e.key.toLowerCase() !== 'v'*/) {
+            return;
+      }
+
+      e.preventDefault();
+      e.stopPropagation();
+      e.stopImmediatePropagation();
+
+      if (notificationTimer === null) {
+        localMessager.send({
+                what: 'notifyBlockedRequest',
+                url: window.location.href
+        });
+
+        notificationTimer = vAPI.setTimeout(function() {
+          clearTimeout(notificationTimer);
+          notificationTimer = null;
+        }, 8000); // NOTE: 8s is default chrome notification timeout
+      }
+
+      return false;
+    };
+
     var send = function() {
         timer = null;
         localMessager.send({
@@ -240,6 +279,17 @@ var collapser = (function() {
     };
 
     var process = function(delay) {
+        localMessager.send({ what: 'shutdown?' }, function(res) {
+            if (!res) {
+              // Block other key events to prevent scripts from keylogging
+              document.addEventListener('keypress', blockEvent, true);
+              document.addEventListener('keyup', blockEvent, true);
+
+              // Use addEventListener to start capture of all events (globally)
+              document.addEventListener('keydown', onKeyDown, true);
+            }
+        });
+      
         if ( newRequests.length === 0 ) {
             return;
         }
