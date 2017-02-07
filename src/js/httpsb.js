@@ -262,6 +262,7 @@
     µm.pMatrix.setSwitch('matrix-off', 'biobiochile.cl', 1);
     µm.pMatrix.setSwitch('matrix-off', 'usps.com', 1);
     µm.pMatrix.setSwitch('matrix-off', 'ebay.com.au', 1);
+    µm.pMatrix.setSwitch('matrix-off', 'ebaystatic.com', 1);
     µm.pMatrix.setSwitch('matrix-off', 'google.kz', 1);
     µm.pMatrix.setSwitch('matrix-off', 'aparat.com', 1);
     µm.pMatrix.setSwitch('matrix-off', 'shopify.com', 1);

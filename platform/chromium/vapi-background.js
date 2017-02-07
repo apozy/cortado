@@ -124,10 +124,10 @@ vAPI.notifications.notifyLocked = function (domain, options) {
   var opt = {
               type: options.type || "basic",
               // progress: 3,
-              title: options.title || "Site Locked",
-              // contextMessage: "Risk Level",
-              message: options.message || "Actions on this site may be limited.",
-              // contextMessage: "Restricted input and downloads",
+              title: options.title || "Site Locked by Apozy",
+              // contextMessage: "Risk Level"
+              message: options.message || "You don't frequently use this site.",
+              contextMessage: "Restricted input and downloads",
               iconUrl: options.iconUrl || "img/icon.svg",
               // message: "5 Risks",
               buttons: [{title: "Click to unlock " + domain, iconUrl: unlockIcon}]
