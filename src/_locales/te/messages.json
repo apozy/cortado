@@ -308,7 +308,7 @@
     "description":"English: Collapse placeholder of blocked elements"
   },
   "settingsCloudStorageEnabled":{
-    "message":"Enable cloud storage support",
+    "message":"Save settings to your Chrome account's cloud storage",
     "description":""
   },
   "privacyPageTitle":{
