@@ -301,7 +301,7 @@
   },
   "settingsIconBadgeEnabled":{
     "message":"於圖示上顯示請求之數量",
-    "description":"English: Show the number of distinct requests on the icon"
+    "description":"English: Show the privacy grade of each site you visit (Note: Sites you visit will be sent to Apozy for analysis and will remain anonymous)  "
   },
   "settingsCollapseBlocked":{
     "message":"隱藏已封鎖元素之佔位符",

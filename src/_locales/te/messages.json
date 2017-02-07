@@ -301,7 +301,7 @@
   },
   "settingsIconBadgeEnabled":{
     "message":"చిహ్నంపై విభిన్న అభ్యర్దనల సంఖ్య చూపుము",
-    "description":"English: Show the number of distinct requests on the icon"
+    "description":"English: Show the privacy grade of each site you visit (Note: Sites you visit will be sent to Apozy for analysis and will remain anonymous)  "
   },
   "settingsCollapseBlocked":{
     "message":"నిరోధించబడిన అంశాలయోక్క సంగ్రాహకాలను దాచుము",

@@ -301,7 +301,7 @@
   },
   "settingsIconBadgeEnabled":{
     "message":"Montrer le nombre de requêtes distinctes sur l'icône",
-    "description":"English: Show the number of distinct requests on the icon"
+    "description":"English: Show the privacy grade of each site you visit (Note: Sites you visit will be sent to Apozy for analysis and will remain anonymous)  "
   },
   "settingsCollapseBlocked":{
     "message":"Cacher les espaces réservés aux éléments bloqués",
