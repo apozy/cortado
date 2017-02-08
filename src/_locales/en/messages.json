@@ -307,8 +307,8 @@
         "description": "English: Opacity"
     },
     "settingsIconBadgeEnabled":{
-        "message":"Show the privacy grade of each site you visit (Note: Sites you visit will be sent to Apozy for analysis and will remain anonymous)  ",
-        "description":"English: Show the privacy grade of each site you visit (Note: Sites you visit will be sent to Apozy for analysis and will remain anonymous)  "
+        "message":"Show site privacy grades by sending domains you visit to Apozy for calculation.  ",
+        "description":"English: Show site privacy grades by sending domains you visit to Apozy for calculation.  "
     },
     "settingsCollapseBlocked" : {
         "message": "Collapse placeholder of blocked elements",

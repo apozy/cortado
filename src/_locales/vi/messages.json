@@ -301,7 +301,7 @@
   },
   "settingsIconBadgeEnabled":{
     "message":"Hiển thị số lượng yêu cầu riêng biệt trên biểu tượng",
-    "description":"English: Show the privacy grade of each site you visit (Note: Sites you visit will be sent to Apozy for analysis and will remain anonymous)  "
+    "description":"English: Show site privacy grades by sending domains you visit to Apozy for calculation.  "
   },
   "settingsCollapseBlocked":{
     "message":"Collapse placeholder of blocked elements",

@@ -301,7 +301,7 @@
   },
   "settingsIconBadgeEnabled":{
     "message":"הראה את מספר הבקשות החסומות הייחודיות על האייקון",
-    "description":"English: Show the privacy grade of each site you visit (Note: Sites you visit will be sent to Apozy for analysis and will remain anonymous)  "
+    "description":"English: Show site privacy grades by sending domains you visit to Apozy for calculation.  "
   },
   "settingsCollapseBlocked":{
     "message":"הסתר את המקום שנשאר מחסימה של אלמנטים",

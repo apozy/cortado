@@ -51,6 +51,11 @@
             word-wrap: normal;
             margin-top: 20px;
         }
+
+        .collapsible-body ul li {
+          padding-top: 5px;
+          padding-bottom: 5px;
+        }
     </style>
 </head>
 
@@ -59,99 +64,119 @@
     <div class="row">
         <div class="col s12" style="margin-bottom: 24px;">
             <ul class="tabs">
-                <li class="tab col s4"><a class="purple-text active" href="#settings">Settings &amp; Privacy</a></li>
-                <li class="tab col s4"><a class="purple-text" href="#rules">Manage Rules</a></li>
-                <li class="tab col s4"><a class="purple-text" href="#blacklist">Blacklist</a></li>
+                <li class="tab col s4"><a class="purple-text active" href="#settings">Your Privacy</a></li>
+                <li class="tab col s4"><a class="purple-text" href="#rules">Website Permissions</a></li>
+                <li class="tab col s4"><a class="purple-text" href="#blacklist">Blocked Websites</a></li>
                 <!-- <li class="tab col s3"><a class="purple-text" href="#about">About</a></li> -->
             </ul>
         </div>
-        <div id="settings" class="col s12" style="padding: 24px;">
-
-            <!-- <h2 data-i18n="settingsMatrixDisplayHeader"></h2>
-      <ul style="list-style:none">
-          <li style="margin-top:0.5em;"><input id="colorBlindFriendly" type="checkbox" data-range="bool"><label data-i18n="settingsMatrixDisplayColorBlind" for="colorBlindFriendly"></label>
-          <li style="margin-top:0.5em;"><span data-i18n="settingsMatrixDisplayTextSizePrompt"></span>
-          <input type="radio" name="displayTextSize" id="displayTextSizeNormal" value="13px"><label data-i18n="settingsMatrixDisplayTextSizeNormal" for="displayTextSizeNormal"></label>
-          <input type="radio" name="displayTextSize" id="displayTextSizeLarge" value="16px"><label data-i18n="settingsMatrixDisplayTextSizeLarge" for="displayTextSizeLarge"></label>
-      </ul> -->
-
-            <h2 data-i18n="settingsMatrixConvenienceHeader"></h2>
-            <ul>
-                <li>
-                    <input id="iconBadgeEnabled" type="checkbox" data-range="bool">
-                    <label data-i18n="settingsIconBadgeEnabled" for="iconBadgeEnabled"></label>
-                    <li>
-                        <input id="collapseBlocked" type="checkbox" data-range="bool">
-                        <label data-i18n="settingsCollapseBlocked" for="collapseBlocked"></label>
-                        <li>
-                            <input id="cloudStorageEnabled" type="checkbox" data-range="bool">
-                            <label data-i18n="settingsCloudStorageEnabled" for="cloudStorageEnabled"></label>
+        <div id="settings" class="col s12">
+            <!--
+            <h2 data-i18n="settingsMatrixDisplayHeader"></h2>
+            <ul style="list-style:none">
+                <li style="margin-top:0.5em;"><input id="colorBlindFriendly" type="checkbox" data-range="bool"><label data-i18n="settingsMatrixDisplayColorBlind" for="colorBlindFriendly"></label>
+                <li style="margin-top:0.5em;"><span data-i18n="settingsMatrixDisplayTextSizePrompt"></span>
+                <input type="radio" name="displayTextSize" id="displayTextSizeNormal" value="13px"><label data-i18n="settingsMatrixDisplayTextSizeNormal" for="displayTextSizeNormal"></label>
+                <input type="radio" name="displayTextSize" id="displayTextSizeLarge" value="16px"><label data-i18n="settingsMatrixDisplayTextSizeLarge" for="displayTextSizeLarge"></label>
             </ul>
-
-            <h2>Advanced</h2>
-            <ul>
+              -->
+            <blockquote>Control what data is sent and set additional privacy protections. All data is anonymized before being securely sent via SSL.</blockquote>
+            <ul class="collapsible" data-collapsible="expandable">
                 <li>
-                    <input id="delete-blacklisted-cookies" type="checkbox" data-setting-bool="deleteCookies"><label data-i18n="privacyDeleteBlockedCookiesPrompt" for="delete-blacklisted-cookies"></label>
-                    <span class="whatisthis"></span>
-                    <div class="whatisthis-expandable para" data-i18n="privacyDeleteBlockedCookiesHelp"></div>
-                    <li>
-                        <input id="delete-unused-session-cookies" type="checkbox" data-setting-bool="deleteUnusedSessionCookies"><label data-i18n="privacyDeleteNonBlockedSessionCookiesPrompt1" for="delete-unused-session-cookies"></label>
-                        <input id="delete-unused-session-cookies-after" type="text" value="60" size="3" style="width: 24px; padding: 10px;"><span data-i18n="privacyDeleteNonBlockedSessionCookiesPrompt2"></span>
-                        <span class="whatisthis"></span>
-                        <div class="whatisthis-expandable para" data-i18n="privacyDeleteNonBlockedSessionCookiesHelp"></div>
-                        <!--
-              Delete non-blocked session cookies x minutes after the last time they have been used.
+                    <div class="collapsible-header active"><i class="material-icons">cloud_queue</i>Data We Send</div>
+                    <div class="collapsible-body">
+                        <ul style="padding: 20px 0px 20px 0px;">
+                            <li>
+                                <input id="iconBadgeEnabled" type="checkbox" data-range="bool">
+                                <label data-i18n="settingsIconBadgeEnabled" for="iconBadgeEnabled"></label>
+                            </li>
+                            <li>
+                                <input id="cloudStorageEnabled" type="checkbox" data-range="bool">
+                                <label data-i18n="settingsCloudStorageEnabled" for="cloudStorageEnabled"></label>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">expand_more</i>Show advanced tracking protections...</div>
+                    <div class="collapsible-body" style="padding: 20px 0px 20px 0px;">
+                        <ul>
+                            <li>
+                                <input id="collapseBlocked" type="checkbox" data-range="bool">
+                                <label data-i18n="settingsCollapseBlocked" for="collapseBlocked"></label>
+                            </li>
+                            <li>
+                                <input id="delete-blacklisted-cookies" type="checkbox" data-setting-bool="deleteCookies"><label data-i18n="privacyDeleteBlockedCookiesPrompt" for="delete-blacklisted-cookies"></label>
+                                <span class="whatisthis"></span>
+                                <div class="whatisthis-expandable para" data-i18n="privacyDeleteBlockedCookiesHelp"></div>
+                            </li>
+                            <li>
+                                <input id="delete-unused-session-cookies" type="checkbox" data-setting-bool="deleteUnusedSessionCookies"><label data-i18n="privacyDeleteNonBlockedSessionCookiesPrompt1" for="delete-unused-session-cookies"></label>
+                                <input id="delete-unused-session-cookies-after" type="text" value="60" size="3" style="width: 24px; padding: 10px;"><span data-i18n="privacyDeleteNonBlockedSessionCookiesPrompt2"></span>
+                                <span class="whatisthis"></span>
+                                <div class="whatisthis-expandable para" data-i18n="privacyDeleteNonBlockedSessionCookiesHelp"></div>
+                                <!--
+                                  Delete non-blocked session cookies x minutes after the last time they have been used.
 
-              Allow generically blocked cookies but deleted them x minutes after they have been first created.
+                                  Allow generically blocked cookies but deleted them x minutes after they have been first created.
 
-              A "generically blocked" cookie is a cookie which inherits its block status in
-              the matrix from the `cookie` cell or the `all` cell in the top row of the
-              matrix.
+                                  A "generically blocked" cookie is a cookie which inherits its block status in
+                                  the matrix from the `cookie` cell or the `all` cell in the top row of the
+                                  matrix.
 
-              When a cookie inherits its block status from a cell in the top row of the
-              matrix (the "header" row), this means it is not specifically distrusted, but
-              rather that the default stance is to distrust cookies in general.
+                                  When a cookie inherits its block status from a cell in the top row of the
+                                  matrix (the "header" row), this means it is not specifically distrusted, but
+                                  rather that the default stance is to distrust cookies in general.
 
-              However some sites do require cookies to minimally work properly. This options
-              allow to "unbreak" these sites by allowing not specifically distrusted cookies
-              to travel back and forth between you and the server, but to limit the lifetime
-              of these cookies so that they cannot be used to track you.
-          -->
-                        <li>
-                            <input id="delete-blacklisted-localstorage" type="checkbox" data-setting-bool="deleteLocalStorage"><label data-i18n="privacyDeleteBlockedLocalStoragePrompt" for="delete-blacklisted-localstorage"></label>
+                                  However some sites do require cookies to minimally work properly. This options
+                                  allow to "unbreak" these sites by allowing not specifically distrusted cookies
+                                  to travel back and forth between you and the server, but to limit the lifetime
+                                  of these cookies so that they cannot be used to track you.
+                              -->
+                            </li>
+                            <li>
+                                <input id="delete-blacklisted-localstorage" type="checkbox" data-setting-bool="deleteLocalStorage"><label data-i18n="privacyDeleteBlockedLocalStoragePrompt" for="delete-blacklisted-localstorage"></label>
+                            </li>
                             <li>
                                 <input id="clear-browser-cache" type="checkbox" data-setting-bool="clearBrowserCache"><label data-i18n="privacyClearCachePrompt1" for="clear-browser-cache"></label>
                                 <input id="clear-browser-cache-after" type="text" value="60" size="3" style="width: 24px; padding: 10px;"> <label data-i18n="privacyClearCachePrompt2" for="clear-browser-cache-after"></label>
                                 <span class="whatisthis"></span>
                                 <div class="whatisthis-expandable para" data-i18n="privacyClearCacheHelp"></div>
-                                <li>
-                                    <input id="process-referer" type="checkbox" data-matrix-switch="referrer-spoof"><label data-i18n="privacyProcessRefererPrompt" for="process-referer"></label>
-                                    <span class="whatisthis"></span>
-                                    <div class="whatisthis-expandable para" data-i18n="privacyProcessRefererHelp"></div>
-                                    <li>
-                                        <input id="no-mixed-content" type="checkbox" data-matrix-switch="https-strict"><label data-i18n="privacyNoMixedContentPrompt" for="no-mixed-content"></label>
-                                        <span class="whatisthis"></span>
-                                        <div class="whatisthis-expandable para" data-i18n="privacyNoMixedContentHelp"></div>
-                                        <li>
-                                            <input id="process-hyperlink-auditing" type="checkbox" data-setting-bool="processHyperlinkAuditing"><label data-i18n="privacyProcessHyperlinkAuditingPrompt" for="process-hyperlink-auditing"></label>
-                                            <span class="whatisthis"></span>
-                                            <div class="whatisthis-expandable para" data-i18n="privacyProcessHyperlinkAuditingHelp"></div>
-                                            <li>&nbsp;
-                                                <li>
-                                                    <input id="spoof-user-agent" type="checkbox" data-matrix-switch="ua-spoof"><label data-i18n="privacySpoofUserAgentPrompt1" for="spoof-user-agent"></label> <input id="spoof-user-agent-every" type="text"
-                                                        value="5" size="3" style="width: 24px; padding: 10px;"> <span data-i18n="privacySpoofUserAgentPrompt2"></span>
-                                                    <span class="whatisthis"></span>
-                                                    <div class="whatisthis-expandable para" data-i18n="privacySpoofUserAgentHelp"></div>
-                                                    <textarea id="spoof-user-agent-with" spellcheck="false" style=""></textarea>
+                            </li>
+                            <li>
+                                <input id="process-referer" type="checkbox" data-matrix-switch="referrer-spoof"><label data-i18n="privacyProcessRefererPrompt" for="process-referer"></label>
+                                <span class="whatisthis"></span>
+                                <div class="whatisthis-expandable para" data-i18n="privacyProcessRefererHelp"></div>
+                            </li>
+                            <li>
+                                <input id="no-mixed-content" type="checkbox" data-matrix-switch="https-strict"><label data-i18n="privacyNoMixedContentPrompt" for="no-mixed-content"></label>
+                                <span class="whatisthis"></span>
+                                <div class="whatisthis-expandable para" data-i18n="privacyNoMixedContentHelp"></div>
+                            </li>
+                            <li>
+                                <input id="process-hyperlink-auditing" type="checkbox" data-setting-bool="processHyperlinkAuditing"><label data-i18n="privacyProcessHyperlinkAuditingPrompt" for="process-hyperlink-auditing"></label>
+                                <span class="whatisthis"></span>
+                                <div class="whatisthis-expandable para" data-i18n="privacyProcessHyperlinkAuditingHelp"></div>
+                            </li>
+                            <li>
+                                <input id="spoof-user-agent" type="checkbox" data-matrix-switch="ua-spoof"><label data-i18n="privacySpoofUserAgentPrompt1" for="spoof-user-agent"></label> <input id="spoof-user-agent-every" type="text" value="5" size="3"
+                                    style="width: 24px; padding: 10px;"> <span data-i18n="privacySpoofUserAgentPrompt2"></span>
+                                <span class="whatisthis"></span>
+                                <div class="whatisthis-expandable para" data-i18n="privacySpoofUserAgentHelp"></div>
+                                <textarea id="spoof-user-agent-with" spellcheck="false" style=""></textarea>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
             </ul>
         </div>
         <div id="rules" class="col s12">
-
+          <blockquote>Permissions are automatically set based on service risk, reputation, usage and browser behavior. If you are an advanced user, you may want to set specific permissions for code, movies, images, and documents loaded from any website, or linked websites. These permissions include allowing, denying, sandboxing, or validating requests and related subrequests. Proceed with caution!</blockquote>
+          <br>
             <div id="cloudWidget" class="hide" data-cloud-entry="myRulesPane"></div>
-
             <!-- <p data-i18n="userRulesFormatHint"></p> -->
             <div id="diff">
-                <div class="pane left">
+                <div class="card pane left">
                     <div>
                         <h2 data-i18n="userRulesPermanentHeader"></h2>
                         <button class="btn" type="button" id="exportButton" data-i18n="userRulesExport"></button>
@@ -159,7 +184,7 @@
                     </div>
                     <ul></ul>
                 </div>
-                <div class="pane right">
+                <div class="card pane right">
                     <div>
                         <h2 data-i18n="userRulesTemporaryHeader"></h2>
                         <button class="btn" type="button" id="commitButton" data-i18n="userRulesCommit"></button>
@@ -177,7 +202,7 @@
             <span class="hidden" data-i18n="userRulesDefaultFileName"></span>
         </div>
         <div id="blacklist" class="col s12">
-
+          <blockquote>Additional blocking, like for ads or trackers, can be specified here.</blockquote>
             <p data-i18n="hostsFilesPrompt"></p>
             <ul id="options">
                 <li><input type="checkbox" id="autoUpdate"><label data-i18n="hostsFilesAutoUpdatePrompt" for="autoUpdate"></label>
@@ -237,7 +262,7 @@
     <script src="js/vapi-client.js"></script>
     <script src="js/udom.js"></script>
     <script src="js/i18n.js"></script>
-    <!-- <script src="js/dashboard-common.js"></script> -->
+    <script src="js/dashboard-common.js"></script>
     <script src="js/settings.js"></script>
     <script src="js/privacy.js"></script>
     <script src="js/cloud-ui.js"></script>

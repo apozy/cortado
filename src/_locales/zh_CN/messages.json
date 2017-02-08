@@ -301,7 +301,7 @@
   },
   "settingsIconBadgeEnabled":{
     "message":"在图标上显示不重复请求的数量",
-    "description":"English: Show the privacy grade of each site you visit (Note: Sites you visit will be sent to Apozy for analysis and will remain anonymous)  "
+    "description":"English: Show site privacy grades by sending domains you visit to Apozy for calculation.  "
   },
   "settingsCollapseBlocked":{
     "message":"隐藏已屏蔽元素的占位符",
