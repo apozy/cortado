@@ -388,7 +388,7 @@
     "description":"Second part"
   },
   "privacySpoofUserAgentHelp":{
-    "message":"<a href='https:\/\/www.eff.org\/deeplinks\/2010\/01\/tracking-by-user-agent'>Según la <i>Electronic Frontier Foundation<\/i><\/a>: &ldquo;[...] su navegador envía un encabezado &lsquo;User Agent&rsquo;  al sitio web, estableciendo de manera precisa que combinación de sistema operativo y navegador está usando. Esto puede ayudar a diferenciar los usuarios en Internet, pues esta información varía a menudo considerablemente de un usuario a otro. [...] <b>la cadena User Agent se convierte en un verdadero problema de privacidad<\/b>.&rdquo;<p>Esta opción le permite resolver este problema puesto de relieve por la EFF.<\/p><p>Usted puede suministrar su propia lista de cadenas <i>user agent<\/i>. Una cadena por línea. Las líneas en blanco o con prefijo &lsquo;#&rsquo; serán ignoradas.<\/p>",
+    "message":"<a href='https:\/\/www.eff.org\/deeplinks\/2010\/01\/tracking-by-user-agent'>Según la <i>Electronic Frontier Foundation<\/i><\/a>: &ldquo;[...] su navegador envía un encabezado &lsquo;User Agent&rsquo;  al sitio web, estableciendo de manera precisa que combinación de sistema operativo y navegador está usando. Esto puede ayudar a diferenciar los usuarios en Internet, pues esta información varía a menudo considerablemente de un usuario a otro. [...] <b>la cadena User Agent se convierte en un verdadero problema de privacidad<\/b>.&rdquo;<p>Esta opción le permite resolver este problema puesto de relieve por la EFF.<\/p><p>Usted puede suministrar su propia lista de cadenas <i>user agent<\/i>. Una cadena por línea. Las líneas en blanco o con prefijo # serán ignoradas.<\/p>",
     "description":""
   },
   "privacyBehindTheSceneHeader":{
@@ -476,7 +476,7 @@
     "description":""
   },
   "hostsFilesExternalListsHint":{
-    "message":"Una URL por línea. Las línes con prefijo &lsquo;#&rsquo; serán ignoradas. Las URL inválidas serán ignoradas de manera silenciosa.",
+    "message":"Una URL por línea. Las línes con prefijo # serán ignoradas. Las URL inválidas serán ignoradas de manera silenciosa.",
     "description":""
   },
   "hostsFilesExternalListsParse":{

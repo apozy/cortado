@@ -388,7 +388,7 @@
     "description":"Second part"
   },
   "privacySpoofUserAgentHelp":{
-    "message":"<a href='https:\/\/www.eff.org\/deeplinks\/2010\/01\/tracking-by-user-agent'><i>Electronic Frontier Foundation'a<\/i> göre<\/a>: &ldquo;[...] tarayıcınız web sitesine kullandığınız işletim sistemini ve tarayıcıyı bilgisini içeren &lsquo;Kullanıcı Aracı&rsquo; başlığı gönderir. Bu bilgi Internet kullanıcılarının birbirlerinden ayırt edilmesine yardımcı olabilir. [...] <b>Kullanıcı Aracı dizesi gerçek bir gizlilik problemine yol açar<\/b>.&rdquo;<p>Bu seçenek EFF tarafından dile getirilen gizlilik sorununu çözmenizi sağlar. <\/p><p>Kendi kullanıcı aracı dizesi listelerinizi sağlayabilirsiniz. Satır başına bir dize. Boş satırlar ve &lsquo;#&rsquo; işareti ile başlayan satırlar yok sayılacaktır.<\/p>",
+    "message":"<a href='https:\/\/www.eff.org\/deeplinks\/2010\/01\/tracking-by-user-agent'><i>Electronic Frontier Foundation'a<\/i> göre<\/a>: &ldquo;[...] tarayıcınız web sitesine kullandığınız işletim sistemini ve tarayıcıyı bilgisini içeren &lsquo;Kullanıcı Aracı&rsquo; başlığı gönderir. Bu bilgi Internet kullanıcılarının birbirlerinden ayırt edilmesine yardımcı olabilir. [...] <b>Kullanıcı Aracı dizesi gerçek bir gizlilik problemine yol açar<\/b>.&rdquo;<p>Bu seçenek EFF tarafından dile getirilen gizlilik sorununu çözmenizi sağlar. <\/p><p>Kendi kullanıcı aracı dizesi listelerinizi sağlayabilirsiniz. Satır başına bir dize. Boş satırlar ve # işareti ile başlayan satırlar yok sayılacaktır.<\/p>",
     "description":""
   },
   "privacyBehindTheSceneHeader":{
@@ -476,7 +476,7 @@
     "description":""
   },
   "hostsFilesExternalListsHint":{
-    "message":"Satır başına tek URL. &lsquo;#&rsquo; işareti ile başlayan satırlar yok sayılacaktır. Geçersiz URL'ler sessizcene yok sayılacaktır.",
+    "message":"Satır başına tek URL. # işareti ile başlayan satırlar yok sayılacaktır. Geçersiz URL'ler sessizcene yok sayılacaktır.",
     "description":""
   },
   "hostsFilesExternalListsParse":{

@@ -388,7 +388,7 @@
     "description":"Second part"
   },
   "privacySpoofUserAgentHelp":{
-    "message":"<a href='https:\/\/www.eff.org\/deeplinks\/2010\/01\/tracking-by-user-agent'>根据<i>电子前哨基金会<\/i><\/a>：&ldquo;[...]您的浏览器会向网站发送一个&lsquo;用户代理&rsquo;头部，精确地向网站报告您所使用的操作系统和网络浏览器。对不同的人而言，系统和浏览器的版本通常存在相当的差异，因此这些信息可以帮助区分互联网用户。[...] <b>用户代理字串成为了一个真正的隐私问题<\/b>。&rdquo;<p>这个选项允许您解决由EFF所提出的隐私疑议。<\/p><p>您可以提供您自己的用户代理字串表。每行一个字串。空行以及以&lsquo;#&rsquo;开头的行将被忽略。<\/p>",
+    "message":"<a href='https:\/\/www.eff.org\/deeplinks\/2010\/01\/tracking-by-user-agent'>根据<i>电子前哨基金会<\/i><\/a>：&ldquo;[...]您的浏览器会向网站发送一个&lsquo;用户代理&rsquo;头部，精确地向网站报告您所使用的操作系统和网络浏览器。对不同的人而言，系统和浏览器的版本通常存在相当的差异，因此这些信息可以帮助区分互联网用户。[...] <b>用户代理字串成为了一个真正的隐私问题<\/b>。&rdquo;<p>这个选项允许您解决由EFF所提出的隐私疑议。<\/p><p>您可以提供您自己的用户代理字串表。每行一个字串。空行以及以#开头的行将被忽略。<\/p>",
     "description":""
   },
   "privacyBehindTheSceneHeader":{
@@ -476,7 +476,7 @@
     "description":""
   },
   "hostsFilesExternalListsHint":{
-    "message":"每行一条URL。以&lsquo;#&rsquo;开头的行将被忽略。无效的URL将被忽略。",
+    "message":"每行一条URL。以#开头的行将被忽略。无效的URL将被忽略。",
     "description":""
   },
   "hostsFilesExternalListsParse":{

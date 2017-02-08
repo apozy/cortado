@@ -388,7 +388,7 @@
     "description":"Second part"
   },
   "privacySpoofUserAgentHelp":{
-    "message":"<a href='https:\/\/www.eff.org\/deeplinks\/2010\/01\/tracking-by-user-agent'>Ifølge the <i>Electronic Frontier Foundation<\/i><\/a>: &ldquo;[...] your browser sends a &lsquo;User Agent&rsquo; header to the website saying precisely which operating system and web browser you are using. This information could help distinguish Internet users from one another because these versions differ, often considerably, from person to person. [...] <b>the User Agent string becomes a real privacy problem<\/b>.&rdquo;<p>Denne indstilling tillader dig at imødegå dette privacy problem som bliver fremført af EFF.<\/p><p>Du kan tilføje din egen liste af bruger agent strings. En string per linje. Blanke linje og linjer præfikset med &lsquo;#&rsquo; vil blive ignoreret.<\/p>",
+    "message":"<a href='https:\/\/www.eff.org\/deeplinks\/2010\/01\/tracking-by-user-agent'>Ifølge the <i>Electronic Frontier Foundation<\/i><\/a>: &ldquo;[...] your browser sends a &lsquo;User Agent&rsquo; header to the website saying precisely which operating system and web browser you are using. This information could help distinguish Internet users from one another because these versions differ, often considerably, from person to person. [...] <b>the User Agent string becomes a real privacy problem<\/b>.&rdquo;<p>Denne indstilling tillader dig at imødegå dette privacy problem som bliver fremført af EFF.<\/p><p>Du kan tilføje din egen liste af bruger agent strings. En string per linje. Blanke linje og linjer præfikset med # vil blive ignoreret.<\/p>",
     "description":""
   },
   "privacyBehindTheSceneHeader":{
@@ -476,7 +476,7 @@
     "description":""
   },
   "hostsFilesExternalListsHint":{
-    "message":"Et URL per linje. Linjer der begynder med &lsquo;#&rsquo; vil blive ignoreret. Ugyldige URLs vil lydløst blive ignoreret.",
+    "message":"Et URL per linje. Linjer der begynder med # vil blive ignoreret. Ugyldige URLs vil lydløst blive ignoreret.",
     "description":""
   },
   "hostsFilesExternalListsParse":{

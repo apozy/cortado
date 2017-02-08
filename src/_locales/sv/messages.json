@@ -388,7 +388,7 @@
     "description":"Second part"
   },
   "privacySpoofUserAgentHelp":{
-    "message":"<a href='https:\/\/www.eff.org\/deeplinks\/2010\/01\/tracking-by-user-agent'>Enligt <i>Electronic Frontier Foundation<\/i><\/a>:  &ldquo;[...] din webbläsare skickar &lsquo;användaragent&rsquo; i sidhuvudet till webbplatser för att säga precis vilket operativsystem och webbläsare du använder. Denna information kan hjälpa sidan att unikt särskilja internetanvändare från varandra, eftersom denna information skiljer sig ofta markant från person till person. [...]<b>Användaragenten blir sannerligen ett problem<\/b>.&rdquo;<p>Denna inställning åtgärdar integritetsproblemet som EFF har lyft.<\/p><p>Du kan skriva in en egen lista med användaragenter. En sträng per rad. Tomma rader och rader som börjar med &lsquo;#&rsquo; struntas i.<\/p>",
+    "message":"<a href='https:\/\/www.eff.org\/deeplinks\/2010\/01\/tracking-by-user-agent'>Enligt <i>Electronic Frontier Foundation<\/i><\/a>:  &ldquo;[...] din webbläsare skickar &lsquo;användaragent&rsquo; i sidhuvudet till webbplatser för att säga precis vilket operativsystem och webbläsare du använder. Denna information kan hjälpa sidan att unikt särskilja internetanvändare från varandra, eftersom denna information skiljer sig ofta markant från person till person. [...]<b>Användaragenten blir sannerligen ett problem<\/b>.&rdquo;<p>Denna inställning åtgärdar integritetsproblemet som EFF har lyft.<\/p><p>Du kan skriva in en egen lista med användaragenter. En sträng per rad. Tomma rader och rader som börjar med # struntas i.<\/p>",
     "description":""
   },
   "privacyBehindTheSceneHeader":{
@@ -476,7 +476,7 @@
     "description":""
   },
   "hostsFilesExternalListsHint":{
-    "message":"En adress per rad. Rader som börjar med &lsquo;#&rsquo; ignoreras. Inkorrekta adresser ignoreras utan varning.",
+    "message":"En adress per rad. Rader som börjar med # ignoreras. Inkorrekta adresser ignoreras utan varning.",
     "description":""
   },
   "hostsFilesExternalListsParse":{
