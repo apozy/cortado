@@ -1,8 +1,8 @@
 {
     "manifest_version": 2,
-    "name": "Apozy",
+    "name": "Apozy (Lite)",
     "short_name": "Apozy",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "description": "__MSG_extShortDesc__",
     "icons": {
         "16": "img/icon_16.png",
