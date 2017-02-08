@@ -4,7 +4,7 @@
         "description": ""
     },
     "extShortDesc": {
-        "message": "Know the privacy of sites you use. Stop phishing, ransomware/malware, and trackers while browsing uninterrupted.",
+        "message": "Know the privacy of sites you visit. Stop phishing, ransomware/malware, and trackers while browsing uninterrupted.",
         "description": "this will be used as short description in web stores: MUST BE 132 characters OR LESS"
     },
     "dashboardPageName": {
