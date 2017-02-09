@@ -301,7 +301,7 @@
   },
   "settingsIconBadgeEnabled":{
     "message":"於圖示上顯示請求之數量",
-    "description":"English: Show site privacy grades by sending domains you visit to Apozy for calculation.  "
+    "description":"English: See privacy grades. Requires the domain name of sites you visit.  "
   },
   "settingsCollapseBlocked":{
     "message":"隱藏已封鎖元素之佔位符",

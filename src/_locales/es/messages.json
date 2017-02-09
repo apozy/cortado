@@ -301,7 +301,7 @@
   },
   "settingsIconBadgeEnabled":{
     "message":"Mostrar el número de peticiones distintas en el icono",
-    "description":"English: Show site privacy grades by sending domains you visit to Apozy for calculation.  "
+    "description":"English: See privacy grades. Requires the domain name of sites you visit.  "
   },
   "settingsCollapseBlocked":{
     "message":"Colapsar marcadores de posición de los elementos bloqueados",

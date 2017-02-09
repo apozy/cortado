@@ -53,8 +53,8 @@
         }
 
         .collapsible-body ul li {
-          padding-top: 5px;
-          padding-bottom: 5px;
+            padding-top: 5px;
+            padding-bottom: 5px;
         }
     </style>
 </head>
@@ -64,10 +64,10 @@
     <div class="row">
         <div class="col s12" style="margin-bottom: 24px;">
             <ul class="tabs">
-                <li class="tab col s4"><a class="purple-text active" href="#settings">Your Privacy</a></li>
-                <li class="tab col s4"><a class="purple-text" href="#rules">Website Permissions</a></li>
-                <li class="tab col s4"><a class="purple-text" href="#blacklist">Blocked Websites</a></li>
-                <!-- <li class="tab col s3"><a class="purple-text" href="#about">About</a></li> -->
+                <li class="tab col s3"><a class="purple-text active" href="#settings">Your Privacy</a></li>
+                <li class="tab col s3"><a class="purple-text" href="#rules">Website Permissions</a></li>
+                <li class="tab col s3"><a class="purple-text" href="#blacklist">Blocked Websites</a></li>
+                <li class="tab col s3"><a class="purple-text" href="#about">About</a></li>
             </ul>
         </div>
         <div id="settings" class="col s12">
@@ -80,15 +80,26 @@
                 <input type="radio" name="displayTextSize" id="displayTextSizeLarge" value="16px"><label data-i18n="settingsMatrixDisplayTextSizeLarge" for="displayTextSizeLarge"></label>
             </ul>
               -->
-            <blockquote>Control what data is sent and set additional privacy protections. All data is anonymized before being securely sent via SSL.</blockquote>
+            <blockquote>Apozy <a href="https://en.wikipedia.org/wiki/Sandbox_(computer_security)">locks</a> websites to stop attacks like <a href="https://en.wikipedia.org/wiki/Phishing">phishing</a>, <a href="https://en.wikipedia.org/wiki/Malware">malware</a>,
+                <a
+                    href="https://en.wikipedia.org/wiki/Data_breach">data leaks</a>, <a href="https://en.wikipedia.org/wiki/Code_injection">data injection attacks</a> and <a href="https://en.wikipedia.org/wiki/Cross-site_scripting">cross-site scripting</a>. We accomplish this with the help of people like
+                    you. Any data you share is a contribution to our community of users and a commitment to a safer web. We limit what we collect to the essentials. Configure how you contribute data and set additional privacy protections below:</blockquote>
             <ul class="collapsible" data-collapsible="expandable">
                 <li>
-                    <div class="collapsible-header active"><i class="material-icons">cloud_queue</i>Data We Send</div>
+                    <div class="collapsible-header active"><i class="material-icons">autorenew</i>What you securely share with Apozy</div>
                     <div class="collapsible-body">
                         <ul style="padding: 20px 0px 20px 0px;">
                             <li>
+                                <input id="lockReportingEnabled" type="checkbox" data-range="bool">
+                                <label for="lockReportingEnabled">Auto-update site locking. Requires a domain name when you (un)lock sites.</label>
+                            </li>
+                            <li>
                                 <input id="iconBadgeEnabled" type="checkbox" data-range="bool">
                                 <label data-i18n="settingsIconBadgeEnabled" for="iconBadgeEnabled"></label>
+                            </li>
+                            <li>
+                                <input id="cspReportingEnabled" type="checkbox" data-range="bool">
+                                <label for="cspReportingEnabled">Be a contributor. Report URL's that violate privacy or security norms.</label>
                             </li>
                             <li>
                                 <input id="cloudStorageEnabled" type="checkbox" data-range="bool">
@@ -171,8 +182,9 @@
             </ul>
         </div>
         <div id="rules" class="col s12">
-          <blockquote>Permissions are automatically set based on service risk, reputation, usage and browser behavior. If you are an advanced user, you may want to set specific permissions for code, movies, images, and documents loaded from any website, or linked websites. These permissions include allowing, denying, sandboxing, or validating requests and related subrequests. Proceed with caution!</blockquote>
-          <br>
+            <blockquote>Permissions are automatically set based on service risk, reputation, usage and browser behavior. If you are an advanced user, you may want to set specific permissions for code, movies, images, and documents loaded from any website, or linked
+                websites. These permissions include allowing, denying, sandboxing, or validating requests and related subrequests. Proceed with caution!</blockquote>
+            <br>
             <div id="cloudWidget" class="hide" data-cloud-entry="myRulesPane"></div>
             <!-- <p data-i18n="userRulesFormatHint"></p> -->
             <div id="diff">
@@ -202,7 +214,7 @@
             <span class="hidden" data-i18n="userRulesDefaultFileName"></span>
         </div>
         <div id="blacklist" class="col s12">
-          <blockquote>Additional blocking, like for ads or trackers, can be specified here.</blockquote>
+            <blockquote>Additional blocking, like for ads or trackers, can be specified here.</blockquote>
             <p data-i18n="hostsFilesPrompt"></p>
             <ul id="options">
                 <li><input type="checkbox" id="autoUpdate"><label data-i18n="hostsFilesAutoUpdatePrompt" for="autoUpdate"></label>
@@ -248,7 +260,43 @@
                 </ul>
             </div>
         </div>
-        <!-- <div id="about" class="col s12">About</div> -->
+        <div id="about" class="col s12">
+            <ul class="collection with-header">
+                <li class="collection-header">Apozy <span id="aboutVersion"></span></li>
+                <li class="collection-item"><a href="#"><span data-i18n="aboutDoc"></span></a></li>
+                <li class="collection-item"><span data-i18n="aboutPermissions"></span></li>
+                <li class="collection-item">
+                    <a href="#" data-i18n="aboutCode"></a>
+                </li>
+                <li class="collection-item">
+                    <a href="#" data-i18n="aboutIssues"></a>
+                </li>
+                <li class="collection-item"><span data-i18n="aboutContributors"></span>
+                    <ul>
+                        <li><span data-i18n="aboutCodeContributors"></span> <a href="https://www.apozy.com">Apozy</a>, <a href="https://github.com/gorhill/uMatrix/graphs/contributors">uMatrix, <a href="https://github.com/gorhill/httpswitchboard/graphs/contributors">HTTP Switchboard</a>
+                            <li><span data-i18n="aboutTranslationContributors"></span> <a href="https://github.com/gorhill/uMatrix/wiki/Translation-work-contributors">Crowdin</a>
+                    </ul>
+                    </li>
+            </ul>
+            <br>
+            <div class="row">
+                <h2>Export Your Data</h2>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <button class="btn" type="button" id="backupUserDataButton" data-i18n="aboutBackupButton"></button>
+                    <button class="btn" type="button" id="restoreUserDataButton" data-i18n="aboutRestoreButton"></button>
+                    <input id="restoreFilePicker" type="file" accept="text/plain" style="display:none;">
+                    <button class="btn" type="button" id="resetUserDataButton" data-i18n="aboutResetButton"></button>
+                </div>
+
+                <span style="display: none;" data-i18n="aboutStorageUsed"></span>
+                <span style="display: none;" data-i18n="aboutBackupFilename"></span>
+                <span style="display: none;" data-i18n="aboutRestoreConfirm"></span>
+                <span style="display: none;" data-i18n="aboutRestoreError"></span>
+                <span style="display: none;" data-i18n="aboutResetConfirm"></span>
+            </div>
+        </div>
     </div>
 
     <script src="/lib/jquery.js"></script>
@@ -263,6 +311,7 @@
     <script src="js/cloud-ui.js"></script>
     <script src="js/user-rules.js"></script>
     <script src="js/hosts-files.js"></script>
+    <script src="js/about.js"></script>
 </body>
 
 </html>

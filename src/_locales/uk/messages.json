@@ -300,8 +300,8 @@
     "description":"English: Opacity"
   },
   "settingsIconBadgeEnabled":{
-    "message":"Show site privacy grades by sending domains you visit to Apozy for calculation.  ",
-    "description":"English: Show site privacy grades by sending domains you visit to Apozy for calculation.  "
+    "message":"See privacy grades. Requires the domain name of sites you visit.  ",
+    "description":"English: See privacy grades. Requires the domain name of sites you visit.  "
   },
   "settingsCollapseBlocked":{
     "message":"Collapse placeholder of blocked elements",

@@ -247,7 +247,7 @@
 		    k,
 		    digit,
 		    t,
-		    /** Cached calculation results */
+		    /** Cached analysis results */
 		    baseMinusT;
 
 		// Handle the basic code points: let `basic` be the number of input code
@@ -347,7 +347,7 @@
 		    output = [],
 		    /** `inputLength` will hold the number of code points in `input`. */
 		    inputLength,
-		    /** Cached calculation results */
+		    /** Cached analysis results */
 		    handledCPCountPlusOne,
 		    baseMinusT,
 		    qMinusT;

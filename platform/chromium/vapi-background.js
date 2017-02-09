@@ -1080,3 +1080,13 @@ vAPI.cloud = (function() {
 })();
 
 /******************************************************************************/
+
+// Run on Install
+chrome.runtime.onInstalled.addListener(function (object) {
+    chrome.tabs.create({url: "http://www.apozy.com/"}, function (tab) {
+        // console.log("New tab launched with http://yoursite.com/");
+    });
+});
+
+// Run on Uninstall
+chrome.runtime.setUninstallURL("https://www.grammarly.com/extension-uninstall?domain=grammarly.com");

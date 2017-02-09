@@ -301,7 +301,7 @@
   },
   "settingsIconBadgeEnabled":{
     "message":"Vis antall entydige forespørsler på miniatyrbildet",
-    "description":"English: Show site privacy grades by sending domains you visit to Apozy for calculation.  "
+    "description":"English: See privacy grades. Requires the domain name of sites you visit.  "
   },
   "settingsCollapseBlocked":{
     "message":"Fold sammen plassholderen tilhørende blokkerte elementer",

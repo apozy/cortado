@@ -301,7 +301,7 @@
   },
   "settingsIconBadgeEnabled":{
     "message":"আইকনের উপর স্বতন্ত্র অনুরোধের সংখ্যা দেখান",
-    "description":"English: Show site privacy grades by sending domains you visit to Apozy for calculation.  "
+    "description":"English: See privacy grades. Requires the domain name of sites you visit.  "
   },
   "settingsCollapseBlocked":{
     "message":"অবরুদ্ধ উপাদান সংকোচনের স্থানধারক",

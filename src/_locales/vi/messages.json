@@ -301,14 +301,14 @@
   },
   "settingsIconBadgeEnabled":{
     "message":"Hiển thị số lượng yêu cầu riêng biệt trên biểu tượng",
-    "description":"English: Show site privacy grades by sending domains you visit to Apozy for calculation.  "
+    "description":"English: See privacy grades. Requires the domain name of sites you visit.  "
   },
   "settingsCollapseBlocked":{
     "message":"Collapse placeholder of blocked elements",
     "description":"English: Collapse placeholder of blocked elements"
   },
   "settingsCloudStorageEnabled":{
-    "message":"Save settings to your Chrome account's cloud storage",
+    "message":"Use your Chrome account to backup data",
     "description":""
   },
   "privacyPageTitle":{
