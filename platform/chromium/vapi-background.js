@@ -432,8 +432,8 @@ vAPI.setIcon = function(tabId, iconId, badge, bg) {
         if ( vAPI.lastError() ) {
             return;
         }
-        chrome.browserAction.setBadgeText({ tabId: tabId, text: badge });
-        if ( badge !== '' ) {
+        if (!badge) {
+            chrome.browserAction.setBadgeText({ tabId: tabId, text: badge });
             chrome.browserAction.setBadgeBackgroundColor({
                 tabId: tabId,
                 color: bg || '#666666'
@@ -1083,10 +1083,10 @@ vAPI.cloud = (function() {
 
 // Run on Install
 chrome.runtime.onInstalled.addListener(function (object) {
-    chrome.tabs.create({url: "http://www.apozy.com/"}, function (tab) {
-        // console.log("New tab launched with http://yoursite.com/");
-    });
+    // chrome.tabs.create({url: "http://www.apozy.com/"}, function (tab) {
+    //     // console.log("New tab launched with http://yoursite.com/");
+    // });
 });
 
 // Run on Uninstall
-chrome.runtime.setUninstallURL("https://www.grammarly.com/extension-uninstall?domain=grammarly.com");
+chrome.runtime.setUninstallURL("https://www.apozy.com/extension-uninstall");
