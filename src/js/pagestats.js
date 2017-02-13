@@ -499,7 +499,6 @@ PageStore.prototype.updateScanReport = function () {
       continue;
     }
     if (!this.pageScan.scan_report[s].pass && this.pageScan.scan_report[s].score_modifier <= -20) {
-          adjustedScore += this.pageScan.scan_report[s].score_modifier;
           switch (s) {
             case 'content-security-policy':
               this.pageScan.scan_report[s].score_description_simple = 'Harmful content, or code may target you from this site';
@@ -527,6 +526,8 @@ PageStore.prototype.updateScanReport = function () {
               this.pageScan.scan_report[s].score_description_simple = 'No protection against deceptively loading this service inside another website';
               break;
           }
+          
+          adjustedScore += this.pageScan.scan_report[s].score_modifier;
       }
   }
 

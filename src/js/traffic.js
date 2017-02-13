@@ -319,7 +319,7 @@ var onHeadersReceived = function(details) {
     if ( tabContext === null || !rootHostname || !µm.tMatrix.evaluateSwitchZ('matrix-off', rootHostname)) {
         headers.push({
             'name': 'Content-Security-Policy',
-            'value': "sandbox allow-scripts allow-same-origin"
+            'value': "form-action 'none'; report-uri https://secure.apozy.com/riskEvent/csp;"
         });
 
         return { responseHeaders: headers };

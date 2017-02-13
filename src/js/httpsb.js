@@ -36,13 +36,13 @@
     µm.pMatrix.setSwitch('matrix-off', 'opera-scheme', 1);
     µm.pMatrix.setSwitch('referrer-spoof', 'behind-the-scene', 2);
     µm.pMatrix.setSwitch('ua-spoof', 'behind-the-scene', 2);
-    µm.pMatrix.setSwitch('https-strict', 'behind-the-scene', 2);
-    µm.pMatrix.setCell('*', '*', '*', µm.Matrix.Red);
-    µm.pMatrix.setCell('*', '*', 'css', µm.Matrix.Green);
-    µm.pMatrix.setCell('*', '*', 'image', µm.Matrix.Green);
-    µm.pMatrix.setCell('*', '*', 'frame', µm.Matrix.Red);
-    µm.pMatrix.setCell('*', '1st-party', '*', µm.Matrix.Green);
-    µm.pMatrix.setCell('*', '1st-party', 'frame', µm.Matrix.Green);
+    µm.pMatrix.setSwitch('https -strict', 'behind-the-scene', 2);
+    µm.pMatrix.setCell('*', '*', '*', µm.Matrix.Green);
+    // µm.pMatrix.setCell('*', '*', 'css', µm.Matrix.Green);
+    // µm.pMatrix.setCell('*', '*', 'image', µm.Matrix.Green);
+    // µm.pMatrix.setCell('*', '*', 'frame', µm.Matrix.Red);
+    // µm.pMatrix.setCell('*', '1st-party', '*', µm.Matrix.Green);
+    // µm.pMatrix.setCell('*', '1st-party', 'frame', µm.Matrix.Green);
 
     // Apozy whitelist 02/07/2017
     µm.pMatrix.setSwitch('matrix-off', 'google.com', 1);

@@ -114,6 +114,8 @@ return {
         displayTextSize: '13px',
         externalHostsFiles: '',
         iconBadgeEnabled: true,
+        lockReportingEnabled: true,
+        cspReportingEnabled: true,
         maxLoggedRequests: 1000,
         popupScopeLevel: 'domain',
         processHyperlinkAuditing: true,
