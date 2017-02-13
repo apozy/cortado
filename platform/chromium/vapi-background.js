@@ -432,7 +432,7 @@ vAPI.setIcon = function(tabId, iconId, badge, bg) {
         if ( vAPI.lastError() ) {
             return;
         }
-        if (!badge) {
+        if (badge) {
             chrome.browserAction.setBadgeText({ tabId: tabId, text: badge });
             chrome.browserAction.setBadgeBackgroundColor({
                 tabId: tabId,
