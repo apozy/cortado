@@ -53,6 +53,7 @@
     µm.pMatrix.setSwitch('matrix-off', 'google.co.jp', 1);
     µm.pMatrix.setSwitch('matrix-off', 'live.com', 1);
     µm.pMatrix.setSwitch('matrix-off', 'twitter.com', 1);
+    µm.pMatrix.setSwitch('matrix-off', 'facebook.com', 1);
     µm.pMatrix.setSwitch('matrix-off', 'instagram.com', 1);
     µm.pMatrix.setSwitch('matrix-off', 'linkedin.com', 1);
     µm.pMatrix.setSwitch('matrix-off', 'yahoo.co.jp', 1);
