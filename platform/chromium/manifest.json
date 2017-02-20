@@ -1,6 +1,6 @@
 {
     "manifest_version": 2,
-    "name": "Apozy (Lite)",
+    "name": "Apozy Trusted Browsing",
     "short_name": "Apozy",
     "version": "1.0.9",
     "description": "__MSG_extShortDesc__",
@@ -74,6 +74,7 @@
         "history",
         "notifications",
         "privacy",
+        "identity",
         "storage",
         "tabs",
         "unlimitedStorage",
