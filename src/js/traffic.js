@@ -316,13 +316,26 @@ var onHeadersReceived = function(details) {
 
     var tabContext = µm.tabContextManager.lookup(tabId);
     var rootHostname = tabContext.rootHostname;
+
     if ( tabContext === null || !rootHostname || !µm.tMatrix.evaluateSwitchZ('matrix-off', rootHostname)) {
+        
+        var pageStore = µm.pageStoreFromTabId(tabId);
+        var starPageDomain = '*.' + pageStore.pageDomain;
+
+        // Reports violations
+        headers.push({
+            'name': 'Content-Security-Policy-Report-Only',
+            'value': "Content-Security-Policy: script-src 'self' " + starPageDomain + "; style-src 'self' " + starPageDomain + "; block-all-mixed-content; require-sri-for script; report-uri https://secure.apozy.com/riskEvent/csp;"
+        });
+
+        // Blocks and reports form-action violations
         headers.push({
             'name': 'Content-Security-Policy',
             'value': "form-action 'none'; report-uri https://secure.apozy.com/riskEvent/csp;"
         });
 
         return { responseHeaders: headers };
+
     }
 
     if ( µm.mustAllow(tabContext.rootHostname, µm.URI.hostnameFromURI(requestURL), 'script') ) {
