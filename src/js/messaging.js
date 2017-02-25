@@ -93,6 +93,15 @@ function onMessage(request, sender, callback) {
         response = µm.changeUserSettings(request.name, request.value);
         break;
 
+    case 'updateUserApiKey':
+        console.log("vAPI.storage", vAPI.storage.set);
+        console.log("request.user",request.user);
+        break;
+
+    case 'getUserApiKey':
+        // TODO: write get user api key - this will be appended to all requests
+        break;
+
     default:
         return vAPI.messaging.UNHANDLED;
     }
@@ -660,6 +669,40 @@ var onMessage = function(request, sender, callback) {
 vAPI.messaging.listen('settings.js', onMessage);
 
 })();
+
+
+/******************************************************************************/
+/******************************************************************************/
+
+// options.js
+
+(function() {
+
+var onMessage = function(request, sender, callback) {
+
+    var µm = µMatrix;
+
+    // Async
+    switch ( request.what ) {
+    default:
+        break;
+    }
+
+    // Sync
+    var response;
+
+    switch ( request.what ) {
+    default:
+        return vAPI.messaging.UNHANDLED;
+    }
+
+    callback(response);
+};
+
+vAPI.messaging.listen('options.js', onMessage);
+
+})();
+
 
 /******************************************************************************/
 /******************************************************************************/
