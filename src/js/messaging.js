@@ -106,12 +106,14 @@ function onMessage(request, sender, callback) {
         break;
 
     case 'getUserApiInfo':
+        // TODO: this is a race condition with callback in line 136
         vAPI.storage.get('apozy_api', function (info) {
             return callback(info.apozy_api);
         });
         break;
 
     case 'getUserEmail':
+        // TODO: this is a race condition with callback in line 136
         vAPI.storage.get('apozy_api', function (info) {
             if (info && info.apozy_api) {
                 return callback(info.apozy_api.email);
@@ -122,6 +124,7 @@ function onMessage(request, sender, callback) {
         break;
 
     case 'isUserLoggedIn':
+        // TODO: this is a race condition with callback in line 136
         vAPI.storage.get('apozy_api', function (info) {
             if (info.apikey) {
                 return callback(true)
