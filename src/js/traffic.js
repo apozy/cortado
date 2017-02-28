@@ -302,7 +302,6 @@ var onHeadersReceived = function(details) {
     var µm = µMatrix;
     var tabId = details.tabId;
     var requestType = requestTypeNormalizer[details.type] || 'other';
-
     // Ignore schemes other than 'http...'
     // if ( requestURL.lastIndexOf('http', 0) !== 0 ) {
     //     return;

@@ -59,13 +59,7 @@ function queryStringToJSON() {
 
 // NOTE: runs automatically
 function handleAPIKeyResponse() {
-    console.log('hit');
-
-    console.log('getting query string', location.search.slice(1));
-
     var queryObj = queryStringToJSON();
-
-    console.log('queryObj', queryObj);
 
     if (Object.keys(queryObj).length > 0) {
 

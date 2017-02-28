@@ -94,13 +94,39 @@ function onMessage(request, sender, callback) {
         break;
 
     case 'updateUserApiKey':
-        console.log("vAPI.storage", vAPI.storage.set);
-        console.log("request.user",request.user);
+        vAPI.storage.set({
+            "apozy_api": request.user
+        });
+        
+        // TODO: remove in prod, this just prints what's stored
+        vAPI.storage.get('apozy_api', function (info) {
+            console.log("stored info", info);
+        });
+
         break;
 
-    case 'getUserApiKey':
-        // TODO: write get user api key - this will be appended to all requests
+    case 'getUserApiInfo':
+        vAPI.storage.get('apozy_api', function (info) {
+            return callback(info.apozy_api);
+        });
         break;
+
+    case 'getUserEmail':
+        vAPI.storage.get('apozy_api', function (info) {
+            if (info && info.apozy_api) {
+                return callback(info.apozy_api.email);
+            } else {
+                return callback(info.apozy_api);
+            }
+        });
+        break;
+
+    case 'isUserLoggedIn':
+        vAPI.storage.get('apozy_api', function (info) {
+            if (info.apikey) {
+                return callback(true)
+            }
+        })
 
     default:
         return vAPI.messaging.UNHANDLED;
