@@ -135,6 +135,33 @@ function onMessage(request, sender, callback) {
         });
         break;
 
+    /*
+    case 'getApiKeySignature':
+        async_return = true;
+        vAPI.storage.get('apozy_api', function (info) {
+            // The message for this
+            // messager.send({
+            //     what: 'getApiKeySignature',
+            //     path: '/what/path/am/i/httping'
+            // })
+
+            var path = request.path;
+            var id = info.apozy_api.id;
+            var secret = info.apozy_api.secret;
+            var email = info.apozy_api.email;
+
+
+            // TODO: @ejustice implement
+            const signature = crypto
+                                .createHmac('sha1', key.secret)
+                                .update(req.path) // Does not include query params
+                                .digest('hex');
+            return callback(signature);
+        });
+        break;
+    */
+    
+
     default:
         return vAPI.messaging.UNHANDLED;
     }
