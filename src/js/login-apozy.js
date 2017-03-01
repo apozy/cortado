@@ -36,14 +36,6 @@ var cachedUserSettings = {};
 
 /******************************************************************************/
 
-function changeUserSettings(name, value) {
-    messager.send({
-        what: 'userSettings',
-        name: name,
-        value: value
-    });
-}
-
 
 function queryStringToJSON() {
     var pairs = location.search.slice(1).split('&');

@@ -37,6 +37,8 @@ var µm = µMatrix;
 // Default is for commonly used message.
 
 function onMessage(request, sender, callback) {
+    var async_return = false;
+
     // Async
     switch ( request.what ) {
     case 'getAssetContent':
@@ -93,7 +95,7 @@ function onMessage(request, sender, callback) {
         response = µm.changeUserSettings(request.name, request.value);
         break;
 
-    case 'updateUserApiKey':
+    case 'setUserApiKey':
         vAPI.storage.set({
             "apozy_api": request.user
         });
@@ -106,28 +108,30 @@ function onMessage(request, sender, callback) {
         break;
 
     case 'getUserApiInfo':
-        // TODO: this is a race condition with callback in line 136
+        async_return = true;
         vAPI.storage.get('apozy_api', function (info) {
             return callback(info.apozy_api);
         });
         break;
 
     case 'getUserEmail':
-        // TODO: this is a race condition with callback in line 136
+        async_return = true;
         vAPI.storage.get('apozy_api', function (info) {
             if (info && info.apozy_api) {
                 return callback(info.apozy_api.email);
             } else {
-                return callback(info.apozy_api);
+                return callback(undefined);
             }
         });
         break;
 
     case 'isUserLoggedIn':
-        // TODO: this is a race condition with callback in line 136
+        async_return = true;
         vAPI.storage.get('apozy_api', function (info) {
             if (info.apikey) {
                 return callback(true)
+            } else {
+                return callback(false);
             }
         })
 
@@ -135,7 +139,10 @@ function onMessage(request, sender, callback) {
         return vAPI.messaging.UNHANDLED;
     }
 
-    callback(response);
+    if (!async_return) {
+        callback(response);
+    }
+
 }
 
 /******************************************************************************/
