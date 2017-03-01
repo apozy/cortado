@@ -51,7 +51,12 @@ function queryStringToJSON() {
 
 // NOTE: runs automatically
 function handleAPIKeyResponse() {
-    var queryObj = queryStringToJSON();
+
+    try {
+        var queryObj = queryStringToJSON();
+    } catch (e) {
+        console.log("Malformed querystring", e);
+    }
 
     if (Object.keys(queryObj).length > 0) {
 
@@ -70,6 +75,26 @@ function handleAPIKeyResponse() {
             }, function (info) {
                 console.log("got the callback");
                 
+            });
+
+            // TODO: remove tests below
+
+            messager.send({
+                what: 'getUserApiInfo'
+            }, function (info) {
+                console.log("api info", info);
+            });
+
+            messager.send({
+                what: 'getUserEmail'
+            }, function (info) {
+                console.log("user email", info);
+            });
+
+            messager.send({
+                what: 'isUserLoggedIn'
+            }, function (info) {
+                console.log("user logged in", info);
             });
             // vAPI.storage.set({authInfo:queryObj});
 
