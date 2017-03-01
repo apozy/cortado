@@ -57,17 +57,17 @@ function handleAPIKeyResponse() {
 
         // if there is an error in the query string
         if (queryObj.error) {
-            console.log("there was an error");
+            console.log("Querystring indicated error.");
         // TODO: validate return object user & user.apikey w/ all necessary info, if  not redirect to /?error=true
         // if there is a empty querystring 
         } else if (queryObj[""] === "") {
-            console.log("empty query string");
+            console.log("Empty query string.");
+        // otherwise, valid querystring
         } else {
-
             messager.send({
-                what: 'updateUserApiKey',
+                what: 'setUserApiKey',
                 user: queryObj
-            }, function () {
+            }, function (info) {
                 console.log("got the callback");
                 
             });

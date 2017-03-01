@@ -104,7 +104,6 @@ function onMessage(request, sender, callback) {
         vAPI.storage.get('apozy_api', function (info) {
             console.log("stored info", info);
         });
-
         break;
 
     case 'getUserApiInfo':
@@ -128,12 +127,13 @@ function onMessage(request, sender, callback) {
     case 'isUserLoggedIn':
         async_return = true;
         vAPI.storage.get('apozy_api', function (info) {
-            if (info.apikey) {
-                return callback(true)
+            if (info.apozy_api) {
+                return callback(true);
             } else {
                 return callback(false);
             }
-        })
+        });
+        break;
 
     default:
         return vAPI.messaging.UNHANDLED;
