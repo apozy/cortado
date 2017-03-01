@@ -244,9 +244,10 @@ var collapser = (function() {
       // Handle shortcut keys with standard modifier
       if ((e.ctrlKey || e.metaKey || e.altKey)
           && !keyCodes[e.keyCode]
-          // Uncomment to block copy and paste
-          /*&& e.key.toLowerCase() !== 'c'
-          && e.key.toLowerCase() !== 'v'*/) {
+          && e.key.toLowerCase() !== 'v'
+          // Uncomment to block copy
+          //&& e.key.toLowerCase() !== 'c'
+        ) {
             return;
       }
 
