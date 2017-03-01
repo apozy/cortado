@@ -51,11 +51,18 @@ function queryStringToJSON() {
 
 // NOTE: runs automatically
 function handleAPIKeyResponse() {
+    // TODO: remove this isUserLoggedIn test
+    messager.send({
+        what: 'isUserLoggedIn'
+    }, function (info) {
+        console.log("user logged in", info);
+    });
 
     try {
         var queryObj = queryStringToJSON();
     } catch (e) {
         console.log("Malformed querystring", e);
+        return;
     }
 
     if (Object.keys(queryObj).length > 0) {
