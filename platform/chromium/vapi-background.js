@@ -122,17 +122,19 @@ vAPI.notifications.notifyLocked = function (domain, options) {
 
   var unlockIcon = 'data:image/svg+xml;utf8,<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"> <path d="M0 0h24v24H0z" fill="none"/> <path d="M12 17c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm6-9h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6h1.9c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm0 12H6V10h12v10z"/> </svg>';
   var opt = {
-              type: options.type || "progress",
+              type: options.type || "basic",
               // progress: 3,
-              title: options.title || "Site Locked by Apozy",
+              title: options.title || "Apozy Protection is On",
               // contextMessage: "Risk Level"
-              message: options.message || "You don't frequently use this site.",
-              contextMessage: "Restricted input and downloads",
+              message: options.message || "You don't use this site often, so actions like typing and downloads are locked.",
+              contextMessage: options.contextMessage || "",
               iconUrl: options.iconUrl || "img/icon.svg",
-              progress: 100,
-              // message: "5 Risks",
               buttons: [{title: "Click to unlock " + domain, iconUrl: unlockIcon}]
           };
+
+          if (opt.type.toLowerCase() === "progress") {
+            opt.progress = options.progress || 0;
+          }
 
           chrome.notifications.create(domain, opt, null);
 };

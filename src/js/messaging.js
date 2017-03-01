@@ -533,6 +533,7 @@ var onMessage = function(request, sender, callback) {
     }
 
     var tabId = sender && sender.tab ? sender.tab.id || 0 : 0;
+    var pageStore = µm.pageStoreFromTabId(tabId);
 
     // Sync
     var response;
@@ -556,7 +557,15 @@ var onMessage = function(request, sender, callback) {
             undefined;
         break;
    case 'notifyBlockedRequest':
-         vAPI.notifications.notifyLocked(µm.URI.domainFromHostname(µm.URI.hostnameFromURI(request.url)));
+         var options = {};
+
+         if (pageStore.pageScan.score !== undefined) {
+           options.contextMessage = "Site privacy is " + pageStore.pageScan.score + '%';
+           options.type = "progress";
+           options.progress = pageStore.pageScan.score;
+         }
+
+         vAPI .notifications .notifyLocked(µm.URI.domainFromHostname(µm.URI.hostnameFromURI(request.url)), options);
          break;
 
     case 'shutdown?':
