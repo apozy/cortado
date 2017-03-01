@@ -49,9 +49,9 @@ function queryStringToJSON() {
     return JSON.parse(JSON.stringify(result));
 }
 
-// NOTE: runs automatically
-function handleAPIKeyResponse() {
-    // TODO: remove this isUserLoggedIn test
+// NOTE: runs onLoad
+function handleURLQuerystring() {
+    // TODO: use this isUserLoggedIn test for views
     messager.send({
         what: 'isUserLoggedIn'
     }, function (info) {
@@ -69,13 +69,38 @@ function handleAPIKeyResponse() {
 
         // if there is an error in the query string
         if (queryObj.error) {
+            // TODO: @ejustice implement error view 
             console.log("Querystring indicated error.");
+
         // TODO: validate return object user & user.apikey w/ all necessary info, if  not redirect to /?error=true
-        // if there is a empty querystring 
+        // if there is a empty querystring, do nothing
         } else if (queryObj[""] === "") {
-            console.log("Empty query string.");
-        // otherwise, valid querystring
-        } else {
+            // console.log("Empty query string.");
+        } else if (queryObj.logout) {
+            messager.send({
+                what: 'logout'
+            });
+
+            // TODO: remove tests below / use
+            console.log("logging out, here is info");
+            messager.send({
+                what: 'getUserApiInfo'
+            }, function (info) {
+                console.log("api info", info);
+            });
+            messager.send({
+                what: 'getUserEmail'
+            }, function (info) {
+                console.log("user email", info);
+            });
+            messager.send({
+                what: 'isUserLoggedIn'
+            }, function (info) {
+                console.log("user logged in", info);
+            });
+            
+        // otherwise, if there is a valid apikey querystring
+        } else if (queryObj.email && queryObj.id && queryObj.secret) {
             messager.send({
                 what: 'setUserApiKey',
                 user: queryObj
@@ -84,8 +109,8 @@ function handleAPIKeyResponse() {
                 
             });
 
-            // TODO: remove tests below
 
+            // TODO: remove tests below / use
             messager.send({
                 what: 'getUserApiInfo'
             }, function (info) {
@@ -103,11 +128,8 @@ function handleAPIKeyResponse() {
             }, function (info) {
                 console.log("user logged in", info);
             });
-            // vAPI.storage.set({authInfo:queryObj});
-
-            // vAPI.storage.get("authInfo", function (value) {
-            //     console.log("testing getting query object", value);
-            // });
+        } else {
+            // Do nothing 
         }
 
     }
@@ -115,17 +137,12 @@ function handleAPIKeyResponse() {
 
 /******************************************************************************/
 
-function prepareToDie() {
-}
+function prepareToDie() {}
 
 /******************************************************************************/
 
 uDom.onLoad(function() {
-    // var onUserSettingsReceived = function(userSettings) {
-
-    handleAPIKeyResponse();
-    // };
-    // messager.send({ what: 'getUserSettings' }, onUserSettingsReceived);
+    handleURLQuerystring();
 });
 
 /******************************************************************************/

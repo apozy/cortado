@@ -99,11 +99,6 @@ function onMessage(request, sender, callback) {
         vAPI.storage.set({
             "apozy_api": request.user
         });
-        
-        // TODO: remove in prod, this just prints what's stored
-        vAPI.storage.get('apozy_api', function (info) {
-            console.log("stored info", info);
-        });
         break;
 
     case 'getUserApiInfo':
@@ -133,6 +128,10 @@ function onMessage(request, sender, callback) {
                 return callback(false);
             }
         });
+        break;
+
+    case 'logout':
+        vAPI.storage.remove('apozy_api');
         break;
 
     /*
