@@ -54,6 +54,11 @@
             µm.tMatrix.evaluateSwitchZ('matrix-off', domain) === false
         );
 
+        // Persist change
+        if ( µm.pMatrix.applyDiff([{src: domain, what: 'matrix-off'}], µm.tMatrix) ) {
+            µm.saveMatrix();
+        }
+
         µm.forceReload(tabId);
     };
 

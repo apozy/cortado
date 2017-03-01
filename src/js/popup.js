@@ -945,7 +945,7 @@ var makeMenu = function() {
     if ( Object.keys(groupStats).length === 0 ) {
         return;
     }
-    
+
     $("#isLocked").prop("checked", !matrixSnapshot.tSwitches["matrix-off"]);
 
     // https://github.com/gorhill/httpswitchboard/issues/31
@@ -1172,13 +1172,7 @@ function updateMatrixSwitches() {
 function toggleMatrixSwitch(ev) {
     var lockValue = $("#isLocked").prop("checked");
 
-    // var elem = ev.currentTarget;
-    // var pos = elem.id.indexOf('_');
-    // if ( pos === -1 ) {
-    //     return;
-    // }
-    // var switchName = elem.id.slice(pos + 1);
-
+    // Whitelist
     var request = {
         what: 'toggleMatrixSwitch',
         switchName: 'matrix-off',
@@ -1187,22 +1181,25 @@ function toggleMatrixSwitch(ev) {
 
     messager.send(request, updateMatrixSnapshot);
 
-    // Force tab reload
-    messager.send({
-        what: 'forceReloadTab',
-        tabId: matrixSnapshot.tabId
-    });
+    // Save Whitelist
+    persistMatrix([{src: matrixSnapshot.scope, what: 'matrix-off'}]);
+
+    // Reload matrix
+    buttonReloadHandler();
 
     // Close popup
-    var closeTimer = vAPI.setTimeout(function() {
-      if (!lockValue) {
-          window.close();
-      } else {
-         clearTimeout(this);
-      }
-    }, 500);
+    closeOnLock(lockValue);
 }
-
+/******************************************************************************/
+function closeOnLock(lockValue) {
+  var closeTimer = vAPI.setTimeout(function() {
+    if (!lockValue) {
+        window.close();
+    } else {
+       clearTimeout(this);
+    }
+  }, 500);
+}
 /******************************************************************************/
 
 function updatePersistButton() {
@@ -1220,10 +1217,10 @@ function updatePersistButton() {
 
 /******************************************************************************/
 
-function persistMatrix() {
+function persistMatrix(diff) {
     var request = {
         what: 'applyDiffToPermanentMatrix',
-        diff: matrixSnapshot.diff
+        diff: (diff) ? diff : matrixSnapshot.diff
     };
     messager.send(request, updateMatrixSnapshot);
 }
