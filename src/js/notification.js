@@ -48,16 +48,11 @@
             tab.id :
             vAPI.noTabId;
 
-        µm.tMatrix.setSwitchZ(
-            'matrix-off',
-            domain,
-            µm.tMatrix.evaluateSwitchZ('matrix-off', domain) === false
-        );
-
-        // Persist change
-        if ( µm.pMatrix.applyDiff([{src: domain, what: 'matrix-off'}], µm.tMatrix) ) {
-            µm.saveMatrix();
-        }
+        // Set & save lock status
+        var matrixStatus = µm.pMatrix.evaluateSwitchZ('matrix-off', domain) === false;
+        µm.tMatrix.setSwitchZ( 'matrix-off', domain, matrixStatus);
+        µm.pMatrix.setSwitchZ( 'matrix-off', domain, matrixStatus);
+        µm.saveMatrix();
 
         µm.forceReload(tabId);
     };

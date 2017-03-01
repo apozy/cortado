@@ -321,11 +321,22 @@ var onMessage = function(request, sender, callback) {
 
     switch ( request.what ) {
     case 'toggleMatrixSwitch':
+        var matrixStatus = µm.tMatrix.evaluateSwitchZ(request.switchName, request.srcHostname) === false;
+
         µm.tMatrix.setSwitchZ(
             request.switchName,
             request.srcHostname,
-            µm.tMatrix.evaluateSwitchZ(request.switchName, request.srcHostname) === false
+            matrixStatus
         );
+
+        µm.pMatrix.setSwitchZ(
+            request.switchName,
+            request.srcHostname,
+            matrixStatus
+        );
+
+        µm.saveMatrix();
+
         break;
 
     case 'blacklistMatrixCell':

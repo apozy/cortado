@@ -1181,9 +1181,6 @@ function toggleMatrixSwitch(ev) {
 
     messager.send(request, updateMatrixSnapshot);
 
-    // Save Whitelist
-    persistMatrix([{src: matrixSnapshot.scope, what: 'matrix-off'}]);
-
     // Reload matrix
     buttonReloadHandler();
 

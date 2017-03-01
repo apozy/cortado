@@ -478,6 +478,13 @@ PageStore.prototype.updatePageHistory = function () {
                             parentScope.pageDomain,
                             true
                         );
+                        µm.pMatrix.setSwitchZ(
+                            'matrix-off',
+                            parentScope.pageDomain,
+                            true
+                        );
+                        
+                        µm.saveMatrix();
                     }
                   });
                 }
@@ -526,7 +533,7 @@ PageStore.prototype.updateScanReport = function () {
               this.pageScan.scan_report[s].score_description_simple = 'No protection against deceptively loading this service inside another website';
               break;
           }
-          
+
           adjustedScore += this.pageScan.scan_report[s].score_modifier;
       }
   }
