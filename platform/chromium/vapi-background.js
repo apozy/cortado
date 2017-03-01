@@ -129,6 +129,7 @@ vAPI.notifications.notifyLocked = function (domain, options) {
               message: options.message || "You don't frequently use this site.",
               contextMessage: "Restricted input and downloads",
               iconUrl: options.iconUrl || "img/icon.svg",
+              progress: 100,
               // message: "5 Risks",
               buttons: [{title: "Click to unlock " + domain, iconUrl: unlockIcon}]
           };
