@@ -1,13 +1,38 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Welcome Aboard</title>
+    <title>Setup Apozy</title>
+    <!-- <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:300" rel="stylesheet"> -->
     <link rel="stylesheet" href="lib/materialize/materialize.css">
+    <!-- <link rel="stylesheet" href="css/main.css"> -->
 </head>
-<body>
-<div class="container" style="display: flex; position: absolute; top: 0; left: 0; height: 100%; width: 100%; background: #f5f5f5">
-    <div class="row valign-wrapper">
-        <div class="col s10 m8 l8 offset-s1 offset-m2 offset-l2 valign">
+
+<body style="background: #f5f5f5">
+    <div class="row"></div>
+    <div class="container row">
+        <div class="col s12 m6">
+            <h1>How would you like Apozy to behave?</h1>
+            <form action="#">
+                <div>
+                    <input class="with-gap" name="privacyMode" type="radio" id="mode1" />
+                    <label for="mode1">Personalized Protection</label>
+                </div>
+                <div>
+                    <input class="with-gap" name="privacyMode" type="radio" id="mode2" />
+                    <label for="mode2">Community Mode: Only share</label>
+                </div>
+                <div>
+                    <input class="with-gap" name="privacyMode" type="radio" id="mode3" />
+                    <label for="mode3">Limited protection, but maximum privacy.</label>
+                </div>
+            </form>
+            <div class="row"></div>
+            <!-- Modal Trigger -->
+            <a class="waves-effect waves-light btn" href="#modal1">Modal</a>
+
+        </div>
+        <div class="col s12 m6">
             <div class="card purple lighten-5 hoverable">
                 <div class="card-content">
                     <span class="card-title">Hi, we're Apozy.</span>
@@ -32,6 +57,8 @@
             </div>
         </div>
     </div>
-</div>
+    <script src="/lib/jquery.js"></script>
+    <script src="/lib/materialize/materialize.js"></script>
 </body>
+
 </html>
