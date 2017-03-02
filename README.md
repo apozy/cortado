@@ -8,6 +8,9 @@ Cortado is a fork of [Raymond Hill's uMatrix](https://github.com/gorhill/uMatrix
 
 ![screenshot](http://i.imgur.com/ElwQNR1.png)
 
+# Download
+[From Chrome Store](https://chrome.google.com/webstore/detail/apozy-trusted-browsing/akgjbibhebefdjbebhpmknohhojhppeb?hl=en)
+
 # License
 
 <a href="https://github.com/gorhill/umatrix/blob/master/LICENSE.txt">GPLv3</a>.
