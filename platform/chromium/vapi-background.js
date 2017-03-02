@@ -1086,9 +1086,9 @@ vAPI.cloud = (function() {
 
 // Run on Install
 chrome.runtime.onInstalled.addListener(function (object) {
-    // chrome.tabs.create({url: "http://www.apozy.com/"}, function (tab) {
-    //     // console.log("New tab launched with http://yoursite.com/");
-    // });
+    chrome.tabs.create({url: "onboard.html"}, function (tab) {
+        // console.log("New tab launched with http://yoursite.com/");
+    });
 });
 
 // Run on Uninstall
