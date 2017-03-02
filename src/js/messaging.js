@@ -37,6 +37,8 @@ var µm = µMatrix;
 // Default is for commonly used message.
 
 function onMessage(request, sender, callback) {
+    var async_return = false;
+
     // Async
     switch ( request.what ) {
     case 'getAssetContent':
@@ -93,11 +95,80 @@ function onMessage(request, sender, callback) {
         response = µm.changeUserSettings(request.name, request.value);
         break;
 
+    case 'setUserApiKey':
+        vAPI.storage.set({
+            "apozy_api": request.user
+        });
+        break;
+
+    case 'getUserApiInfo':
+        async_return = true;
+        vAPI.storage.get('apozy_api', function (info) {
+            return callback(info.apozy_api);
+        });
+        break;
+
+    case 'getUserEmail':
+        async_return = true;
+        vAPI.storage.get('apozy_api', function (info) {
+            if (info && info.apozy_api) {
+                return callback(info.apozy_api.email);
+            } else {
+                return callback(undefined);
+            }
+        });
+        break;
+
+    case 'isUserLoggedIn':
+        async_return = true;
+        vAPI.storage.get('apozy_api', function (info) {
+            if (info.apozy_api) {
+                return callback(true);
+            } else {
+                return callback(false);
+            }
+        });
+        break;
+
+    case 'logout':
+        vAPI.storage.remove('apozy_api');
+        break;
+
+    /*
+    case 'getApiKeySignature':
+        async_return = true;
+        vAPI.storage.get('apozy_api', function (info) {
+            // The message for this
+            // messager.send({
+            //     what: 'getApiKeySignature',
+            //     path: '/what/path/am/i/httping'
+            // })
+
+            var path = request.path;
+            var id = info.apozy_api.id;
+            var secret = info.apozy_api.secret;
+            var email = info.apozy_api.email;
+
+
+            // TODO: @ejustice implement
+            const signature = crypto
+                                .createHmac('sha1', key.secret)
+                                .update(req.path) // Does not include query params
+                                .digest('hex');
+            return callback(signature);
+        });
+        break;
+    */
+    
+
     default:
         return vAPI.messaging.UNHANDLED;
     }
 
-    callback(response);
+    if (!async_return) {
+        callback(response);
+    }
+
 }
 
 /******************************************************************************/
@@ -680,6 +751,40 @@ var onMessage = function(request, sender, callback) {
 vAPI.messaging.listen('settings.js', onMessage);
 
 })();
+
+
+/******************************************************************************/
+/******************************************************************************/
+
+// options.js
+
+(function() {
+
+var onMessage = function(request, sender, callback) {
+
+    var µm = µMatrix;
+
+    // Async
+    switch ( request.what ) {
+    default:
+        break;
+    }
+
+    // Sync
+    var response;
+
+    switch ( request.what ) {
+    default:
+        return vAPI.messaging.UNHANDLED;
+    }
+
+    callback(response);
+};
+
+vAPI.messaging.listen('options.js', onMessage);
+
+})();
+
 
 /******************************************************************************/
 /******************************************************************************/

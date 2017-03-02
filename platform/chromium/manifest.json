@@ -67,6 +67,9 @@
     "homepage_url": "https://www.apozy.com",
     "minimum_chrome_version": "22.0",
     "options_page": "options.html",
+    "web_accessible_resources": [
+        "/options.html"
+    ],
     "permissions": [
         "browsingData",
         "contentSettings",

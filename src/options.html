@@ -60,7 +60,6 @@
 </head>
 
 <body>
-
     <div class="row">
         <div class="col s12" style="margin-bottom: 24px;">
             <ul class="tabs">
@@ -297,6 +296,11 @@
                 <span style="display: none;" data-i18n="aboutResetConfirm"></span>
             </div>
         </div> -->
+
+        <!-- <a href="https://secure.apozy.com/auth/google/plugin/callback" class="btn btn-google-plus" tooltip-placement="top" tooltip="Sign in with Google" tooltip-append-to-body="true"><i class="fa fa-google"></i></a> -->
+        <a href="http://localhost:1337/auth/google/extension/callback" class="btn btn-google-plus" tooltip-placement="top" tooltip="Sign in with Google" tooltip-append-to-body="true"><i class="fa fa-google"></i>Login</a>
+        <a href="?logout=true" class="btn btn-google-plus" tooltip-placement="top" tooltip="Sign in with Google" tooltip-append-to-body="true"><i class="fa fa-google"></i>Logout</a>
+
     </div>
 
     <script src="/lib/jquery.js"></script>
@@ -312,6 +316,8 @@
     <script src="js/user-rules.js"></script>
     <script src="js/hosts-files.js"></script>
     <!-- <script src="js/about.js"></script> -->
+    <script src="js/login-apozy.js"></script>
+
 </body>
 
 </html>
