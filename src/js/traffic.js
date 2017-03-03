@@ -358,8 +358,6 @@ var onHeadersReceived = function(details) {
             });
         }
 
-        // console.log('headers', headers);
-
         return { responseHeaders: headers };
         
     }
