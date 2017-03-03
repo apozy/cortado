@@ -55,7 +55,7 @@ function handleURLQuerystring() {
     messager.send({
         what: 'isUserLoggedIn'
     }, function (info) {
-        console.log("user logged in", info);
+        console.log("[aync] user logged in", info);
     });
 
     try {
