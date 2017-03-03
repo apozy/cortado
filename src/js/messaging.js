@@ -749,7 +749,6 @@ vAPI.messaging.listen('settings.js', onMessage);
 (function() {
 
 var onMessage = function(request, sender, callback) {
-
     var µm = µMatrix;
 
     // Async

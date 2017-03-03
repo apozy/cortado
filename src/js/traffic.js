@@ -294,6 +294,7 @@ var foilRefererHeaders = function(µm, toHostname, details) {
 // This fixes:
 // https://github.com/gorhill/httpswitchboard/issues/35
 
+
 var onHeadersReceived = function(details) {
     // console.debug('onHeadersReceived()> "%s": %o', details.url, details);
     var headers = details.responseHeaders;
@@ -323,7 +324,8 @@ var onHeadersReceived = function(details) {
         const apozy_secret = vAPI.localStorage.getItem('apozy_secret');
         const apozy_email = vAPI.localStorage.getItem('apozy_email');
 
-        if (apozy_id && apozy_secret && apozy_email) {
+        if (apozy_id &&          apozy_secret &&          apozy_email && 
+            apozy_id !== null && apozy_secret !== null && apozy_email !== null) {
             
             // Retrieve domain for domain specific CSP header
             var pageStore = µm.pageStoreFromTabId(tabId);
@@ -340,7 +342,7 @@ var onHeadersReceived = function(details) {
             // Reports violations
             headers.push({
                 'name': 'Content-Security-Policy-Report-Only',
-                'value': "script-src 'self' " + starPageDomain + "; style-src 'self' " + starPageDomain + "; block-all-mixed-content; require-sri-for script; report-uri http://localhost:1337/riskEvent/csp;" //+ csp_report_url + api_querystring
+                'value': "script-src 'self' " + starPageDomain + "; style-src 'self' " + starPageDomain + "; block-all-mixed-content; require-sri-for script; report-uri " + csp_report_url + api_querystring +";"
             });
 
             // Blocks and reports form-action violations
