@@ -98,7 +98,7 @@ function handleURLQuerystring() {
             }, function (info) {
                 console.log("user logged in", info);
             });
-            
+
         // otherwise, if there is a valid apikey querystring
         } else if (queryObj.email && queryObj.id && queryObj.secret) {
             messager.send({

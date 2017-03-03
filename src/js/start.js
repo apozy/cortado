@@ -78,7 +78,10 @@ var defaultLocalUserSettings = {
             '<a href="{{url}}" title="{{url}}" target="_blank">&#x2191;</a>{{url}}',
             '</body></html>'
         ].join(''),
-    placeholderImage: 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='
+    placeholderImage: 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==',
+    apozy_id: null,
+    apozy_secret: null,
+    apozy_email: null
 };
 
 var rwLocalUserSettings = {

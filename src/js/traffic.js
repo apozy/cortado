@@ -313,17 +313,54 @@ var onHeadersReceived = function(details) {
         µm.tabContextManager.push(tabId, requestURL);
     }
 
+    // If Safe Browsing is on
     var tabContext = µm.tabContextManager.lookup(tabId);
     var rootHostname = tabContext.rootHostname;
     if ( tabContext === null || !rootHostname || !µm.tMatrix.evaluateSwitchZ('matrix-off', rootHostname)) {
-        headers.push({
-            'name': 'Content-Security-Policy',
-            'value': "form-action 'none'; report-uri https://secure.apozy.com/riskEvent/csp;"
-        });
+
+        // TODO: before pushing these changes we must deploy csp violation tracking API 
+        const apozy_id = vAPI.localStorage.getItem('apozy_id');
+        const apozy_secret = vAPI.localStorage.getItem('apozy_secret');
+        const apozy_email = vAPI.localStorage.getItem('apozy_email');
+
+        if (apozy_id && apozy_secret && apozy_email) {
+            
+            // Retrieve domain for domain specific CSP header
+            var pageStore = µm.pageStoreFromTabId(tabId);
+            var starPageDomain = '*.' + pageStore.pageDomain;
+            
+            // dev vs prod url
+            var csp_report_url = (chrome.i18n.getMessage('@@extension_id') === "akgjbibhebefdjbebhpmknohhojhppeb") ? 
+                                'https://secure.apozy.com/riskEvent/csp' : 
+                                'http://localhost:1337/riskEvent/csp'
+
+            // create authentication querystring 
+            const api_querystring = "?id=" + apozy_id + "&secret=" + apozy_secret + "&email=" + apozy_email; 
+
+            // Reports violations
+            headers.push({
+                'name': 'Content-Security-Policy-Report-Only',
+                'value': "script-src 'self' " + starPageDomain + "; style-src 'self' " + starPageDomain + "; block-all-mixed-content; require-sri-for script; report-uri http://localhost:1337/riskEvent/csp;" //+ csp_report_url + api_querystring
+            });
+
+            // Blocks and reports form-action violations
+            headers.push({
+                'name': 'Content-Security-Policy',
+                'value': "form-action 'none'; report-uri " + csp_report_url + api_querystring
+            });
+        } else {
+            // Does not report violations for unauthenticated user
+            headers.push({
+                'name': 'Content-Security-Policy',
+                'value': "form-action 'none'"
+            });
+        }
+
+        // console.log('headers', headers);
 
         return { responseHeaders: headers };
+        
     }
-
     if ( µm.mustAllow(tabContext.rootHostname, µm.URI.hostnameFromURI(requestURL), 'script') ) {
         return;
     }
