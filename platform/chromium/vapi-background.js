@@ -124,14 +124,17 @@ vAPI.notifications.notifyLocked = function (domain, options) {
   var opt = {
               type: options.type || "basic",
               // progress: 3,
-              title: options.title || "Site Locked by Apozy",
+              title: options.title || "Apozy Protection is On",
               // contextMessage: "Risk Level"
-              message: options.message || "You don't frequently use this site.",
-              contextMessage: "Restricted input and downloads",
+              message: options.message || "You don't use this site often, so actions like typing and downloads are locked.",
+              contextMessage: options.contextMessage || "",
               iconUrl: options.iconUrl || "img/icon.svg",
-              // message: "5 Risks",
               buttons: [{title: "Click to unlock " + domain, iconUrl: unlockIcon}]
           };
+
+          if (opt.type.toLowerCase() === "progress") {
+            opt.progress = options.progress || 0;
+          }
 
           chrome.notifications.create(domain, opt, null);
 };
@@ -1083,9 +1086,9 @@ vAPI.cloud = (function() {
 
 // Run on Install
 chrome.runtime.onInstalled.addListener(function (object) {
-    // chrome.tabs.create({url: "http://www.apozy.com/"}, function (tab) {
-    //     // console.log("New tab launched with http://yoursite.com/");
-    // });
+    chrome.tabs.create({url: "onboard.html"}, function (tab) {
+        // console.log("New tab launched with http://yoursite.com/");
+    });
 });
 
 // Run on Uninstall

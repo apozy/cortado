@@ -317,6 +317,7 @@ var onHeadersReceived = function(details) {
     // If Safe Browsing is on
     var tabContext = µm.tabContextManager.lookup(tabId);
     var rootHostname = tabContext.rootHostname;
+
     if ( tabContext === null || !rootHostname || !µm.tMatrix.evaluateSwitchZ('matrix-off', rootHostname)) {
 
         // TODO: before pushing these changes we must deploy csp violation tracking API 

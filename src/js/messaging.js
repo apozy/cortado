@@ -167,7 +167,7 @@ function onMessage(request, sender, callback) {
         });
         break;
     */
-    
+
 
     default:
         return vAPI.messaging.UNHANDLED;
@@ -248,7 +248,8 @@ var matrixSnapshot = function(pageStore, details) {
         userSettings: {
             colorBlindFriendly: µmuser.colorBlindFriendly,
             displayTextSize: µmuser.displayTextSize,
-            popupScopeLevel: µmuser.popupScopeLevel
+            popupScopeLevel: µmuser.popupScopeLevel,
+            iconBadgeEnabled: µmuser.iconBadgeEnabled
         }
     };
 
@@ -400,11 +401,22 @@ var onMessage = function(request, sender, callback) {
 
     switch ( request.what ) {
     case 'toggleMatrixSwitch':
+        var matrixStatus = µm.tMatrix.evaluateSwitchZ(request.switchName, request.srcHostname) === false;
+
         µm.tMatrix.setSwitchZ(
             request.switchName,
             request.srcHostname,
-            µm.tMatrix.evaluateSwitchZ(request.switchName, request.srcHostname) === false
+            matrixStatus
         );
+
+        µm.pMatrix.setSwitchZ(
+            request.switchName,
+            request.srcHostname,
+            matrixStatus
+        );
+
+        µm.saveMatrix();
+
         break;
 
     case 'blacklistMatrixCell':
@@ -601,6 +613,7 @@ var onMessage = function(request, sender, callback) {
     }
 
     var tabId = sender && sender.tab ? sender.tab.id || 0 : 0;
+    var pageStore = µm.pageStoreFromTabId(tabId);
 
     // Sync
     var response;
@@ -624,7 +637,15 @@ var onMessage = function(request, sender, callback) {
             undefined;
         break;
    case 'notifyBlockedRequest':
-         vAPI.notifications.notifyLocked(µm.URI.domainFromHostname(µm.URI.hostnameFromURI(request.url)));
+         var options = {};
+
+         if (pageStore.pageScan.score !== undefined) {
+           options.contextMessage = "Site privacy is " + pageStore.pageScan.score + '%';
+           options.type = "progress";
+           options.progress = pageStore.pageScan.score;
+         }
+
+         vAPI .notifications .notifyLocked(µm.URI.domainFromHostname(µm.URI.hostnameFromURI(request.url)), options);
          break;
 
     case 'shutdown?':

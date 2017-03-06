@@ -63,22 +63,13 @@
     <div class="row">
         <div class="col s12" style="margin-bottom: 24px;">
             <ul class="tabs">
-                <li class="tab col s4"><a class="purple-text active" href="#settings">Your Privacy</a></li>
-                <li class="tab col s4"><a class="purple-text" href="#rules">Website Permissions</a></li>
-                <li class="tab col s4"><a class="purple-text" href="#blacklist">Blocked Websites</a></li>
-                <!-- <li class="tab col s3"><a class="purple-text" href="#about">About</a></li> -->
+                <li class="tab col s3"><a class="purple-text active" href="#settings">Your Privacy</a></li>
+                <li class="tab col s3"><a class="purple-text" href="#rules">Website Permissions</a></li>
+                <li class="tab col s3"><a class="purple-text" href="#blacklist">Blocked Websites</a></li>
+                <li class="tab col s3"><a class="purple-text" href="#about">About</a></li>
             </ul>
         </div>
         <div id="settings" class="col s12">
-            <!--
-            <h2 data-i18n="settingsMatrixDisplayHeader"></h2>
-            <ul style="list-style:none">
-                <li style="margin-top:0.5em;"><input id="colorBlindFriendly" type="checkbox" data-range="bool"><label data-i18n="settingsMatrixDisplayColorBlind" for="colorBlindFriendly"></label>
-                <li style="margin-top:0.5em;"><span data-i18n="settingsMatrixDisplayTextSizePrompt"></span>
-                <input type="radio" name="displayTextSize" id="displayTextSizeNormal" value="13px"><label data-i18n="settingsMatrixDisplayTextSizeNormal" for="displayTextSizeNormal"></label>
-                <input type="radio" name="displayTextSize" id="displayTextSizeLarge" value="16px"><label data-i18n="settingsMatrixDisplayTextSizeLarge" for="displayTextSizeLarge"></label>
-            </ul>
-              -->
             <blockquote>Apozy <a href="https://en.wikipedia.org/wiki/Sandbox_(computer_security)">locks</a> websites to stop attacks like <a href="https://en.wikipedia.org/wiki/Phishing">phishing</a>, <a href="https://en.wikipedia.org/wiki/Malware">malware</a>,
                 <a
                     href="https://en.wikipedia.org/wiki/Data_breach">data leaks</a>, <a href="https://en.wikipedia.org/wiki/Code_injection">data injection attacks</a> and <a href="https://en.wikipedia.org/wiki/Cross-site_scripting">cross-site scripting</a>. We accomplish this with the help of people like
@@ -88,17 +79,18 @@
                     <div class="collapsible-header active"><i class="material-icons">autorenew</i>What you securely share with Apozy</div>
                     <div class="collapsible-body">
                         <ul style="padding: 20px 0px 20px 0px;">
-                            <li>
+                            <!-- For later -->
+                            <!-- <li>
                                 <input id="lockReportingEnabled" type="checkbox" data-range="bool">
                                 <label for="lockReportingEnabled">Auto-whitelist sites. Requires the domain name of (un)locked site.</label>
-                            </li>
+                            </li> -->
                             <li>
                                 <input id="iconBadgeEnabled" type="checkbox" data-range="bool">
-                                <label data-i18n="settingsIconBadgeEnabled" for="iconBadgeEnabled"></label>
+                                <label for="iconBadgeEnabled"><strong class="black-text">Enable site privacy grades.</strong> Shows you the privacy grade of sites you visit. Requires anonymously sharing the domain name of sites you visit securely with Apozy.</label>
                             </li>
                             <li>
                                 <input id="cspReportingEnabled" type="checkbox" data-range="bool">
-                                <label for="cspReportingEnabled">Be a contributor. Report URL's that violate privacy or security norms.</label>
+                                <label for="cspReportingEnabled"><strong class="black-text">Enable community protection.</strong> Pay it forward by helping everyone's protection stay up-to-date and accurate. Share the URL's of sites that violate privacy or security norms securely with Apozy.</label>
                             </li>
                             <li>
                                 <input id="cloudStorageEnabled" type="checkbox" data-range="bool">
@@ -259,21 +251,20 @@
                 </ul>
             </div>
         </div>
-        <!-- <div id="about" class="col s12">
-            <ul class="collection with-header">
-                <li class="collection-header">Apozy Lite&nbsp;<span id="aboutVersion"></span></li>
-                <li class="collection-item"><a href="#"><span data-i18n="aboutDoc"></span></a></li>
-                <li class="collection-item"><span data-i18n="aboutPermissions"></span></li>
+        <div id="about" class="col s12">
+            <ul class="collection">
+                <li class="collection-item">Apozy Trusted Browsing&nbsp;<span id="aboutVersion"></span></li>
+
                 <li class="collection-item">
-                    <a href="#" data-i18n="aboutCode"></a>
+                    <a href="https://github.com/apozy/cortado">Source Code (GPLv3)</a>
                 </li>
                 <li class="collection-item">
-                    <a href="#" data-i18n="aboutIssues"></a>
+                    <a href="https://github.com/apozy/cortado/issues">Bugs and Issues</a>
                 </li>
                 <li class="collection-item"><span data-i18n="aboutContributors"></span>
                     <ul>
-                        <li><span data-i18n="aboutCodeContributors"></span> <a href="https://www.apozy.com">Apozy</a>, <a href="https://github.com/gorhill/uMatrix/graphs/contributors">uMatrix, <a href="https://github.com/gorhill/httpswitchboard/graphs/contributors">HTTP Switchboard</a>
-                            <li><span data-i18n="aboutTranslationContributors"></span> <a href="https://github.com/gorhill/uMatrix/wiki/Translation-work-contributors">Crowdin</a>
+                        <li><span data-i18n="aboutCodeContributors"></span> <a href="https://github.com/apozy/cortado">Apozy</a>, <a href="https://github.com/gorhill/uMatrix/graphs/contributors">uMatrix, <a href="https://github.com/gorhill/httpswitchboard/graphs/contributors">HTTP Switchboard</a>
+                        <li><span data-i18n="aboutTranslationContributors"></span> <a href="https://github.com/gorhill/uMatrix/wiki/Translation-work-contributors">Crowdin</a>
                     </ul>
                     </li>
             </ul>
@@ -295,12 +286,7 @@
                 <span style="display: none;" data-i18n="aboutRestoreError"></span>
                 <span style="display: none;" data-i18n="aboutResetConfirm"></span>
             </div>
-        </div> -->
-
-        <!-- <a href="https://secure.apozy.com/auth/google/plugin/callback" class="btn btn-google-plus" tooltip-placement="top" tooltip="Sign in with Google" tooltip-append-to-body="true"><i class="fa fa-google"></i></a> -->
-        <a href="http://localhost:1337/auth/google/extension/callback" class="btn btn-google-plus" tooltip-placement="top" tooltip="Sign in with Google" tooltip-append-to-body="true"><i class="fa fa-google"></i>Login</a>
-        <a href="?logout=true" class="btn btn-google-plus" tooltip-placement="top" tooltip="Sign in with Google" tooltip-append-to-body="true"><i class="fa fa-google"></i>Logout</a>
-
+        </div>
     </div>
 
     <script src="/lib/jquery.js"></script>
@@ -309,15 +295,14 @@
     <script src="js/vapi-client.js"></script>
     <script src="js/udom.js"></script>
     <script src="js/i18n.js"></script>
-    <!-- <script src="js/dashboard-common.js"></script> -->
     <script src="js/settings.js"></script>
     <script src="js/privacy.js"></script>
     <script src="js/cloud-ui.js"></script>
     <script src="js/user-rules.js"></script>
     <script src="js/hosts-files.js"></script>
-    <!-- <script src="js/about.js"></script> -->
+    <script src="js/about.js"></script>
+    <script src="js/onboard.js"></script>
     <script src="js/login-apozy.js"></script>
-
 </body>
 
 </html>

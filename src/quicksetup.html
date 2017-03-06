@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Setup Apozy</title>
+    <link rel="stylesheet" href="lib/materialize/materialize.css">
+</head>
+
+<body style="background: #f5f5f5; width: 384px;">
+    <div class="row"></div>
+    <div class="container row">
+        <div class="col s12 m12">
+              <div>
+                  <input id="iconBadgeEnabled" type="checkbox" data-range="bool">
+                  <label for="iconBadgeEnabled"><strong class="black-text">Enable site privacy grades.</strong> Shows you the privacy grade of sites you visit. Requires anonymously sharing the domain name of sites you visit securely with Apozy.</label>
+              </div>
+              <div class="row"></div>
+              <div>
+                  <input id="cspReportingEnabled" type="checkbox" data-range="bool">
+                  <label for="cspReportingEnabled"><strong class="black-text">Enable community protection.</strong> Pay it forward by helping everyone's protection stay up-to-date and accurate. Share the URL's of sites that violate privacy or security norms securely with Apozy.</label>
+              </div>
+              <div class="row"></div>
+              <div>
+                  <button id="done" class="btn btn-primary col s12">Done</button>
+              </div>
+        </div>
+    </div>
+    <script src="/lib/jquery.js"></script>
+    <script src="/lib/materialize/materialize.js"></script>
+    <script src="js/vapi-common.js"></script>
+    <script src="js/vapi-client.js"></script>
+    <script src="js/udom.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/privacy.js"></script>
+    <script src="js/about.js"></script>
+    <script src="js/onboard.js"></script>
+</body>
+
+</html>

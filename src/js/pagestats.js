@@ -350,10 +350,12 @@ PageStore.prototype.init = function(tabContext) {
     this.scanDaemonTimer = null;
     this.mtxContentModifiedTime = 0;
     this.mtxCountModifiedTime = 0;
-    this.visited = false;
+    this.trustedVisits = 0;
 
-    // Start Page Scanning
-    this.scheduleScanDaemon(1000);
+    // Start Page Scanning only if User has given permission
+    if (µm.userSettings.iconBadgeEnabled) {
+      this.scheduleScanDaemon(1000);
+    }
 
     // Check if page has ever been visited
     this.updatePageHistory();
@@ -459,32 +461,52 @@ PageStore.prototype.updatePageHistory = function () {
 
   var searchingHistory = vAPI.history.search({
       text: parentScope.pageDomain,
-      maxResults: 20
+      maxResults: 100,
+      startTime: Number(moment().subtract(1, "months").format("x")),
+      endTime: Number(moment().subtract(2, "days").format("x"))
   }, function(results) {
       // What to show if there are no results.
       if (!results.length) {
           parentScope.visted = false;
       } else {
+          // Stores unique dates of site visits
+          var uniqueDates = {};
           results.forEach(function(site) {
+              // Search results exist, but not for actual domain
+              if (!site.url.toLowerCase().includes(parentScope.pageDomain)) {
+                return;
+              }
+
               vAPI.history.getVisits({url: site.url}, function (visits) {
                 // Site must have at least 7 total visits
                 if (visits.length > 7) {
                   visits.forEach(function(visit) {
-                    // Visit must have occured a few days in the past
-                    if (visit.visitTime < searchBeforeDate) {
-                        parentScope.visited = true;
-                        µm.tMatrix.setSwitchZ(
-                            'matrix-off',
-                            parentScope.pageDomain,
-                            true
-                        );
+                    if (moment(visit.visitTime).isBefore(moment().subtract(2, "days"))) {
+                       uniqueDates[moment(visit.visitTime).format('YYYYMMDD')] = 1;
                     }
                   });
+                  // Must have at least three unique visit dates
+                  // TODO: Needs performance boost, getting called too frequently
+                  // refactor it out to only get called once
+                  parentScope.trustedVisits = Object.keys(uniqueDates).length;
+                  if (parentScope.trustedVisits >= 3) {
+                    // console.log(site.url, parentScope.pageDomain, parentScope.trustedVisits);
+                    µm.tMatrix.setSwitchZ(
+                        'matrix-off',
+                        parentScope.pageDomain,
+                        true
+                    );
+                    µm.pMatrix.setSwitchZ(
+                        'matrix-off',
+                        parentScope.pageDomain,
+                        true
+                    );
+
+                    µm.saveMatrix();
+                  }
                 }
               });
           });
-
-
       }
   });
 };
@@ -526,7 +548,7 @@ PageStore.prototype.updateScanReport = function () {
               this.pageScan.scan_report[s].score_description_simple = 'No protection against deceptively loading this service inside another website';
               break;
           }
-          
+
           adjustedScore += this.pageScan.scan_report[s].score_modifier;
       }
   }
@@ -543,6 +565,11 @@ PageStore.prototype.updateScanReport = function () {
 };
 
 PageStore.prototype.scan = function (tld) {
+  // Respect user's privacy, only scan if enabled
+  if (!µm.userSettings.iconBadgeEnabled) {
+    return;
+  }
+
   var xhr = new XMLHttpRequest();
   var scan = {};
   var scanReport = {};
