@@ -343,6 +343,7 @@ var onHeadersReceived = function(details) {
             // Reports violations
             headers.push({
                 'name': 'Content-Security-Policy-Report-Only',
+                // TODO: @ejustice improve. see https://git.apozy.us/apozy/umatrix/issues/12
                 'value': "script-src 'self' " + starPageDomain + "; style-src 'self' " + starPageDomain + "; block-all-mixed-content; require-sri-for script; report-uri " + csp_report_url + api_querystring +";"
             });
 
