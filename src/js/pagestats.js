@@ -352,8 +352,10 @@ PageStore.prototype.init = function(tabContext) {
     this.mtxCountModifiedTime = 0;
     this.trustedVisits = 0;
 
-    // Start Page Scanning
-    this.scheduleScanDaemon(1000);
+    // Start Page Scanning only if User has given permission
+    if (µm.userSettings.iconBadgeEnabled) {
+      this.scheduleScanDaemon(1000);
+    }
 
     // Check if page has ever been visited
     this.updatePageHistory();
@@ -563,6 +565,11 @@ PageStore.prototype.updateScanReport = function () {
 };
 
 PageStore.prototype.scan = function (tld) {
+  // Respect user's privacy, only scan if enabled
+  if (!µm.userSettings.iconBadgeEnabled) {
+    return;
+  }
+
   var xhr = new XMLHttpRequest();
   var scan = {};
   var scanReport = {};

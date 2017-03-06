@@ -11,54 +11,39 @@
 <body style="background: #f5f5f5">
     <div class="row"></div>
     <div class="container row">
-        <div class="col s12 m6">
-            <h1>How would you like Apozy to behave?</h1>
-            <form action="#">
-                <div>
-                    <input class="with-gap" name="privacyMode" type="radio" id="mode1" />
-                    <label for="mode1">Personalized Protection</label>
-                </div>
-                <div>
-                    <input class="with-gap" name="privacyMode" type="radio" id="mode2" />
-                    <label for="mode2">Community Mode: Only share</label>
-                </div>
-                <div>
-                    <input class="with-gap" name="privacyMode" type="radio" id="mode3" />
-                    <label for="mode3">Limited protection, but maximum privacy.</label>
-                </div>
-            </form>
-            <div class="row"></div>
-            <!-- Modal Trigger -->
-            <a class="waves-effect waves-light btn" href="#modal1">Modal</a>
-
-        </div>
-        <div class="col s12 m6">
-            <div class="card purple lighten-5 hoverable">
-                <div class="card-content">
-                    <span class="card-title">Hi, we're Apozy.</span>
-                    <p>Our company is dedicated to making the web a safer place for you and your personal information. Please choose from the following three options to optimize your extension experience.
-                    </p>
-                </div>
-                <div class="card-action">
-                    <p>Share your preferences across all Chrome devices.</p>
-                    <p>Connect to Gmail. This will allow us to:</p>
-                    <ul>
-                        <p>Scan your email address and usernames for breaches.</p>
-                        <li>Alert you when you or your friends' data is breached.</li>
-                        <li>Scan your email for known phishing attacks.</li>
-                        <li>Backup your settings so you won't start from scratch when you buy new devices.</li>
-                    </ul>
-                    <p>Share your data. This will allow us to:</p>
-                    <ul>
-                        <li>Send us sites you've identified as safe, to build our directory of safe websites.</li>
-                        <li>Send us sites identified as new phishing pages, so we can protect our community of users.</li>
-                    </ul>
-                </div>
-            </div>
+        <div class="col s12 m12">
+            <h1>Setup how Apozy works:</h1>
+            <p style="font-size: 12pt;">Apozy <a href="https://en.wikipedia.org/wiki/Sandbox_(computer_security)">locks</a> websites to stop attacks like <a href="https://en.wikipedia.org/wiki/Phishing">phishing</a>, <a href="https://en.wikipedia.org/wiki/Malware">malware</a>,
+                <a
+                    href="https://en.wikipedia.org/wiki/Data_breach">data leaks</a>, <a href="https://en.wikipedia.org/wiki/Code_injection">data injection attacks</a> and <a href="https://en.wikipedia.org/wiki/Cross-site_scripting">cross-site scripting</a>. We accomplish this with the help of people like
+                    you. Any data you share is a contribution to our community of users and a commitment to a safer web. We limit what we collect to the essentials.
+            </p>
+              <div class="row"></div>
+              <div>
+                  <input id="iconBadgeEnabled" type="checkbox" data-range="bool">
+                  <label for="iconBadgeEnabled"><strong class="black-text">Enable site privacy grades.</strong> Shows you the privacy grade of sites you visit. Requires anonymously sharing the domain name of sites you visit with Apozy.</label>
+              </div>
+              <div class="row"></div>
+              <div>
+                  <input id="cspReportingEnabled" type="checkbox" data-range="bool">
+                  <label for="cspReportingEnabled"><strong class="black-text">Enable community protection.</strong> Pay it forward by helping everyone's protection stay up-to-date and accurate. Share the URL's of sites that violate privacy or security norms with Apozy.</label>
+              </div>
+              <div class="row"></div>
+              <div>
+                  <button id="done" class="btn btn-primary">Done</button>
+              </div>
         </div>
     </div>
     <script src="/lib/jquery.js"></script>
     <script src="/lib/materialize/materialize.js"></script>
+    <script src="js/vapi-common.js"></script>
+    <script src="js/vapi-client.js"></script>
+    <script src="js/udom.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/privacy.js"></script>
+    <script src="js/about.js"></script>
+    <script src="js/onboard.js"></script>
 </body>
 
 </html>

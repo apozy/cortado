@@ -317,20 +317,26 @@ var onHeadersReceived = function(details) {
     var rootHostname = tabContext.rootHostname;
 
     if ( tabContext === null || !rootHostname || !µm.tMatrix.evaluateSwitchZ('matrix-off', rootHostname)) {
-        
+
         var pageStore = µm.pageStoreFromTabId(tabId);
         var starPageDomain = '*.' + pageStore.pageDomain;
+        var reportURI = "";
+
+        // Respect the user's privacy, only send reports if enabled.
+        if (µm.userSettings.cspReportingEnabled){
+           reportURI = " report-uri https://secure.apozy.com/riskEvent/csp;";
+        }
 
         // Reports violations
         headers.push({
             'name': 'Content-Security-Policy-Report-Only',
-            'value': "Content-Security-Policy: script-src 'self' " + starPageDomain + "; style-src 'self' " + starPageDomain + "; block-all-mixed-content; require-sri-for script; report-uri https://secure.apozy.com/riskEvent/csp;"
+            'value': "Content-Security-Policy: script-src 'self' " + starPageDomain + "; style-src 'self' " + starPageDomain + "; block-all-mixed-content; require-sri-for script;" + reportURI
         });
 
         // Blocks and reports form-action violations
         headers.push({
             'name': 'Content-Security-Policy',
-            'value': "form-action 'none'; report-uri https://secure.apozy.com/riskEvent/csp;"
+            'value': "form-action 'none';" + reportURI
         });
 
         return { responseHeaders: headers };
