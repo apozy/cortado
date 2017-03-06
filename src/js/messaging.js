@@ -159,7 +159,7 @@ function onMessage(request, sender, callback) {
         });
         break;
     */
-    
+
 
     default:
         return vAPI.messaging.UNHANDLED;
@@ -240,7 +240,8 @@ var matrixSnapshot = function(pageStore, details) {
         userSettings: {
             colorBlindFriendly: µmuser.colorBlindFriendly,
             displayTextSize: µmuser.displayTextSize,
-            popupScopeLevel: µmuser.popupScopeLevel
+            popupScopeLevel: µmuser.popupScopeLevel,
+            iconBadgeEnabled: µmuser.iconBadgeEnabled
         }
     };
 

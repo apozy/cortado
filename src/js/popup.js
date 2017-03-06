@@ -981,6 +981,12 @@ function initScanResults() {
     $('#favicon').attr('src', matrixSnapshot.favIconUrl);
     $('#domain').text(matrixSnapshot.domain);
 
+    if (getUserSetting('iconBadgeEnabled') !== true) {
+        $('#riskList').append('<li class="white-text">Enable privacy grades to see this site\'s grade and security details.<br><br></li>');
+         $('#riskList').append('<li><a class="btn btn-primary col s12" href="quicksetup.html">Enable Privacy Grades</a></li>');
+         return;
+    }
+
     if (matrixSnapshot.scan.state.toUpperCase() !== "FINISHED") {
       $('#riskScore').text("Scan is " + matrixSnapshot.scan.state.toLowerCase());
       $('#riskList').append('<li><a class="grey-text text-lighten-3" href="#!">All typing, form submissions and downloads are blocked when Site Lock is switched \'On\'.</a></li>');
