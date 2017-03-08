@@ -78,8 +78,6 @@ function handleURLQuerystring() {
             messager.send({
                 what: 'setUserApiKey',
                 user: queryObj
-            }, function (info) {
-                // Do nothing                
             });
         } else {
             // Do nothing 
