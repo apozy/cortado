@@ -99,12 +99,19 @@ function onMessage(request, sender, callback) {
         vAPI.storage.set({
             "apozy_api": request.user
         });
+        vAPI.localStorage.setItem("apozy_id",request.user.id);
+        vAPI.localStorage.setItem("apozy_secret",request.user.secret);
+        vAPI.localStorage.setItem("apozy_email",request.user.email);
         break;
 
     case 'getUserApiInfo':
         async_return = true;
         vAPI.storage.get('apozy_api', function (info) {
-            return callback(info.apozy_api);
+            if (info && info.apozy_api) {
+                return callback(info.apozy_api);
+            } else {
+                return callback(undefined);
+            }
         });
         break;
 
@@ -132,6 +139,7 @@ function onMessage(request, sender, callback) {
 
     case 'logout':
         vAPI.storage.remove('apozy_api');
+        vAPI.localStorage.setItem("apozy_api", undefined);
         break;
 
     /*
@@ -762,7 +770,6 @@ vAPI.messaging.listen('settings.js', onMessage);
 (function() {
 
 var onMessage = function(request, sender, callback) {
-
     var µm = µMatrix;
 
     // Async

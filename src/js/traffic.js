@@ -294,6 +294,7 @@ var foilRefererHeaders = function(µm, toHostname, details) {
 // This fixes:
 // https://github.com/gorhill/httpswitchboard/issues/35
 
+
 var onHeadersReceived = function(details) {
     // console.debug('onHeadersReceived()> "%s": %o', details.url, details);
     var headers = details.responseHeaders;
@@ -313,36 +314,55 @@ var onHeadersReceived = function(details) {
         µm.tabContextManager.push(tabId, requestURL);
     }
 
+    // If Safe Browsing is on
     var tabContext = µm.tabContextManager.lookup(tabId);
     var rootHostname = tabContext.rootHostname;
 
     if ( tabContext === null || !rootHostname || !µm.tMatrix.evaluateSwitchZ('matrix-off', rootHostname)) {
 
-        var pageStore = µm.pageStoreFromTabId(tabId);
-        var starPageDomain = '*.' + pageStore.pageDomain;
-        var reportURI = "";
+        // TODO: before pushing these changes we must deploy csp violation tracking API 
+        const apozy_id = vAPI.localStorage.getItem('apozy_id');
+        const apozy_secret = vAPI.localStorage.getItem('apozy_secret');
+        const apozy_email = vAPI.localStorage.getItem('apozy_email');
 
-        // Respect the user's privacy, only send reports if enabled.
-        if (µm.userSettings.cspReportingEnabled){
-           reportURI = " report-uri https://secure.apozy.com/riskEvent/csp;";
+        if (apozy_id &&          apozy_secret &&          apozy_email && 
+            apozy_id !== null && apozy_secret !== null && apozy_email !== null) {
+            
+            // Retrieve domain for domain specific CSP header
+            var pageStore = µm.pageStoreFromTabId(tabId);
+            var starPageDomain = '*.' + pageStore.pageDomain;
+            
+            // dev vs prod url
+            var csp_report_url = (chrome.i18n.getMessage('@@extension_id') === "akgjbibhebefdjbebhpmknohhojhppeb") ? 
+                                'https://secure.apozy.com/riskEvent/csp' : 
+                                'http://localhost:1337/riskEvent/csp'
+
+            // create authentication querystring 
+            const api_querystring = "?id=" + apozy_id + "&secret=" + apozy_secret + "&email=" + apozy_email; 
+
+            // Reports violations
+            headers.push({
+                'name': 'Content-Security-Policy-Report-Only',
+                // TODO: @ejustice improve. see https://git.apozy.us/apozy/umatrix/issues/12
+                'value': "script-src 'self' " + starPageDomain + "; style-src 'self' " + starPageDomain + "; block-all-mixed-content; require-sri-for script; report-uri " + csp_report_url + api_querystring +";"
+            });
+
+            // Blocks and reports form-action violations
+            headers.push({
+                'name': 'Content-Security-Policy',
+                'value': "form-action 'none'; report-uri " + csp_report_url + api_querystring
+            });
+        } else {
+            // Does not report violations for unauthenticated user
+            headers.push({
+                'name': 'Content-Security-Policy',
+                'value': "form-action 'none'"
+            });
         }
 
-        // Reports violations
-        headers.push({
-            'name': 'Content-Security-Policy-Report-Only',
-            'value': "Content-Security-Policy: script-src 'self' " + starPageDomain + "; style-src 'self' " + starPageDomain + "; block-all-mixed-content; require-sri-for script;" + reportURI
-        });
-
-        // Blocks and reports form-action violations
-        headers.push({
-            'name': 'Content-Security-Policy',
-            'value': "form-action 'none';" + reportURI
-        });
-
         return { responseHeaders: headers };
-
+        
     }
-
     if ( µm.mustAllow(tabContext.rootHostname, µm.URI.hostnameFromURI(requestURL), 'script') ) {
         return;
     }

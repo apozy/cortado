@@ -51,82 +51,33 @@ function queryStringToJSON() {
 
 // NOTE: runs onLoad
 function handleURLQuerystring() {
-    // TODO: use this isUserLoggedIn test for views
-    messager.send({
-        what: 'isUserLoggedIn'
-    }, function (info) {
-        console.log("user logged in", info);
-    });
-
     try {
         var queryObj = queryStringToJSON();
     } catch (e) {
+        // TODO: @ejustice implement error view
         console.log("Malformed querystring", e);
         return;
     }
 
-    if (Object.keys(queryObj).length > 0) {
+    if (queryObj !== undefined && Object.keys(queryObj).length > 0) {
 
         // if there is an error in the query string
         if (queryObj.error) {
             // TODO: @ejustice implement error view 
             console.log("Querystring indicated error.");
 
-        // TODO: validate return object user & user.apikey w/ all necessary info, if  not redirect to /?error=true
         // if there is a empty querystring, do nothing
         } else if (queryObj[""] === "") {
-            // console.log("Empty query string.");
+            // Do nothing
         } else if (queryObj.logout) {
             messager.send({
                 what: 'logout'
             });
-
-            // TODO: remove tests below / use
-            console.log("logging out, here is info");
-            messager.send({
-                what: 'getUserApiInfo'
-            }, function (info) {
-                console.log("api info", info);
-            });
-            messager.send({
-                what: 'getUserEmail'
-            }, function (info) {
-                console.log("user email", info);
-            });
-            messager.send({
-                what: 'isUserLoggedIn'
-            }, function (info) {
-                console.log("user logged in", info);
-            });
-            
         // otherwise, if there is a valid apikey querystring
         } else if (queryObj.email && queryObj.id && queryObj.secret) {
             messager.send({
                 what: 'setUserApiKey',
                 user: queryObj
-            }, function (info) {
-                console.log("got the callback");
-                
-            });
-
-
-            // TODO: remove tests below / use
-            messager.send({
-                what: 'getUserApiInfo'
-            }, function (info) {
-                console.log("api info", info);
-            });
-
-            messager.send({
-                what: 'getUserEmail'
-            }, function (info) {
-                console.log("user email", info);
-            });
-
-            messager.send({
-                what: 'isUserLoggedIn'
-            }, function (info) {
-                console.log("user logged in", info);
             });
         } else {
             // Do nothing 
