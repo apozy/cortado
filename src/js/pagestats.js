@@ -578,7 +578,7 @@ PageStore.prototype.scan = function (tld) {
 
   xhr.open("POST", "https://privacy.apozy.com/api/v1/analyze?hidden=true&host=" + tld, true);
   xhr.onreadystatechange = function() {
-    if (xhr.readyState == 4) {
+    if (xhr.readyState === 4 && xhr.status === 200) {
       // JSON.parse does not evaluate the attacker's scripts.
       scan = JSON.parse(xhr.responseText);
       if (scan.error) {

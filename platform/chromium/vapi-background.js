@@ -1088,11 +1088,16 @@ vAPI.cloud = (function() {
 chrome.runtime.onInstalled.addListener(function (details) {
   if(details.reason == "install") {
     chrome.tabs.create({url: "onboard.html"}, function (tab) {
-        // console.log("New tab launched with http://yoursite.com/");
+        // Stuff after onboarding
     });
   } else if(details.reason == "update"){
       var currentVersion = chrome.runtime.getManifest().version;
       var previousVersion = details.previousVersion;
+
+      // Update rules
+      var µm = µMatrix;
+      µm.pMatrix.setSwitch('matrix-off', 'clerky.com', 1);
+      µm.saveMatrix();
   }
 });
 
