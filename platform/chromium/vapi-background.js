@@ -1085,10 +1085,15 @@ vAPI.cloud = (function() {
 /******************************************************************************/
 
 // Run on Install
-chrome.runtime.onInstalled.addListener(function (object) {
+chrome.runtime.onInstalled.addListener(function (details) {
+  if(details.reason == "install") {
     chrome.tabs.create({url: "onboard.html"}, function (tab) {
         // console.log("New tab launched with http://yoursite.com/");
     });
+  } else if(details.reason == "update"){
+      var currentVersion = chrome.runtime.getManifest().version;
+      var previousVersion = details.previousVersion;
+  }
 });
 
 // Run on Uninstall
