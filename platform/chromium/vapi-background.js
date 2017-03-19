@@ -36,7 +36,7 @@ var vAPI = self.vAPI = self.vAPI || {};
 var chrome = self.chrome;
 var manifest = chrome.runtime.getManifest();
 
-// For debouncing notificaitons
+// For debouncing notificaitons, see vAPI.notifications.notifyLocked
 var notificationTimer = null;
 
 vAPI.chrome = true;
