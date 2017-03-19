@@ -124,9 +124,6 @@ var collapser = (function() {
     var pendingRequests = {};
     var pendingRequestCount = 0;
 
-    // For debouncing notificaitons
-    var notificationTimer = null;
-
     var srcProps = {
         'img': 'src'
     };
@@ -231,17 +228,10 @@ var collapser = (function() {
       e.stopPropagation();
       e.stopImmediatePropagation();
 
-      if (notificationTimer === null) {
-        localMessager.send({
-                what: 'notifyBlockedRequest',
-                url: window.location.href
-        });
-
-        notificationTimer = vAPI.setTimeout(function() {
-          clearTimeout(notificationTimer);
-          notificationTimer = null;
-        }, 8000); // NOTE: 8s is default chrome notification timeout
-      }
+      localMessager.send({
+              what: 'notifyBlockedRequest',
+              url: window.location.href
+      });
 
       return false;
     };
@@ -276,17 +266,10 @@ var collapser = (function() {
       e.stopPropagation();
       e.stopImmediatePropagation();
 
-      if (notificationTimer === null) {
-        localMessager.send({
-                what: 'notifyBlockedRequest',
-                url: window.location.href
-        });
-
-        notificationTimer = vAPI.setTimeout(function() {
-          clearTimeout(notificationTimer);
-          notificationTimer = null;
-        }, 8000); // NOTE: 8s is default chrome notification timeout
-      }
+      localMessager.send({
+              what: 'notifyBlockedRequest',
+              url: window.location.href
+      });
 
       return false;
     };
@@ -319,7 +302,7 @@ var collapser = (function() {
               // Block form input
               var forms = document.querySelectorAll('form');
               // var forms = document.querySelectorAll('[type="submit"]');
-              
+
               for (var f = 0; f < forms.length; f++) {
                 forms[f].addEventListener('click', notifyBlockEvent, true);
               }
