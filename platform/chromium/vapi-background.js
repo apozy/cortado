@@ -1099,7 +1099,6 @@ chrome.downloads.onCreated.addListener(function(download) {
   // Check if download is safe
   chrome.tabs.query({ active: true, currentWindow: true }, function (tab) {
     tabDomain = µm.URI.domainFromHostname(µm.URI.hostnameFromURI(tab[0].url));
-          console.log(tab[0].url, endHostname);
     if (!µm.tMatrix.evaluateSwitchZ('matrix-off', µm.URI.hostnameFromURI(tab[0].url)) &&
         !µm.tMatrix.evaluateSwitchZ('matrix-off', endHostname)) {
       chrome.downloads.cancel(download.id, function() {
