@@ -1094,15 +1094,16 @@ chrome.downloads.onCreated.addListener(function(download) {
           };
 
   var endHostname = µm.URI.hostnameFromURI(download.finalUrl);
-  var tabDomain = '';
+  var tabHostname = '';
 
   // Check if download is safe
   chrome.tabs.query({ active: true, currentWindow: true }, function (tab) {
-    tabDomain = µm.URI.domainFromHostname(µm.URI.hostnameFromURI(tab[0].url));
-    if (!µm.tMatrix.evaluateSwitchZ('matrix-off', µm.URI.hostnameFromURI(tab[0].url)) &&
+    tabHostname = µm.URI.hostnameFromURI(tab[0].url);
+
+    if (!µm.tMatrix.evaluateSwitchZ('matrix-off', tabHostname) &&
         !µm.tMatrix.evaluateSwitchZ('matrix-off', endHostname)) {
       chrome.downloads.cancel(download.id, function() {
-        vAPI.notifications.notifyLocked(tabDomain, opt);
+        vAPI.notifications.notifyLocked(µm.URI.domainFromHostname(tabHostname), opt);
       });
     }
   });
