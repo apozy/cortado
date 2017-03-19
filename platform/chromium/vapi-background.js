@@ -126,10 +126,10 @@ vAPI.notifications.notifyLocked = function (domain, options) {
               // progress: 3,
               title: options.title || "Apozy Protection is On",
               // contextMessage: "Risk Level"
-              message: options.message || "You don't use this site often, so actions like typing and downloads are locked.",
+              message: options.message || "You don't use this site often, so actions like typing are locked.",
               contextMessage: options.contextMessage || "",
               iconUrl: options.iconUrl || "img/icon.svg",
-              buttons: [{title: "Click to unlock " + domain, iconUrl: unlockIcon}]
+              buttons: options.buttons || [{title: "Click to unlock " + domain, iconUrl: unlockIcon}]
           };
 
           if (opt.type.toLowerCase() === "progress") {
@@ -1083,6 +1083,31 @@ vAPI.cloud = (function() {
 })();
 
 /******************************************************************************/
+// Run on download
+chrome.downloads.onCreated.addListener(function(download) {
+  var µm = µMatrix;
+  var options = {};
+
+  var opt = {
+              contextMessage: "Stopped Download",
+              message: options.message || "You don't use this site often, so downloads are locked."
+          };
+
+  var endHostname = µm.URI.hostnameFromURI(download.finalUrl);
+  var tabDomain = '';
+
+  // Check if download is safe
+  chrome.tabs.query({ active: true, currentWindow: true }, function (tab) {
+    tabDomain = µm.URI.domainFromHostname(µm.URI.hostnameFromURI(tab[0].url));
+          console.log(tab[0].url, endHostname);
+    if (!µm.tMatrix.evaluateSwitchZ('matrix-off', µm.URI.hostnameFromURI(tab[0].url)) &&
+        !µm.tMatrix.evaluateSwitchZ('matrix-off', endHostname)) {
+      chrome.downloads.cancel(download.id, function() {
+        vAPI.notifications.notifyLocked(tabDomain, opt);
+      });
+    }
+  });
+});
 
 // Run on Install
 chrome.runtime.onInstalled.addListener(function (details) {

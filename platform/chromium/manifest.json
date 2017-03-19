@@ -74,6 +74,7 @@
         "browsingData",
         "contentSettings",
         "cookies",
+        "downloads",
         "history",
         "notifications",
         "privacy",

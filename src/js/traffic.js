@@ -303,6 +303,7 @@ var onHeadersReceived = function(details) {
     var µm = µMatrix;
     var tabId = details.tabId;
     var requestType = requestTypeNormalizer[details.type] || 'other';
+
     // Ignore schemes other than 'http...'
     // if ( requestURL.lastIndexOf('http', 0) !== 0 ) {
     //     return;
@@ -319,31 +320,21 @@ var onHeadersReceived = function(details) {
     var rootHostname = tabContext.rootHostname;
 
     if ( tabContext === null || !rootHostname || !µm.tMatrix.evaluateSwitchZ('matrix-off', rootHostname)) {
-
-        // TODO: before pushing these changes we must deploy csp violation tracking API 
         const apozy_id = vAPI.localStorage.getItem('apozy_id');
         const apozy_secret = vAPI.localStorage.getItem('apozy_secret');
         const apozy_email = vAPI.localStorage.getItem('apozy_email');
+        const csp_report_url = 'https://secure.apozy.com/riskEvent/csp';
+        const api_querystring = "?id=" + apozy_id + "&secret=" + apozy_secret + "&email=" + apozy_email;
 
-        if (apozy_id &&          apozy_secret &&          apozy_email && 
-            apozy_id !== null && apozy_secret !== null && apozy_email !== null) {
-            
+        if (apozy_id && apozy_secret && apozy_email) {
             // Retrieve domain for domain specific CSP header
             var pageStore = µm.pageStoreFromTabId(tabId);
             var starPageDomain = '*.' + pageStore.pageDomain;
-            
-            // dev vs prod url
-            var csp_report_url = (chrome.i18n.getMessage('@@extension_id') === "akgjbibhebefdjbebhpmknohhojhppeb") ? 
-                                'https://secure.apozy.com/riskEvent/csp' : 
-                                'http://localhost:1337/riskEvent/csp'
-
-            // create authentication querystring 
-            const api_querystring = "?id=" + apozy_id + "&secret=" + apozy_secret + "&email=" + apozy_email; 
 
             // Reports violations
             headers.push({
                 'name': 'Content-Security-Policy-Report-Only',
-                // TODO: @ejustice improve. see https://git.apozy.us/apozy/umatrix/issues/12
+                // TODO: Needs immprovement see issue umatrix/12
                 'value': "script-src 'self' " + starPageDomain + "; style-src 'self' " + starPageDomain + "; block-all-mixed-content; require-sri-for script; report-uri " + csp_report_url + api_querystring +";"
             });
 
@@ -352,6 +343,7 @@ var onHeadersReceived = function(details) {
                 'name': 'Content-Security-Policy',
                 'value': "form-action 'none'; report-uri " + csp_report_url + api_querystring
             });
+            
         } else {
             // Does not report violations for unauthenticated user
             headers.push({
@@ -361,7 +353,7 @@ var onHeadersReceived = function(details) {
         }
 
         return { responseHeaders: headers };
-        
+
     }
     if ( µm.mustAllow(tabContext.rootHostname, µm.URI.hostnameFromURI(requestURL), 'script') ) {
         return;
