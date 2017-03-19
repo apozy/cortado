@@ -1097,6 +1097,7 @@ chrome.runtime.onInstalled.addListener(function (details) {
       // Update rules
       var µm = µMatrix;
       µm.pMatrix.setSwitch('matrix-off', 'clerky.com', 1);
+      µm.pMatrix.setSwitch('matrix-off', 'apozy.com', 1);
       µm.saveMatrix();
   }
 });

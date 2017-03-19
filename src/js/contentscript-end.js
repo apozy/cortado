@@ -123,6 +123,10 @@ var collapser = (function() {
     var newRequests = [];
     var pendingRequests = {};
     var pendingRequestCount = 0;
+
+    // For debouncing notificaitons
+    var notificationTimer = null;
+
     var srcProps = {
         'img': 'src'
     };
@@ -222,10 +226,27 @@ var collapser = (function() {
       return false;
     };
 
-    var onKeyDown = function(e) {
-      // For debouncing notificaitons
-      var notificationTimer = null;
+    var notifyBlockEvent = function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      e.stopImmediatePropagation();
 
+      if (notificationTimer === null) {
+        localMessager.send({
+                what: 'notifyBlockedRequest',
+                url: window.location.href
+        });
+
+        notificationTimer = vAPI.setTimeout(function() {
+          clearTimeout(notificationTimer);
+          notificationTimer = null;
+        }, 8000); // NOTE: 8s is default chrome notification timeout
+      }
+
+      return false;
+    };
+
+    var onKeyDown = function(e) {
       // Ignore if following modifier is active.
       if (e.getModifierState("Fn") ||
           e.getModifierState("Hyper") ||
@@ -282,12 +303,26 @@ var collapser = (function() {
     var process = function(delay) {
         localMessager.send({ what: 'shutdown?' }, function(res) {
             if (!res) {
+              // Use addEventListener to start capture of all events (globally)
+
               // Block other key events to prevent scripts from keylogging
               document.addEventListener('keypress', blockEvent, true);
               document.addEventListener('keyup', blockEvent, true);
-
-              // Use addEventListener to start capture of all events (globally)
               document.addEventListener('keydown', onKeyDown, true);
+
+              // Block drag and drop
+              document.addEventListener('drop', notifyBlockEvent, true);
+
+              // Block file uploads
+              document.addEventListener('change', notifyBlockEvent, true);
+
+              // Block form input
+              var forms = document.querySelectorAll('form');
+              // var forms = document.querySelectorAll('[type="submit"]');
+              
+              for (var f = 0; f < forms.length; f++) {
+                forms[f].addEventListener('click', notifyBlockEvent, true);
+              }
             }
         });
 

@@ -3321,6 +3321,7 @@
     µm.pMatrix.setSwitch('matrix-off', 'mailchimp.com', 1);
     µm.pMatrix.setSwitch('matrix-off', 'close.io', 1);
     µm.pMatrix.setSwitch('matrix-off', 'clerky.com', 1);
+    µm.pMatrix.setSwitch('matrix-off', 'apozy.com', 1);
 
     µm.tMatrix = new µm.Matrix();
     µm.tMatrix.assign(µm.pMatrix);
